@@ -1,0 +1,7 @@
+- header
+- abovethefold
+- aboutme
+- myskills
+- portfolio
+    - line
+- footer

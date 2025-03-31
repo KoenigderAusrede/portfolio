@@ -1,0 +1,71 @@
+header {
+    height: 7.5rem;
+    width: 100vw;
+    background-color: #141D2F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+}
+
+p {
+    color: white;
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+p::before, p::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #9747FF;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+p::before {
+    top: -2px;
+    left: 0;
+}
+
+p::after {
+    bottom: -2px;
+    right: 0;
+}
+
+p:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+p:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+p:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+p::after {
+    transition: width 0.3s ease-in-out 0.3s, right 0.3s ease-in-out 0.3s;
+}
+
+
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 3rem;
+}
+
+img {
+    margin-left: 3rem;
+}
+
+.felixLogo {
+    height: 2.7rem;
+}

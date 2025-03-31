@@ -1,0 +1,105 @@
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1de6b5;
+  border-radius: 25px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    .portfolio-image {
+      transform: scale(2.3);
+      filter: blur(2px);
+    }
+
+    .portfolio-info,
+    .portfolio-buttons {
+      opacity: 1; // Elemente einblenden
+      transform: translateY(0);
+    }
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+
+  .portfolio-buttons {
+    position: absolute;
+    top: 3rem;
+    left: 34%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .portfolio-button {
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &.github {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+
+    &.live-test {
+      background-color: #8f00ff;
+      color: white;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .portfolio-info {
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    height:40%;
+    background: white;
+    border-radius: 25px 25px 0 0;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: #8f00ff;
+  }
+
+  p {
+    font-size: 1rem;
+    color: black;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  
+  .tag {
+    background-color: rgba(29, 230, 181, 0.1); // Leichter grüner Hintergrund
+    color: #1de6b5; // Grüne Schriftfarbe
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid #1de6b5;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://dieblasers.de",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

@@ -1,0 +1,95 @@
+<section class="contact-section">
+  <h1 class="contact-heading">Contact</h1>
+  <div class="contact-content">
+    <div class="contact-text">
+      <h2>Got a problem to solve?</h2>
+      <p>
+        Contact me through this form. I am interested in hearing from you, knowing your ideas, 
+        and contributing to your projects with my work.
+      </p>
+      <p>
+        Need a Project Manager, Frontend developer and or Digital Strategist? <strong>Contact me!</strong>
+      </p>
+    </div>
+    <form class="contact-form" (submit)="onSubmit($event)">
+      <!-- Name Field -->
+      <div class="form-group">
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Your name"
+          [(ngModel)]="userName"
+          name="name"
+          [ngClass]="{ 'error-border': nameError, 'success-border': nameValid }"
+          (blur)="validateName()"
+        />
+        <div class="error-message" *ngIf="nameError">
+          Your name is required
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <input
+          type="email"
+          class="input-field"
+          placeholder="Your email"
+          [(ngModel)]="userEmail"
+          name="email"
+          [ngClass]="{ 'error-border': emailError, 'success-border': emailValid }"
+          (blur)="validateEmail()"
+        />
+        <div class="error-message" *ngIf="emailError">
+          <span *ngIf="userEmail === ''">Your email is required</span>
+          <span *ngIf="userEmail !== ''">Invalid email format</span>
+        </div>
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <textarea
+          class="textarea-field"
+          placeholder="Your message"
+          [(ngModel)]="userMessage"
+          name="message"
+          [ngClass]="{ 'error-border': messageError, 'success-border': messageValid }"
+          (blur)="validateMessage()"
+        ></textarea>
+        <div class="error-message" *ngIf="messageError">
+          Your message is empty
+        </div>
+      </div>
+
+      <!-- Privacy Checkbox -->
+      <div class="privacy-check">
+        <input
+          type="checkbox"
+          id="privacy"
+          [(ngModel)]="privacyChecked"
+          (change)="handlePrivacyCheckboxChange($event)"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <label
+          [class.checked]="privacyChecked"
+          for="privacy"
+          class="custom-checkbox"
+        >
+          I've read the <a href="#" class="privacy-link">privacy policy</a> and agree to the processing of my data as outlined.
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="!privacyChecked"
+      >
+        Send message :)
+      </button>
+    </form>
+    <!-- Success-Overlay -->
+    <div *ngIf="messageSent" class="message-container">
+      <p>Ihre Nachricht wurde erfolgreich gesendet! 📩</p>
+    </div>    
+  </div>
+</section>
