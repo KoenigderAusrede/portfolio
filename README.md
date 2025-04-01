@@ -1,27 +1,97 @@
-# Profile
+# 📄 Profile App – Angular + SSR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Willkommen zur **Profile App** – ein modernes Angular-Projekt mit **Server-Side Rendering (SSR)** per Express.js. Aufgeräumte Struktur, blitzschneller Start, und kein PHP-Ballast mehr.
 
-## Development server
+Welcome to the **Profile App** – a modern Angular project with **Server-Side Rendering (SSR)** using Express.js. Clean structure, blazing fast startup, and minimal legacy bloat.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Quickstart
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1. 📦 Installieren / Install dependencies
+```bash
+npm install
+```
 
-## Build
+### 2. 🧪 Entwicklung starten / Start in dev mode
+```bash
+npm run start
+```
+- 🌐 Nur Client-App ohne SSR / Just the client-side Angular app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 3. 🧠 Mit SSR starten / Run with SSR
+```bash
+npm run start:ssr
+```
+Wird automatisch:
+- ✅ Browser- & Server-Bundles bauen / Build browser + server bundles
+- 🧼 `<base href="/">` fixen / Fix baseHref
+- 🚀 Express SSR-Server starten / Start Express on `http://localhost:4000`
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📁 Projektstruktur / Project Structure
 
-## Running end-to-end tests
+```
+dist/
+├── browser/     # Frontend-Build / Static frontend
+└── server/      # Server-Build / SSR backend (Express)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+src/
+├── app/         # Komponenten / Angular components
+│   ├── aboutme/
+│   ├── contact/
+│   └── skillset/
+├── assets/      # Bilder & Icons / Images, icons, etc.
+└── main.server.ts  # SSR Einstiegspunkt / SSR entry
+```
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🔧 NPM Scripts
+| Script         | Beschreibung / Description               |
+|----------------|------------------------------------------|
+| `start`        | Dev-Server ohne SSR / Dev without SSR     |
+| `build:ssr`    | SSR Build inkl. baseHref Fix              |
+| `start:ssr`    | SSR Build + Launch                       |
+| `serve:ssr`    | Nur SSR starten / Run prebuilt server    |
+
+---
+
+## 📦 Abhängigkeiten / Dependencies
+- Angular 17 (App)
+- Angular Universal (SSR)
+- Express.js (Server)
+
+---
+
+## 📤 Deployment
+
+### 🟢 Vercel / Netlify (Client-only):
+```bash
+npm run build
+```
+→ Output liegt in `dist/browser/` → deploybar als statisches Frontend
+
+### 🔵 Node.js Server (SSR):
+```bash
+npm run build:ssr
+node dist/server/server.mjs
+```
+→ Hoste via Node-Provider (Render, Railway, VPS etc.)
+
+### 🔁 Cleanup
+```bash
+rm -rf dist/
+npm run build:ssr
+```
+
+---
+
+## 💡 Hinweise / Notes
+- `baseHref` wird automatisch ersetzt
+- SSR läuft auf Port `4000`
+
+---
+
+Happy hacking 👨‍💻 / Frohes Coden 💪

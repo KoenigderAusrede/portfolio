@@ -1,4 +1,4 @@
-$checkbox-path: '/felix/assets/checkbox';
+$checkbox-path: '/assets/checkbox';
 
 .contact-section {
   background-color: #141d2f;
@@ -59,26 +59,26 @@ $checkbox-path: '/felix/assets/checkbox';
       font-size: 1rem;
 
 
-      // Hover-Effekt
+      // Hover-Effect
       &:hover {
-        border-color: #1bdae5; // Farbe für den Hover-Rahmen
+        border-color: #1bdae5;
       }
 
       // Fehler-Rahmen
       &.error-border {
-        border-color: #e71b40; // Roter Rahmen bei Fehler
-        background-image: url('/assets/icons/red_warn.png'); // Fehler-Icon
+        border-color: #e71b40; // Red Border on Error
+        background-image: url('/assets/icons/red_warn.png');
         background-repeat: no-repeat;
-        background-size: 20px 20px; // Größe des Symbols
-        background-position: calc(100% - 10px) center; // Rechts innen im Feld
+        background-size: 20px 20px;
+        background-position: calc(100% - 10px) center;
       }
 
       &.success-border {
-        border-color: #00ff7f; // Grüne Farbe bei korrekter Eingabe
-        background-image: url('/assets/icons/green_check.png'); // Erfolgs-Icon
+        border-color: #00ff7f; // Green Border on Success
+        background-image: url('/assets/icons/green_check.png');
         background-repeat: no-repeat;
         background-size: 20px 20px;
-        background-position: calc(100% - 10px) center; // Rechts innen im Feld
+        background-position: calc(100% - 10px) center;
       }
     }
 
@@ -90,12 +90,12 @@ $checkbox-path: '/felix/assets/checkbox';
     .form-group {
       position: relative;
 
-      // Fehlermeldung
+      // Error Message
       .error-message {
-        color: #e71b40; // Textfarbe für Fehlermeldung
-        font-size: 0.875rem; // Etwas kleinerer Text
+        color: #e71b40; 
+        font-size: 0.875rem; 
         margin-top: 0.5rem;
-        display: flex; // Für Icon und Text nebeneinander
+        display: flex;
         align-items: center;
       }
     }

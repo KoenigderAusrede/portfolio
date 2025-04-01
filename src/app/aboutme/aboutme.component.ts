@@ -9,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './aboutme.component.scss'
 })
 export class AboutmeComponent {
-
+  scrollToContact(): void {
+    const contact = document.getElementById('contact');
+    if (contact) {
+      contact.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
 }

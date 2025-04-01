@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./skillset.component.scss']
 })
 export class SkillsetComponent {
-
+  scrollToContact(): void {
+    const contact = document.getElementById('contact');
+    if (contact) {
+      contact.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
