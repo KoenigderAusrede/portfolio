@@ -6,6 +6,7 @@ import { SkillsetComponent } from './skillset/skillset.component';
 import { PortfolioContainerComponent } from "./portfolio-container/portfolio-container.component";
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @Component({
     selector: 'app-root',
@@ -19,7 +20,8 @@ import { ContactComponent } from './contact/contact.component';
         SkillsetComponent, 
         PortfolioContainerComponent, 
         FooterComponent, 
-        ContactComponent
+        ContactComponent,
+        TestimonialsComponent
     ],
 })
 export class AppComponent {

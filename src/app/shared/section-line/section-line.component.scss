@@ -1,0 +1,36 @@
+.section-line-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  
+    &.left .line {
+      transform-origin: left;
+      animation: lineGrow 1.2s ease-out forwards;
+    }
+  
+    &.right .line {
+      transform-origin: right;
+      animation: lineGrow 1.2s ease-out forwards;
+    }
+  
+    .line {
+      height: 2px;
+      flex-grow: 1;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+  
+  @keyframes lineGrow {
+    0% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+  

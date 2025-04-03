@@ -1,17 +1,30 @@
 <div class="main">
-    <img class="backgroundBlurr" src="/assets/blurrs/Blue shadow 1 V2.png" alt="">
-    <div class="container">
-        <div class="rotate270">
-            <h1>I am</h1>
+    <div class="hero-box">
+        <div class="hero-bg-left"></div>
+        <div class="hero-bg-right"></div>
+      
+        <div class="hero-grid">
+          <div class="hero-vertical">
+            <span>I am</span>
+          </div>
+      
+          <div class="hero-content">
+            <h1>Felix Blaser</h1>
+            <p class="roles">Project Manager | Frontend Developer | Digital Strategist</p>
+          </div>
         </div>
-        <div class="horizontal">    
-            <p class="hOne">Felix Blaser</p>
-            <p class="hFour">Project Manager | Frontend Developer | Digital Strategist</p>
-        </div>     
-    </div>
-    <button class="greenButton letsTalk" (click)="scrollToContact()">Let's talk!</button>  
+      
+        <div class="hero-button">
+          <button class="greenButton" (click)="scrollToContact()">Let’s Talk!</button>
+        </div>
+      </div>      
     <div class="divider">
-        <img class="dividerButton" src="/assets/lines/Green100px.png" alt="">
+        <div style="width: 5.5rem;">
+            <app-section-line
+              position="right"
+              color="#70E61C"
+            ></app-section-line>
+          </div>
         <a href="https://github.com/KoenigderAusrede" target="_blank" rel="noopener noreferrer">
             <img class="dividerButton" src="/assets/buttons/Github button.png" alt="GitHub">
           </a>
@@ -21,13 +34,9 @@
           </a>
     </div>
     <div class="scroller">
-        <div class="rotate90-container">
-            <div class="rotate90">
-                <div>scroll down</div>
-            </div>
-        </div>
-        <img src="/assets/icons/arrowdown.png" alt="">
-    </div> 
+        <span class="scroll-text">scroll down</span>
+        <img src="/assets/icons/arrowdown.png" alt="Scroll down">
+      </div>
 </div>
 <div class="main2">
         <div class="textBlock">

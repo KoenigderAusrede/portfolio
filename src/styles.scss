@@ -1,4 +1,9 @@
 html, body {
     margin: 0;
     font-family: 'poppins';
+    overflow-x: hidden;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }

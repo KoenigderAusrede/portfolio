@@ -1,0 +1,27 @@
+<div class="testimonial-wrapper">
+    <div class="quote-box">
+      <div class="quote-symbol">„</div>
+      <p class="quote-text">{{ currentTestimonial.text }}</p>
+      <div class="quote-footer">
+        <div class="line"></div>
+        <span class="author">{{ currentTestimonial.author }}</span>
+      </div>
+    </div>
+  
+    <div class="image-box">
+      <img [src]="currentTestimonial.image" alt="Testimonial Image" />
+    </div>
+  </div>
+  
+  <div class="navigation">
+    <button (click)="prevTestimonial()">&larr;</button>
+    <div class="dots">
+      <span 
+        *ngFor="let testimonial of testimonials; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="setTestimonial(i)">
+      </span>
+    </div>
+    <button (click)="nextTestimonial()">&rarr;</button>
+  </div>
+  

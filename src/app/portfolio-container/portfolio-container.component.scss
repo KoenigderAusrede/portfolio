@@ -3,15 +3,12 @@
     height: fit-content;
 }
 
-.headline {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding-top: 3rem;
-    >img {
-        height: 2px;
-    }
-}
+.portfolio-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
 
 .subLine {
     margin-left: 4rem;

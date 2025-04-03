@@ -1,10 +1,11 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
+import { SectionLineComponent } from '../shared/section-line/section-line.component';
 
 @Component({
   selector: 'app-aboutme',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, SectionLineComponent],
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss'
 })

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { PortfolioItemComponent } from './portfolio-container/portfolio-item/portfolio-item.component';
 import { CommonModule } from '@angular/common';
 import { Project } from '../models/project';
+import { SectionLineComponent } from '../shared/section-line/section-line.component';
 
 @Component({
   selector: 'app-portfolio-container',
   standalone: true,
-  imports: [CommonModule, PortfolioItemComponent],
+  imports: [CommonModule, PortfolioItemComponent, SectionLineComponent],
   templateUrl: './portfolio-container.component.html',
   styleUrl: './portfolio-container.component.scss'
 })

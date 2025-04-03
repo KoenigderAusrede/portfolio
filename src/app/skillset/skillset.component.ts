@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { SectionLineComponent } from '../shared/section-line/section-line.component';
 
 @Component({
   selector: 'app-skillset',
   standalone: true,
-  imports: [],
+  imports: [SectionLineComponent],
   templateUrl: './skillset.component.html',
   styleUrls: ['./skillset.component.scss']
 })
