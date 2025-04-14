@@ -1,11 +1,11 @@
 <header>
-    <button class="burger" (click)="toggleMenu()">
+    <button class="burger" [class.open]="isMenuOpen" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </button>
       
-      <div class="mobile-nav" *ngIf="isMenuOpen">
+      <div class="mobile-nav" [class.open]="isMenuOpen">
         <nav>
           <a href="#aboutme" (click)="closeMenu()">About me</a>
           <a href="#skills" (click)="closeMenu()">Skills</a>

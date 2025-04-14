@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-language = 'de';
+  language = 'de';
 
 toggleMenu() {
   this.isMenuOpen = !this.isMenuOpen;
