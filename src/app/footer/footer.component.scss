@@ -21,6 +21,12 @@
 .impressum {
     color: white;
     text-decoration: none;
+}
 
-
+@media (max-width: 500px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        height: 15rem;
+    }
 }
