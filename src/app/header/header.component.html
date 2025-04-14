@@ -12,8 +12,13 @@
           <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
           <a href="#contact" (click)="closeMenu()">Contact</a>
           <div class="language-toggle">
-            <span [class.active]="language === 'en'" (click)="switchLang('en')">EN</span> /
-            <span [class.active]="language === 'de'" (click)="switchLang('de')">DE</span>
+            <span 
+              (click)="switchLang('en')" 
+              [class.active]="language() === 'en'">EN</span>
+            |
+            <span 
+              (click)="switchLang('de')" 
+              [class.active]="language() === 'de'">DE</span>
           </div>
         </nav>
       </div>
@@ -24,8 +29,13 @@
         <p>Skills</p>
         <p>Portfolio</p>
         <div class="language-toggle">
-          <span [class.active]="language === 'en'" (click)="switchLang('en')">EN</span> /
-          <span [class.active]="language === 'de'" (click)="switchLang('de')">DE</span>
+          <span 
+            (click)="switchLang('en')" 
+            [class.active]="language() === 'en'">EN</span>
+          |
+          <span 
+            (click)="switchLang('de')" 
+            [class.active]="language() === 'de'">DE</span>
         </div>
     </nav>
 </header>

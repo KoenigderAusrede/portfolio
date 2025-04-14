@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  language = this.langService.language;
   isMenuOpen = false;
-  language = 'de';
+
+  constructor(private langService: LanguageService) {}
 
 toggleMenu() {
   this.isMenuOpen = !this.isMenuOpen;
@@ -20,9 +23,8 @@ closeMenu() {
   this.isMenuOpen = false;
 }
 
-switchLang(lang: string) {
-  this.language = lang;
-  // später: i18n switch
+switchLang(lang: 'en' | 'de') {
+  this.langService.switchLang(lang);
 }
 
 }
