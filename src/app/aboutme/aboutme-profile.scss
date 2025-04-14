@@ -1,0 +1,169 @@
+// contains lower part (main2)
+
+.main2 {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #141D2F;
+    color: white;
+    width: 100%;
+    height: 80vh;
+
+    .aboutPp {
+        width: 40vw;
+        height: 40vh;
+        position: relative;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+
+        >img {
+            position: absolute;
+            height: 25rem;
+        }
+    }
+
+    .textBlock {
+        font-size: 0.7rem;
+        margin-left: 1.5rem;
+        width: 40vw;
+        height: 50%;
+
+        >h3 {
+            margin-top: 0;
+        }
+
+        >p {
+            font-size: 0.7rem;
+            margin: 0;
+        }
+    }
+
+    .aboutBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        >img {
+            margin: 0.5rem;
+            height: 2rem;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .curve {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 100%;
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    .curve-mobile {
+        display: none;
+    }
+
+    .curve-desktop {
+        display: block;
+        position: relative;
+        width: 100%;
+        z-index: 3;
+        pointer-events: none;
+        bottom: 5rem;
+    }
+
+    @media (max-width: 920px) {
+          height: 55vh;
+          padding-bottom: 0;
+      }
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        padding: 0;
+        height: fit-content;
+
+        .aboutPp {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            .profileBlur,
+            .profilePicture {
+                position: relative;
+                display: block;
+                margin: 0 auto;
+                height: 50vh;
+                max-height: 100%;
+                width: auto;
+            }
+
+            .profilePicture {
+                position: absolute;
+                z-index: 2;
+                margin-top: -10rem;
+                border-radius: 50%;
+            }
+
+            .profileBlur {
+                z-index: 1;
+            }
+        }
+
+        .textBlock {
+            position: relative;
+            height: fit-content;
+            width: 100%;
+            padding: 0 1rem 0 1rem;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 4;
+            top: -3rem;
+
+            h1 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 0.5rem;
+                line-height: 1.6;
+            }
+        }
+
+        .aboutBlock {
+            align-items: center;
+            padding: 0 1.5rem;
+
+            >img {
+                margin: 1rem 1rem 0 0;
+            }
+
+            p {
+                padding: 0;
+            }
+        }
+
+        .curve-mobile {
+            width: 100%;
+            display: block;
+            bottom: -11.5rem;
+            position: absolute;
+        }
+
+        .curve-desktop {
+            display: none;
+        }
+    }
+}

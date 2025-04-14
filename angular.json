@@ -63,7 +63,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/"
+              "baseHref": "/felix/"
             },
             "development": {
               "optimization": false,

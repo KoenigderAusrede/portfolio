@@ -1,36 +1,46 @@
+// Conatins upper part (main1)
+
 .main {
   background-color: #141D2F;
   color: white;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   margin: 0;
   margin-top: 7.5rem;
   position: relative;
+
+  @media (max-width: 900px) {
+    margin-top: 4.5rem;
+    padding: 0 2rem 3rem 2rem;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+
+  @media (max-width: 360px) {
+    height: 100vh;
+    padding: 3.0 0 2rem 0;
+  }
+
+  @media (max-width: 320px) {
+    padding: 3rem 0 2rem 0;
+  }
 }
 
-.main2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #141D2F;
-  color: white;
-  width: 100%;
-  height: 110vh;
-}
-
-.hero-box {
+.heroBox {
   max-width: 90rem;
   min-height: clamp(700px, 100vh, 1200px);
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 0 2rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
   transform-origin: top center;
-  transition: transform 0.3s ease; // smooth transition
+  transition: transform 0.3s ease;
 
   @media (max-width: 1024px) {
     transform: scale(0.95);
@@ -45,42 +55,82 @@
   }
 }
 
-
-.hero-grid {
+.heroGrid {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: nowrap;
+  height: 100%;
   z-index: 1;
 }
 
-.hero-vertical {
+.heroVertical {
   font-size: clamp(2rem, 5vw, 5rem);
   rotate: 270deg;
   font-weight: 400;
   color: #fff;
   white-space: nowrap;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 }
 
-.hero-content {
+.heroContent {
   h1 {
-    font-size: clamp(3rem, 8vw, 8rem);
+    font-size: clamp(2.5rem, 8vw, 8rem);
     font-weight: 700;
     color: #fff;
     margin: 0;
     line-height: 1;
+    text-align: flex-start;
+    width: 100%;
   }
 
   .roles {
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    color: #9b59b6;
-    margin: 0.5rem 0 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
     white-space: nowrap;
+    color: #9b59b6;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+
+    .roleItem {
+      opacity: 1;
+      transform: translateY(0);
+      transition: none;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: normal;
+
+      .roleItem {
+        opacity: 0;
+        transform: translateY(-10px);
+        animation: fadeInUp 0.6s ease-out forwards;
+
+        &:nth-child(1) {
+          animation-delay: 0.2s;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 0.4s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+      }
+    }
   }
 }
 
-.hero-button {
+.heroButton {
   margin-top: 2rem;
   z-index: 1;
 
@@ -102,8 +152,35 @@
   }
 }
 
-.hero-bg-left,
-.hero-bg-right {
+.divider {
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  z-index: 2;
+
+  .dividerButton {
+    cursor: pointer;
+    height: 2rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (max-width: 480px) {
+    bottom: 5rem;
+    gap: 1.5rem;
+  }
+}
+
+
+.heroBgLeft,
+.heroBgRight {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -115,19 +192,24 @@
   opacity: 0.8;
   pointer-events: none;
   z-index: 0;
+
+  @media (max-width: 480px) {
+    opacity: 0.4;
+  }
 }
 
-.hero-bg-left {
+.heroBgLeft {
   left: 0;
   background-image: url('/assets/blurrs/Purple shadow 1.png');
   animation: slideInLeft 1.6s ease-out forwards;
 }
 
-.hero-bg-right {
+.heroBgRight {
   right: 0;
   background-image: url('/assets/blurrs/Blue shadow 1 V2.png');
   animation: slideInRight 1.6s ease-out forwards;
 }
+
 @keyframes slideInLeft {
   from {
     transform: translateX(-50px);
@@ -152,48 +234,25 @@
   }
 }
 
-
-.profilePicture {
-  height: 25rem;
-  width: auto;
-  position: relative;
-  z-index: 10;
-  position: absolute;
-  border-radius: 40%;
-}
-
-.curve {
-  width: 100%;
-  position: relative;
-  z-index: 5;
-}
-
-.divider {
-  width: 23.3125rem;
-  display: flex;
-  align-items: center;
-  gap: 2.625rem;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 8.5rem;
-}
-
-.dividerButton {
-  cursor: pointer;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .scroller {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  margin-bottom: 7.5rem; // wegen Header
+  margin-bottom: 7.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
 
   .scroll-text {
-    writing-mode: vertical-lr; // alternativ: rotate(-90deg)
+    writing-mode: vertical-lr;
     font-size: 1rem;
     color: white;
     opacity: 0.8;
@@ -206,75 +265,20 @@
     margin-top: 1rem;
     animation: bounce 2s infinite;
   }
+
   @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0);
     }
-  
+
     50% {
       transform: translateY(5px);
     }
   }
-}
 
-
-.letsTalk {
-  font-family: 'poppins';
-  font-size: 28px;
-  position: relative;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  z-index: 15;
-}
-
-.textBlock {
-  margin-left: 4.5rem;
-  width: 40vw;
-  height: 50%;
-
-  >h3 {
-    margin-top: 0;
-  }
-  >p {
-    margin: 0;
-  }
-}
-
-.aboutPp {
-  width: 40vw;
-  height: 40vh;
-  position: relative;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-
-  >img {
-    position: absolute;
-    height: 25rem;
-    width: auto;
-  }
-
-}
-
-
-.curve {
-  width: 100%;
-  z-index: 9;
-}
-
-.aboutBlock {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  >img {
-    margin: 2.5rem;
-    height: 3rem;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.2);
-    }
+  @media (max-width: 480px) {
+    display: none;
   }
 }

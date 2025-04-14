@@ -14,7 +14,9 @@
   </div>
   
   <div class="navigation">
-    <button (click)="prevTestimonial()">&larr;</button>
+    <button class="arrow left" (click)="prevTestimonial()">
+        <img src="assets/arrows/arrow_green_left.png" alt="Zurück" />
+    </button>
     <div class="dots">
       <span 
         *ngFor="let testimonial of testimonials; let i = index"
@@ -22,6 +24,8 @@
         (click)="setTestimonial(i)">
       </span>
     </div>
-    <button (click)="nextTestimonial()">&rarr;</button>
+    <button class="arrow right" (click)="nextTestimonial()">
+        <img src="assets/arrows/arrow_green_right.png" alt="Weiter" />
+    </button>
   </div>
   

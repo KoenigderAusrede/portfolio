@@ -1,4 +1,3 @@
-
 .testimonial-wrapper {
     background-color: #141D2F;
     display: flex;
@@ -10,10 +9,14 @@
   
     .quote-box {
       flex: 1;
+      height: 250px;
       border: 3px solid #8f00ff;
       border-radius: 2rem;
       padding: 2rem;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
   
       .quote-symbol {
         font-size: 6rem;
@@ -24,8 +27,13 @@
       }
   
       .quote-text {
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 1.3vw, 1.1rem);
         color: white;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
       }
   
       .quote-footer {
@@ -48,6 +56,7 @@
   
     .image-box {
       flex: 0 0 250px;
+  
       img {
         border: 4px solid #70e61c;
         border-radius: 100%;
@@ -63,17 +72,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    padding-top: 2rem;
   
-    button {
+    .arrow {
       background: none;
       border: none;
-      font-size: 2rem;
-      color: #8f00ff;
       cursor: pointer;
+      padding: 0;
+      transition: transform 0.2s ease;
+  
+      img {
+        width: 40px;
+        height: 40px;
+        transition: filter 0.3s ease;
+      }
   
       &:hover {
-        color: #70e61c;
+        transform: scale(1.1);
+      }
+  
+      &.left:hover img {
+        content: url('/assets/arrows/arrow_green_left_hover.png');
+      }
+  
+      &.right:hover img {
+        content: url('/assets/arrows/arrow_green_right_hover.png');
       }
     }
   
@@ -87,11 +111,77 @@
         background-color: #8f00ff;
         border-radius: 50%;
         cursor: pointer;
+        transition: background-color 0.3s ease;
   
         &.active {
           background-color: #70e61c;
         }
       }
+    }
+  }
+  
+  /* 🔽 Responsive Design */
+  @media (max-width: 900px) {
+    .testimonial-wrapper {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  
+      .quote-box {
+        order: 2;
+        height: 320px;
+        box-sizing: border-box;
+        overflow: hidden; 
+        padding: 1.5rem;
+      }
+
+      .quote-symbol {
+        display: none;
+      }
+  
+      .image-box {
+        order: 1;
+        margin-bottom: -5rem;
+  
+        img {
+          width: 200px;
+          height: 200px;
+        }
+      }
+  
+      .quote-footer {
+        flex-direction: column;
+        align-items: center;
+  
+        .line {
+          width: 50%;
+          margin: 1rem 0;
+        }
+      }
+    }
+  
+    .navigation {
+      padding-top: 0;
+      margin-top: -2rem;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .testimonial-wrapper {
+      padding: 2rem;
+    }
+  
+    .image-box img {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .quote-text {
+      font-size: 1rem;
+    }
+  
+    .navigation {
+      gap: 1rem;
     }
   }
   

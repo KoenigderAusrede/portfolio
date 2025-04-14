@@ -7,7 +7,7 @@ import { SectionLineComponent } from '../shared/section-line/section-line.compon
   standalone: true,
   imports: [CommonModule, NgOptimizedImage, SectionLineComponent],
   templateUrl: './aboutme.component.html',
-  styleUrl: './aboutme.component.scss'
+  styleUrls: ['./aboutme.component.scss', './aboutme-profile.scss']
 })
 export class AboutmeComponent {
   scrollToContact(): void {

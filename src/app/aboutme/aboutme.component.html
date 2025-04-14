@@ -1,62 +1,76 @@
 <div class="main">
-    <div class="hero-box">
-        <div class="hero-bg-left"></div>
-        <div class="hero-bg-right"></div>
-      
-        <div class="hero-grid">
-          <div class="hero-vertical">
-            <span>I am</span>
-          </div>
-      
-          <div class="hero-content">
-            <h1>Felix Blaser</h1>
-            <p class="roles">Project Manager | Frontend Developer | Digital Strategist</p>
-          </div>
+    <div class="heroBox">
+      <div class="heroBgLeft"></div>
+      <div class="heroBgRight"></div>
+  
+      <div class="heroGrid">
+        <div class="heroVertical">
+          <span>I am</span>
         </div>
-      
-        <div class="hero-button">
-          <button class="greenButton" (click)="scrollToContact()">Let’s Talk!</button>
+  
+        <div class="heroContent">
+          <h1>Felix Blaser</h1>
+          <p class="roles">
+            <span class="roleItem">Project Manager</span>
+            <span class="roleItem">Frontend Developer</span>
+            <span class="roleItem">Digital Strategist</span>
+          </p>
         </div>
-      </div>      
-    <div class="divider">
-        <div style="width: 5.5rem;">
-            <app-section-line
-              position="right"
-              color="#70E61C"
-            ></app-section-line>
-          </div>
-        <a href="https://github.com/KoenigderAusrede" target="_blank" rel="noopener noreferrer">
-            <img class="dividerButton" src="/assets/buttons/Github button.png" alt="GitHub">
-          </a>
-        <img class="dividerButton" src="/assets/buttons/Email button.png" (click)="scrollToContact()" alt="Mail">
-        <a href="https://www.linkedin.com/in/felix-blaser-499804154/" target="_blank" rel="noopener noreferrer">
-            <img class="dividerButton" src="/assets/buttons/Linkedin button.png" alt="LinkedIn">
-          </a>
-    </div>
-    <div class="scroller">
-        <span class="scroll-text">scroll down</span>
-        <img src="/assets/icons/arrowdown.png" alt="Scroll down">
       </div>
-</div>
-<div class="main2">
-        <div class="textBlock">
-            <h1>About me</h1>
-                <p>Hi, my name is Felix and im a project manager, front-end Webdevelopper and digital strategist based in the most beautiful city in the world, Munich, Germany.
-                    <br>I startet my career as an Event Manager, handling Projects for the Automotive and Pharmacuetical Industry.<br>
-                </p>
-                <div class="aboutBlock">
-                    <img src="/assets/icons/bulb/bulb_white_S.png" alt="">
-                <p>I have gained experiance in event and tradeshows for automotive, pharma and various other branches. </p>
-                </div>
-                <div class="aboutBlock">
-                    <img src="/assets/icons/puzzle/puzzle_white_S.png" alt="">
-                <p>After many years of successful projects I've decided to make a change and widen my portfolio and therfore you can see this website.
-                     I'm combining project mangement with technical and webdeveleopment skills to match the needs of today's employers.</p>
-                </div>
-        </div>
-        <div class="aboutPp">
-            <img class="profileBlur" src="/assets/blurrs/green_purple_shadow.png" alt="" srcset="">
-            <img class="profilePicture" [ngSrc]="'assets/img/file.png'" width="300" height="400" alt="Profilbild" priority />
-        </div>
-        <img src="/assets/img/curve.png" class="curve">
-</div>
+  
+      <div class="heroButton">
+        <button class="greenButton" (click)="scrollToContact()">Let’s Talk!</button>
+      </div>
+    </div>
+  
+    <div class="divider">
+      <div style="width: 5.5rem;">
+        <app-section-line position="right" color="#70E61C"></app-section-line>
+      </div>
+      <a href="https://github.com/KoenigderAusrede" target="_blank" rel="noopener noreferrer">
+        <img class="dividerButton" src="assets/buttons/Github button.png" alt="GitHub" />
+      </a>
+      <img class="dividerButton" src="assets/buttons/Email button.png" (click)="scrollToContact()" alt="Mail" />
+      <a href="https://www.linkedin.com/in/felix-blaser-499804154/" target="_blank" rel="noopener noreferrer">
+        <img class="dividerButton" src="assets/buttons/Linkedin button.png" alt="LinkedIn" />
+      </a>
+    </div>
+  
+    <div class="scroller">
+      <span class="scroll-text">scroll down</span>
+      <img src="assets/icons/arrowdown.png" alt="Scroll down" />
+    </div>
+  </div>
+  
+  <div class="main2">
+    <div class="textBlock">
+      <h1>About me</h1>
+      <p>
+        Hi, my name is Felix and I'm a project manager, front-end web developer and digital strategist based in the most beautiful city in the world, Munich, Germany.
+        <br />
+        I started my career as an Event Manager, handling projects for the automotive and pharmaceutical industry.
+      </p>
+  
+      <div class="aboutBlock">
+        <img src="assets/icons/bulb/bulb_white_S.png" alt="" />
+        <p>
+          I have gained experience in events and tradeshows for automotive, pharma and various other industries.
+        </p>
+      </div>
+  
+      <div class="aboutBlock">
+        <img src="assets/icons/puzzle/puzzle_white_S.png" alt="" />
+        <p>
+          After many years of successful projects, I've decided to make a change and broaden my portfolio. That's why you see this website. I'm combining project management with technical and web development skills to meet today's employer needs.
+        </p>
+      </div>
+    </div>
+  
+    <div class="aboutPp">
+      <img class="profileBlur" src="assets/blurrs/green_purple_shadow.png" alt="" />
+      <img class="profilePicture" [ngSrc]="'assets/img/file.png'" width="300" height="400" alt="Profilbild" priority />
+      <img class="curve curve-mobile" src="assets/img/curve.png" alt="Kurve Mobil" />
+    </div>
+  
+    <img class="curve curve-desktop" src="assets/img/curve.png" alt="Kurve Desktop" />
+  </div>

@@ -1,8 +1,31 @@
 <header>
-    <img src="/assets/img/Felix_Logo.png" class="felixLogo">
+    <button class="burger" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="mobile-nav" *ngIf="isMenuOpen">
+        <nav>
+          <a href="#aboutme" (click)="closeMenu()">About me</a>
+          <a href="#skills" (click)="closeMenu()">Skills</a>
+          <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
+          <a href="#contact" (click)="closeMenu()">Contact</a>
+          <div class="language-toggle">
+            <span [class.active]="language === 'en'" (click)="switchLang('en')">EN</span> /
+            <span [class.active]="language === 'de'" (click)="switchLang('de')">DE</span>
+          </div>
+        </nav>
+      </div>
+      
+    <img src="assets/img/Felix_Logo.png" class="felixLogo">
     <nav>
         <p>About me</p>
         <p>Skills</p>
         <p>Portfolio</p>
+        <div class="language-toggle">
+          <span [class.active]="language === 'en'" (click)="switchLang('en')">EN</span> /
+          <span [class.active]="language === 'de'" (click)="switchLang('de')">DE</span>
+        </div>
     </nav>
 </header>

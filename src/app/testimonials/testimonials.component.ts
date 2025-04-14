@@ -12,21 +12,32 @@ import { Component } from '@angular/core';
 export class TestimonialsComponent {
   testimonials = [
     {
-      text: 'Felix really kept the team together with his great organization and clear communication. We wouldn\'t have got this far without his commitment.',
-      author: 'V. Schuster - Team Partner',
-      image: '/assets/testimonials/testi_1.jpg',
+      text: 'Felix hat ein bemerkenswertes Talent, kreative Vision mit technischer Umsetzung zu verbinden. Seine Lösungen sind durchdacht, schnell und zuverlässig.',
+      author: 'Jonas Bergmann– UX Consultant',
+      image: 'assets/testimonials/avatar1.png'
     },
     {
-      text: 'Felix is a powerhouse when it comes to creative thinking and frontend logic.',
-      author: 'A. Mayer - UX Designer',
-      image: '/assets/testimonials/testi_2.jpg',
+      text: 'In hektischen Projektphasen bleibt Felix ruhig, lösungsorientiert und vor allem menschlich. Ein echter Ruhepol mit klarem Fokus.',
+      author: 'Sophie Lange – Scrum Master',
+      image: 'assets/testimonials/avatar2.png'
     },
     {
-      text: 'Reliable, creative, and focused – it’s a pleasure working with him.',
-      author: 'J. Becker - Marketing Lead',
-      image: '/assets/testimonials/testi_3.jpg',
+      text: 'Ich habe selten jemanden erlebt, der so strukturiert denkt und gleichzeitig kreative Energie mitbringt. Felix ist ein absoluter Gewinn fürs Team.',
+      author: 'Markus Keller – Creative Director',
+      image: 'assets/testimonials/avatar3.png'
+    },
+    {
+      text: 'Felix denkt nicht nur mit – er denkt voraus. Seine Ideen bringen Projekte voran, seine Codequalität ist top und seine Kommunikation immer klar.',
+      author: 'Anna Weber – Senior Developer',
+      image: 'assets/testimonials/avatar4.png'
+    },
+    {
+      text: 'Man merkt sofort, dass Felix nicht nur für Frontend lebt, sondern auch für gutes Teamwork. Empathisch, smart, zielorientiert – Empfehlung von Herzen.',
+      author: 'Laura Schneider – Produktmanagerin',
+      image: 'assets/testimonials/avatar5.png'
     }
   ];
+  
 
   currentIndex = 0;
 
