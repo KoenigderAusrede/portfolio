@@ -3,6 +3,7 @@ header {
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #141D2F;
     display: flex;
     justify-content: space-between;
@@ -38,47 +39,50 @@ header {
   }
 }
 
-p {
-    color: white;
-    margin-right: 0.5rem;
-    position: relative;
-}
+nav a {
+  color: white;
+  margin-right: 0.5rem;
+  position: relative;
+  text-decoration: none;
 
-p::before, p::after {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     background-color: #9747FF;
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-}
+  }
 
-p::before {
+  &::before {
     top: -2px;
     left: 0;
-}
+  }
 
-p::after {
+  &::after {
     bottom: -2px;
     right: 0;
-}
+    transition: width 0.3s ease-in-out 0.3s, right 0.3s ease-in-out 0.3s;
+  }
 
-p:hover::before {
+  &:hover::before {
     width: 100%;
     left: 0;
-}
+  }
 
-p:hover::after {
+  &:hover::after {
     width: 100%;
     right: 0;
-}
+  }
 
-p:hover {
+  &:hover {
     cursor: pointer;
-    text-decoration: none;
+  }
 }
 
-p::after {
+
+a::after {
     transition: width 0.3s ease-in-out 0.3s, right 0.3s ease-in-out 0.3s;
 }
 

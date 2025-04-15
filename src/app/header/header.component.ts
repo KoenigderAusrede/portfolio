@@ -27,4 +27,15 @@ switchLang(lang: 'en' | 'de') {
   this.langService.switchLang(lang);
 }
 
+scrollTo(id: string) {
+  const element = document.getElementById(id);
+  if (element) {
+    const yOffset = -120;
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({top: y});
+    this.closeMenu();
+  }
+}
+
+
 }

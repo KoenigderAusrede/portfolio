@@ -25,9 +25,9 @@
       
     <img src="assets/img/Felix_Logo.png" class="felixLogo">
     <nav>
-        <p>About me</p>
-        <p>Skills</p>
-        <p>Portfolio</p>
+      <a (click)="scrollTo('aboutMe')">About me</a>
+      <a (click)="scrollTo('skills')">Skills</a>
+      <a (click)="scrollTo('portfolio')">Portfolio</a>
         <div class="language-toggle">
           <span 
             (click)="switchLang('en')" 
