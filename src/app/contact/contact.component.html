@@ -1,84 +1,69 @@
 <section class="contact-section" id="contact">
-
   <div class="contactHeader">
-    <app-section-line text="Contact" tag="h1" position="right" color="#70E61C"
-      [class]="'contact-heading'"></app-section-line>
+    <app-section-line [text]="text().contact.heading" tag="h1" position="right" color="#70E61C" [class]="'contact-heading'"></app-section-line>
   </div>
 
-<div style="display: flex; flex-direction: row;">
-  <div class="line-wrapper-container">
-    <app-section-line
-      position="left"
-      color="#1bdae5"
-    ></app-section-line>
-  </div>
-<div class="contact-content">
+  <div style="display: flex; flex-direction: row;">
+    <div class="line-wrapper-container">
+      <app-section-line position="left" color="#1bdae5"></app-section-line>
+    </div>
+    <div class="contact-content">
 
-<div class="contact-text-block">
+      <div class="contact-text-block">
+        <div class="contact-text">
+          <h2 class="problem-heading">{{ text().contact.subheading }}</h2>
+          <p [innerHTML]="text().contact.intro1"></p>
+          <p>{{ text().contact.intro2 }}</p>
+        </div>
+      </div>
 
-  <div class="contact-text">
-    <h2 class="problem-heading">Got a problem to solve?</h2>
-    <p>
-      Contact me through this form. I am interested in hearing from you, knowing your ideas,
-      and contributing to your projects with my work.
-    </p>
-    <p>
-      Need a Project Manager, Frontend developer and or Digital Strategist?
-      <strong>Contact me!</strong>
-    </p>
-  </div>
-</div>
+      <form class="contact-form" (submit)="onSubmit($event)">
+        <!-- Name Field -->
+        <div class="form-group">
+          <input type="text" class="input-field" [placeholder]="text().contact.namePlaceholder" [(ngModel)]="userName" name="name"
+            [ngClass]="{ 'error-border': nameError, 'success-border': nameValid }" (blur)="validateName()" />
+          <div class="error-message" *ngIf="nameError">
+            {{ text().contact.nameError }}
+          </div>
+        </div>
 
-<form class="contact-form" (submit)="onSubmit($event)">
-  <!-- Name Field -->
-  <div class="form-group">
-    <input type="text" class="input-field" placeholder="Your name" [(ngModel)]="userName" name="name"
-      [ngClass]="{ 'error-border': nameError, 'success-border': nameValid }" (blur)="validateName()" />
-    <div class="error-message" *ngIf="nameError">
-      Your name is required
+        <!-- Email Field -->
+        <div class="form-group">
+          <input type="email" class="input-field" [placeholder]="text().contact.emailPlaceholder" [(ngModel)]="userEmail" name="email"
+            [ngClass]="{ 'error-border': emailError, 'success-border': emailValid }" (blur)="validateEmail()" />
+          <div class="error-message" *ngIf="emailError">
+            <span *ngIf="userEmail === ''">{{ text().contact.emailErrorEmpty }}</span>
+            <span *ngIf="userEmail !== ''">{{ text().contact.emailErrorInvalid }}</span>
+          </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="form-group">
+          <textarea class="textarea-field" [placeholder]="text().contact.messagePlaceholder" [(ngModel)]="userMessage" name="message"
+            [ngClass]="{ 'error-border': messageError, 'success-border': messageValid }" (blur)="validateMessage()"></textarea>
+          <div class="error-message" *ngIf="messageError">
+            {{ text().contact.messageError }}
+          </div>
+        </div>
+
+        <!-- Privacy Checkbox -->
+        <div class="privacy-check">
+          <input type="checkbox" id="privacy" [(ngModel)]="privacyChecked"
+            (change)="handlePrivacyCheckboxChange($event)" [ngModelOptions]="{ standalone: true }" />
+          <label [class.checked]="privacyChecked" for="privacy" class="custom-checkbox" [innerHTML]="text().contact.privacy"></label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button" [disabled]="!privacyChecked">
+          {{ text().contact.button }}
+        </button>
+      </form>
+
+      <!-- Success-Overlay -->
+      <div *ngIf="messageSent" class="message-container">
+        <p>{{ text().contact.success }}</p>
+      </div>
+
     </div>
   </div>
-
-  <!-- Email Field -->
-  <div class="form-group">
-    <input type="email" class="input-field" placeholder="Your email" [(ngModel)]="userEmail" name="email"
-      [ngClass]="{ 'error-border': emailError, 'success-border': emailValid }" (blur)="validateEmail()" />
-    <div class="error-message" *ngIf="emailError">
-      <span *ngIf="userEmail === ''">Your email is required</span>
-      <span *ngIf="userEmail !== ''">Invalid email format</span>
-    </div>
-  </div>
-
-  <!-- Message Field -->
-  <div class="form-group">
-    <textarea class="textarea-field" placeholder="Your message" [(ngModel)]="userMessage" name="message"
-      [ngClass]="{ 'error-border': messageError, 'success-border': messageValid }"
-      (blur)="validateMessage()"></textarea>
-    <div class="error-message" *ngIf="messageError">
-      Your message is empty
-    </div>
-  </div>
-
-  <!-- Privacy Checkbox -->
-  <div class="privacy-check">
-    <input type="checkbox" id="privacy" [(ngModel)]="privacyChecked" (change)="handlePrivacyCheckboxChange($event)"
-      [ngModelOptions]="{ standalone: true }" />
-    <label [class.checked]="privacyChecked" for="privacy" class="custom-checkbox">
-      I've read the <a href="#" class="privacy-link">privacy policy</a> and agree to the processing of my data as
-      outlined.
-    </label>
-  </div>
-
-  <!-- Submit Button -->
-  <button type="submit" class="submit-button" [disabled]="!privacyChecked">
-    Send message :)
-  </button>
-</form>
-<!-- Success-Overlay -->
-<div *ngIf="messageSent" class="message-container">
-  <p>Ihre Nachricht wurde erfolgreich gesendet! 📩</p>
-</div>
-</div>
-</div>
-  
 </section>

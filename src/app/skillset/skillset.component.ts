@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { NgClass } from '@angular/common';
+import { LanguageService } from '../services/language.service';
+import { translations } from '../../../translations';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-skillset',
@@ -10,6 +13,13 @@ import { NgClass } from '@angular/common';
   styleUrls: ['./skillset.component.scss']
 })
 export class SkillsetComponent {
+
+  constructor(private http: HttpClient, public lang: LanguageService) { }
+
+  text() {
+   return translations[this.lang.language()];
+ }
+
   scrollToContact(): void {
     const contact = document.getElementById('contact');
     if (contact) {

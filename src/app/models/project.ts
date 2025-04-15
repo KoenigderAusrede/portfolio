@@ -1,4 +1,5 @@
 export interface Project {
+  id: 'pollo' | 'join' | 'pokedex';
   title: string;
   image: string;
   description: string;

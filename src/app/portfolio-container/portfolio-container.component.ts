@@ -3,6 +3,9 @@ import { PortfolioItemComponent } from './portfolio-container/portfolio-item/por
 import { CommonModule } from '@angular/common';
 import { Project } from '../models/project';
 import { SectionLineComponent } from '../shared/section-line/section-line.component';
+import { LanguageService } from '../services/language.service';
+import { translations } from '../../../translations';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-portfolio-container',
@@ -12,9 +15,16 @@ import { SectionLineComponent } from '../shared/section-line/section-line.compon
   styleUrl: './portfolio-container.component.scss'
 })
 export class PortfolioContainerComponent {
+
+   constructor(private http: HttpClient, public lang: LanguageService) { }
+
+   text() {
+    return translations[this.lang.language()];
+  }
   
   projects: Project[] = [
     {
+      id: 'pollo',
       title: 'El Pollo Loco',
       image: 'assets/img/Laptop/screen_PoLo.png',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
@@ -23,6 +33,7 @@ export class PortfolioContainerComponent {
       tags: ['JavaScript', 'HTML', 'CSS']
     },
     {
+      id: 'join',
       title: 'Join Kanban',
       image: 'assets/img/Laptop/screen_join.png',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
@@ -31,6 +42,7 @@ export class PortfolioContainerComponent {
       tags: ['Angular', 'TypeScript', 'Firebase']
     },
     {
+      id: 'pokedex',
       title: 'Pokédex',
       image: 'assets/img/Laptop/screen_PoDe.png',
       description: 'Find your favorite Pokémon and learn more about them. Search for Pokémon by name and filter them by type. The Pokédex is based on the PokeAPI.',

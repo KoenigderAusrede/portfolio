@@ -17,26 +17,45 @@ export const translations = {
         change: "After many years of successful projects, I've decided to make a change and broaden my portfolio. That's why you see this website.<br> I'm combining project management with technical and web development skills to meet today's employer needs.",
       },
       skills: {
-        title: 'Skills',
-        description: 'I’ve worked on a variety of projects using...',
-        extensionTitle: 'Looking for another skill?',
-        extensionText: 'I’m always open to expanding my skill set...',
+        heading: 'Skills',
+        tooltipIntro: 'I have a special interest in learning',
+        learning: 'Continually Learning',
+        description: `I've worked on a variety of projects using technologies like HTML, CSS, JavaScript and Angular.<br />
+                      I'm always eager to explore new tools and keep learning – because staying up-to-date is key in web development.<br />
+                      My goal is to create user-friendly and efficient web applications that meet the needs of users and businesses alike.`,
+        extraHeadingStart: 'Looking for ',
+        extraHeadingHighlight: 'another skill',
+        extraParagraph: "I'm always open to expanding my skill set and learning new technologies – just let me know what you're looking for!",
+        cta: 'Get in touch'
       },
       portfolio: {
-        title: 'Projects',
-        buttons: {
-          github: 'View Code',
-          live: 'Live Test'
-        },
-        tags: {
-          html: 'HTML',
-          angular: 'Angular',
-          // etc.
-        }
+        heading: 'Portfolio',
+        subheading: 'Explore a selection of my work here – Interact with projects<br>to see my skills in action.'
       },
       contact: {
-        title: 'Contact Me',
-        cta: 'Send Message'
+        heading: 'Contact',
+        subheading: 'Got a problem to solve?',
+        intro1: 'Contact me through this form. I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.',
+        intro2: 'Need a Project Manager, Frontend developer and or Digital Strategist? Feel free to contact me!',
+        button: 'Send message :)',
+        success: 'Your message has been successfully sent! 📩',
+        namePlaceholder: 'Your name',
+        nameError: 'Your name is required',
+        emailPlaceholder: 'Your email',
+        emailErrorEmpty: 'Your email is required',
+        emailErrorInvalid: 'Invalid email format',
+        messagePlaceholder: 'Your message',
+        messageError: 'Your message is empty',
+        privacy: `I've read the <a href='#' class='privacy-link'>privacy policy</a> and agree to the processing of my data as outlined.`
+      },
+      footer: {
+        legal: 'Legal Notice',
+        copyright: 'Ⓒ Felix Blaser'
+      },
+      portfolioDescriptions: {
+        pollo: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+        join: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+        pokedex: 'Find your favorite Pokémon and learn more about them. Search for Pokémon by name and filter them by type. The Pokédex is based on the PokeAPI.'
       }
     },
   
@@ -58,26 +77,46 @@ export const translations = {
         change: 'Nach vielen erfolgreichen Jahren in der Projektarbeit habe ich beschlossen, eine Veränderung vorzunehmen und mein Portfolio zu erweitern. Deshalb sehen Sie diese Website.<br> Ich kombiniere Projektmanagement mit technischen und Webentwicklungsfähigkeiten, um den heutigen Anforderungen der Arbeitgeber gerecht zu werden.'
       },
       skills: {
-        title: 'Skills',
-        description: 'Ich habe in verschiedenen Projekten...',
-        extensionTitle: 'Auf der Suche nach einem anderen Skill?',
-        extensionText: 'Ich bin immer offen dafür, neue Technologien zu lernen...'
-      },
+        heading: 'Skills',
+        tooltipIntro: 'Ich habe ein besonderes Interesse an',
+        learning: 'Ständig Lernen',
+        description: `Ich habe an einer Vielzahl von Projekten mit Technologien wie HTML, CSS, JavaScript und Angular gearbeitet.<br />
+                      Ich bin immer bestrebt, neue Tools zu erkunden und weiter zu lernen – denn auf dem neuesten Stand zu bleiben ist entscheidend in der Webentwicklung.<br />
+                      Mein Ziel ist es, benutzerfreundliche und effiziente Webanwendungen zu erstellen, die den Bedürfnissen von Nutzern und Unternehmen gerecht werden.`,
+        extraHeadingStart: 'Auf der Suche nach ',
+        extraHeadingHighlight: 'einer anderen Fähigkeit',
+        extraParagraph: "Ich bin immer offen dafür, mein Skillset zu erweitern und neue Technologien zu lernen – lass es mich einfach wissen, was du suchst!",
+        cta: 'Nimm Kontakt auf'
+      }
+      ,
       portfolio: {
-        title: 'Projekte',
-        buttons: {
-          github: 'Code ansehen',
-          live: 'Live-Test'
-        },
-        tags: {
-          html: 'HTML',
-          angular: 'Angular',
-          // etc.
-        }
+        heading: 'Portfolio',
+        subheading: 'Entdecke eine Auswahl meiner Arbeiten hier – Interagiere mit Projekten<br>um meine Fähigkeiten in Aktion zu sehen.'
       },
       contact: {
-        title: 'Kontakt',
-        cta: 'Nachricht senden'
+        heading: 'Kontakt',
+        subheading: 'Du brauchst Hilfe bei einem Problem?',
+        intro1: 'Kontaktiere mich über dieses Formular. Ich freue mich auf deine Ideen und unterstütze gerne mit meiner Arbeit.',
+        intro2: 'Du brauchst einen Projektmanager, Frontend-Entwickler oder digitalen Strategen? Kantaktiere mich gerne!',
+        button: 'Nachricht senden :)',
+        success: 'Deine Nachricht wurde erfolgreich gesendet! 📩',
+        namePlaceholder: 'Dein Name',
+        nameError: 'Dein Name ist erforderlich',
+        emailPlaceholder: 'Deine E-Mail',
+        emailErrorEmpty: 'Deine E-Mail ist erforderlich',
+        emailErrorInvalid: 'Ungültiges E-Mail-Format',
+        messagePlaceholder: 'Deine Nachricht',
+        messageError: 'Deine Nachricht ist leer',
+        privacy: `Ich habe die <a href='#' class='privacy-link'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.`
+      },
+      footer: {
+        legal: 'Impressum',
+        copyright: 'Ⓒ Felix Blaser'
+      },
+      portfolioDescriptions: {
+        pollo: 'Spring-, Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
+        join: 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
+        pokedex: 'Finde dein Lieblings-Pokémon und erfahre mehr darüber. Suche nach Pokémon-Namen und filtere sie nach Typ. Der Pokédex basiert auf der PokeAPI.'
       }
     }
   };

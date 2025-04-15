@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { translations } from '../../../translations';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  
+  constructor(public lang: LanguageService) {}
 
+  text() {
+    return translations[this.lang.language()];
+  }
 }

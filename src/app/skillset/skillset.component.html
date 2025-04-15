@@ -1,95 +1,84 @@
 <div class="skillsSection">
     <div class="textContainer">
-        <div class="textHead">
-            <h1>Skills</h1>
-            <div style="width: 280px">
-                <app-section-line position="right" color="#00CFFF"></app-section-line>
-            </div>
+      <div class="textHead">
+        <h1>{{ text().skills.heading }}</h1>
+        <div style="width: 280px">
+          <app-section-line position="right" color="#00CFFF"></app-section-line>
         </div>
+      </div>
     </div>
-
-
+  
     <div class="symbols">
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/JavaScript.png" />
-            <p>JavaScript</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/Angular.png" />
-            <p>Angular</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/Typescript.png" />
-            <p>TypeScript</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/HTML.png" />
-            <p>HTML</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/Git.png" />
-            <p>GIT</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/Firebase.png" />
-            <p>Firebase</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/CSS.png" />
-            <p>CSS</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/Scrum.png" />
-            <p>Scrum</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/API.png" />
-            <p>API</p>
-        </div>
-        <div class="skillBox">
-            <img class="hover-effect-1" src="assets/icons/Test Automation.png" />
-            <p>Automation</p>
-        </div>
-        <div class="skillBox learning" [ngClass]="{'show-tooltip': showTooltip}">
-            <img class="learningIcon" src="assets/icons/learningBlue.svg" alt="Continually Learning Icon"
-                (click)="handleLearningTap()" />
-            <div class="tooltip" id="tooltip-learning">
-                <p>I have a special interest in learning</p>
-                <div class="iconRow">
-                    <div class="tech">
-                        <img src="assets/icons/react.svg" alt="React" />
-                        <span>React</span>
-                    </div>
-                    <div class="tech">
-                        <img src="assets/icons/python.png" alt="Python" />
-                        <span>Python</span>
-                    </div>
-                </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/JavaScript.png" />
+        <p>JavaScript</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/Angular.png" />
+        <p>Angular</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/Typescript.png" />
+        <p>TypeScript</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/HTML.png" />
+        <p>HTML</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/Git.png" />
+        <p>GIT</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/Firebase.png" />
+        <p>Firebase</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/CSS.png" />
+        <p>CSS</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/Scrum.png" />
+        <p>Scrum</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/API.png" />
+        <p>API</p>
+      </div>
+      <div class="skillBox">
+        <img class="hover-effect-1" src="assets/icons/Test Automation.png" />
+        <p>Automation</p>
+      </div>
+      <div class="skillBox learning" [ngClass]="{'show-tooltip': showTooltip}">
+        <img class="learningIcon" src="assets/icons/learningBlue.svg" alt="Continually Learning Icon" (click)="handleLearningTap()" />
+        <div class="tooltip" id="tooltip-learning">
+          <p>{{ text().skills.tooltipIntro }}</p>
+          <div class="iconRow">
+            <div class="tech">
+              <img src="assets/icons/react.svg" alt="React" />
+              <span>React</span>
             </div>
-            <p>Continually Learning</p>
+            <div class="tech">
+              <img src="assets/icons/python.png" alt="Python" />
+              <span>Python</span>
+            </div>
+          </div>
         </div>
+        <p>{{ text().skills.learning }}</p>
+      </div>
     </div>
-
+  
     <div class="textContainer">
-        <div class="textBody">
-            <p>
-                I've worked on a variety of projects using technologies like HTML, CSS,
-                JavaScript and Angular.<br />
-                I'm always eager to explore new tools and keep learning – because staying
-                up-to-date is key in web development.<br />
-                My goal is to create user-friendly and efficient web applications that
-                meet the needs of users and businesses alike.
-            </p>
-            <div class="skillExtension">
-                <h2>
-                    Looking for <span style="color: #9846ff">another skill</span>?
-                </h2>
-                <p>
-                    I'm always open to expanding my skill set and learning new technologies –
-                    just let me know what you're looking for!
-                </p>
-            </div>
-            <button class="greenButton" (click)="scrollToContact()">Get in touch</button>
+      <div class="textBody">
+        <p [innerHTML]="text().skills.description"></p>
+        <div class="skillExtension">
+          <h2>
+            {{ text().skills.extraHeadingStart }}<span style="color: #9846ff">{{ text().skills.extraHeadingHighlight }}</span>?
+          </h2>
+          <p>{{ text().skills.extraParagraph }}</p>
         </div>
+        <button class="greenButton" (click)="scrollToContact()">{{ text().skills.cta }}</button>
+      </div>
     </div>
-</div>
+  </div>
+  

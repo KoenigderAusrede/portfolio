@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { SectionLineComponent } from '../shared/section-line/section-line.component';
+import { LanguageService } from '../services/language.service';
+import { translations } from '../../../translations';
 
 @Component({
   selector: 'app-contact',
@@ -25,12 +27,9 @@ export class ContactComponent {
   nameValid: boolean = false;
   emailValid: boolean = false;
   messageValid: boolean = false;
-
-  // Neue Variable für die Erfolgsnachricht
   messageSent: boolean = false;
 
 
-  // Formular zurücksetzen & Erfolgsmeldung anzeigen
   resetForm(): void {
     this.userName = '';
     this.userEmail = '';
@@ -46,20 +45,18 @@ export class ContactComponent {
   }
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public lang: LanguageService) { }
 
-  // Validierung beim Verlassen des Namensfeldes
   validateName(): void {
     if (this.userName.trim() === '') {
       this.nameError = true;
       this.nameValid = false;
     } else {
       this.nameError = false;
-      this.nameValid = true; // Feld ist korrekt ausgefüllt
+      this.nameValid = true;
     }
   }
 
-  // Validierung beim Verlassen des E-Mail-Feldes
   validateEmail(): void {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (this.userEmail.trim() === '') {
@@ -70,42 +67,36 @@ export class ContactComponent {
       this.emailValid = false;
     } else {
       this.emailError = false;
-      this.emailValid = true; // Feld ist korrekt ausgefüllt
+      this.emailValid = true;
     }
   }
 
-  // Validierung beim Verlassen des Nachrichtenfeldes
   validateMessage(): void {
     if (this.userMessage.trim() === '') {
       this.messageError = true;
       this.messageValid = false;
     } else {
       this.messageError = false;
-      this.messageValid = true; // Feld ist korrekt ausgefüllt
+      this.messageValid = true;
     }
   }
 
-  // Verarbeiten des Datenschutz-Checkbox-Events
   handlePrivacyCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
     this.privacyChecked = checkbox.checked;
   }
 
-  // Überprüfung aller Felder und Absenden des Formulars
   onSubmit(event: Event): void {
     event.preventDefault();
 
-    // Gesamte Validierung vor dem Absenden
     this.validateName();
     this.validateEmail();
     this.validateMessage();
 
-    // Falls ein Feld ungültig ist, abbrechen
     if (this.nameError || this.emailError || this.messageError) {
       return;
     }
 
-    // Formulardaten erstellen
     const formData = new FormData();
     formData.append('name', this.userName);
     formData.append('email', this.userEmail);
@@ -113,7 +104,6 @@ export class ContactComponent {
 
     console.log('Sending form data:', formData);
 
-    // Sende die Daten nur, wenn die Datenschutz-Checkbox aktiviert ist
     if (this.privacyChecked) {
       const headers = new HttpHeaders({
         Accept: 'application/json',
@@ -135,22 +125,23 @@ export class ContactComponent {
   triggerMessageAnimation(): void {
     this.messageSent = true;
   
-    // 🛑 Warten, bis das Element gerendert wurde
     setTimeout(() => {
       const message = document.querySelector('.message-container');
       if (message) {
         console.log('Nachricht', message);
   
-        // ⏳ Wartezeit für das Entfernen verlängern (mind. so lang wie die CSS-Animation)
+        
         setTimeout(() => {
-          this.messageSent = false; // Umschlag ausblenden
+          this.messageSent = false;
           console.log('📭 Nachricht wurde entfernt!');
-        }, 4000); // ⚡ Warten, bis die Animation fertig ist (mind. 2s)
+        }, 4000); 
       } else {
         console.log('❌ Nachricht nicht gefunden!');
       }
-    }, 100); // 🔥 Mini-Wartezeit, damit das DOM den Umschlag rendert
+    }, 100); 
   }
   
-  
+  text() {
+    return translations[this.lang.language()];
+  }
 }  
