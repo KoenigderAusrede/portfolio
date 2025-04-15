@@ -4,22 +4,21 @@
       <div class="heroBgRight"></div>
   
       <div class="heroGrid">
-        <div class="heroVertical">
-          <span>I am</span>
+        <div class="heroVertical" [ngClass]="text().hero.iam.class">
+          <span>{{ text().hero.iam.text }}</span>
         </div>
+        
   
         <div class="heroContent">
-          <h1>Felix Blaser</h1>
+          <h1>{{ text().hero.name }}</h1>
           <p class="roles">
-            <span class="roleItem">Project Manager</span>
-            <span class="roleItem">Frontend Developer</span>
-            <span class="roleItem">Digital Strategist</span>
+            <span *ngFor="let role of text().hero.roles" class="roleItem">{{ role }}</span>
           </p>
         </div>
       </div>
   
       <div class="heroButton">
-        <button class="greenButton" (click)="scrollToContact()">Let’s Talk!</button>
+        <button class="greenButton" (click)="scrollToContact()">{{ text().hero.cta }}</button>
       </div>
     </div>
   
@@ -37,7 +36,7 @@
     </div>
   
     <div class="scroller">
-      <span class="scroll-text">scroll down</span>
+      <span class="scroll-text">{{ text().hero.scroller}}</span>
       <img src="assets/icons/arrowdown.png" alt="Scroll down" />
     </div>
   </div>
@@ -49,16 +48,12 @@
   
       <div class="aboutBlock">
         <img src="assets/icons/bulb/bulb_white_S.png" alt="" />
-        <p>
-          I have gained experience in events and tradeshows for automotive, pharma and various other industries.
-        </p>
+        <p [innerHTML]="text().about.experience">
       </div>
   
       <div class="aboutBlock">
         <img src="assets/icons/puzzle/puzzle_white_S.png" alt="" />
-        <p>
-          After many years of successful projects, I've decided to make a change and broaden my portfolio. That's why you see this website. I'm combining project management with technical and web development skills to meet today's employer needs.
-        </p>
+        <p [innerHTML]="text().about.change">
       </div>
     </div>
   
