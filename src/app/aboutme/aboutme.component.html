@@ -25,7 +25,7 @@
   
     <div class="divider">
       <div style="width: 5.5rem;">
-        <app-section-line position="right" color="#70E61C"></app-section-line>
+        <app-section-line position="left" color="#70E61C"></app-section-line>
       </div>
       <a href="https://github.com/KoenigderAusrede" target="_blank" rel="noopener noreferrer">
         <img class="dividerButton" src="assets/buttons/Github button.png" alt="GitHub" />
@@ -44,12 +44,8 @@
   
   <div class="main2">
     <div class="textBlock">
-      <h1>About me</h1>
-      <p>
-        Hi, my name is Felix and I'm a project manager, front-end web developer and digital strategist based in the most beautiful city in the world, Munich, Germany.
-        <br />
-        I started my career as an Event Manager, handling projects for the automotive and pharmaceutical industry.
-      </p>
+      <h1>{{ text().about.title }}</h1>
+      <p [innerHTML]="text().about.intro">
   
       <div class="aboutBlock">
         <img src="assets/icons/bulb/bulb_white_S.png" alt="" />

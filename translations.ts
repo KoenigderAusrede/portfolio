@@ -1,21 +1,74 @@
 export const translations = {
     en: {
-      skills: 'Skills',
-      introText: `I've worked on a variety of projects using technologies like HTML, CSS, JavaScript and Angular.
-  I'm always eager to explore new tools and keep learning – because staying up-to-date is key in web development.
-  My goal is to create user-friendly and efficient web applications that meet the needs of users and businesses alike.`,
-      moreSkillsTitle: 'Looking for another skill?',
-      moreSkillsText: `I'm always open to expanding my skill set and learning new technologies – just let me know what you're looking for!`,
-      contactCta: 'Get in touch',
+      hero: {
+        name: 'Felix Blaser',
+        roles: ['Project Manager', 'Frontend Developer', 'Digital Strategist'],
+        cta: "Let’s Talk!",
+      },
+      about: {
+        title: 'About me',
+        intro: "Hi, my name is Felix and I'm a project manager, front-end web developer and digital strategist based in the most beautiful city in the world, Munich, Germany. <br> I started my career as an Event Manager, handling projects for the automotive and pharmaceutical industry.",
+        experience: 'I have gained experience in...',
+        change: "After many years of...",
+      },
+      skills: {
+        title: 'Skills',
+        description: 'I’ve worked on a variety of projects using...',
+        extensionTitle: 'Looking for another skill?',
+        extensionText: 'I’m always open to expanding my skill set...',
+      },
+      portfolio: {
+        title: 'Projects',
+        buttons: {
+          github: 'View Code',
+          live: 'Live Test'
+        },
+        tags: {
+          html: 'HTML',
+          angular: 'Angular',
+          // etc.
+        }
+      },
+      contact: {
+        title: 'Contact Me',
+        cta: 'Send Message'
+      }
     },
+  
     de: {
-      skills: 'Fähigkeiten',
-      introText: `Ich habe an verschiedenen Projekten mit Technologien wie HTML, CSS, JavaScript und Angular gearbeitet.
-  Ich bin stets neugierig auf neue Tools und Technologien – denn am Ball zu bleiben ist im Web-Development entscheidend.
-  Mein Ziel ist es, benutzerfreundliche und effiziente Webanwendungen zu entwickeln, die den Anforderungen von Nutzern und Unternehmen gerecht werden.`,
-      moreSkillsTitle: 'Noch eine Fähigkeit gesucht?',
-      moreSkillsText: `Ich bin immer offen dafür, meinen Skillset zu erweitern – sag mir einfach, was du brauchst!`,
-      contactCta: 'Kontakt aufnehmen',
+      hero: {
+        name: 'Felix Blaser',
+        roles: ['Projektmanager', 'Frontend-Entwickler', 'Digitaler Stratege'],
+        cta: "Lass uns sprechen!",
+      },
+      about: {
+        title: 'Über mich',
+        intro: 'Hi, ich bin Felix und arbeite als...',
+        experience: 'Ich habe Erfahrung in...',
+        change: 'Nach vielen erfolgreichen Jahren...'
+      },
+      skills: {
+        title: 'Skills',
+        description: 'Ich habe in verschiedenen Projekten...',
+        extensionTitle: 'Auf der Suche nach einem anderen Skill?',
+        extensionText: 'Ich bin immer offen dafür, neue Technologien zu lernen...'
+      },
+      portfolio: {
+        title: 'Projekte',
+        buttons: {
+          github: 'Code ansehen',
+          live: 'Live-Test'
+        },
+        tags: {
+          html: 'HTML',
+          angular: 'Angular',
+          // etc.
+        }
+      },
+      contact: {
+        title: 'Kontakt',
+        cta: 'Nachricht senden'
+      }
     }
   };
   
