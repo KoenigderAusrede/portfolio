@@ -1,4 +1,5 @@
-$checkbox-path: '/assets/checkbox';
+$checkbox-path: '../../assets/checkbox';
+
 
 .contact-section {
   background-color: #141d2f;
@@ -81,7 +82,7 @@ $checkbox-path: '/assets/checkbox';
       // Fehler-Rahmen
       &.error-border {
         border-color: #e71b40; // Red Border on Error
-        background-image: url('/assets/icons/red_warn.png');
+        background-image: url("../../assets/icons/red_warn.png");
         background-repeat: no-repeat;
         background-size: 20px 20px;
         background-position: calc(100% - 10px) center;
@@ -89,7 +90,7 @@ $checkbox-path: '/assets/checkbox';
 
       &.success-border {
         border-color: #00ff7f; // Green Border on Success
-        background-image: url('/assets/icons/green_check.png');
+        background-image: url("../../assets/icons/green_check.png");
         background-repeat: no-repeat;
         background-size: 20px 20px;
         background-position: calc(100% - 10px) center;
@@ -152,7 +153,7 @@ $checkbox-path: '/assets/checkbox';
           transform: translateY(-50%);
           width: 1.2rem;
           height: 1.2rem;
-          background-image: url('#{$checkbox-path}/check_box_outline_blank.png'); // Unchecked
+          background-image: url('#{$checkbox-path}/check_box_outline_blank.png');
           background-size: cover;
           transition: background-image 0.3s ease;
         }

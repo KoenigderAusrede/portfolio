@@ -7,7 +7,7 @@
         "symbols textBody";
     justify-content: space-between;
     background-color: #141D2F;
-    background-image: url("/assets/blurrs/Green shadow 3.png");
+    background-image: url('../../assets/blurrs/green_shadow_3.png');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
@@ -223,12 +223,12 @@
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            content: url("/assets/icons/learning.svg");
+            background-image: url('../../assets/icons/learning.svg');
         }
     }
 
     @media (max-width: 768px) {
-        content: url("/assets/icons/learningPurple.svg");
+        background-image: url("../../assets/icons/learningPurple.svg");
     }
 }
 

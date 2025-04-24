@@ -1,8 +1,18 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideImageKitLoader, NgOptimizedImage } from '@angular/common';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { provideRouter, Routes } from '@angular/router';
+
+import { AppComponent }   from './app/app.component';
+import { HomeComponent }  from './app/home/home.component';
+import { LegalComponent } from './app/legal/legal.component';
+
+const routes: Routes = [
+  { path: '',       component: HomeComponent },
+  { path: 'legal',  component: LegalComponent },
+  { path: '**', redirectTo: '' }
+];
 
 bootstrapApplication(AppComponent, {
-  ...appConfig,
-}).catch((err) => console.error(err));
+  providers: [
+    provideRouter(routes)
+  ]
+});
