@@ -8,3 +8,7 @@ html, body {
 *, *::before, *::after {
     box-sizing: border-box;
   }
+
+  section {
+    scroll-margin-top: 7.5rem;
+  }

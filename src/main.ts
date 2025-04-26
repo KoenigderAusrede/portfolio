@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, Routes } from '@angular/router';
+import { provideRouter, Routes, withInMemoryScrolling } from '@angular/router';
 
 import { AppComponent }   from './app/app.component';
 import { HomeComponent }  from './app/home/home.component';
@@ -13,6 +13,12 @@ const routes: Routes = [
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes)
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        anchorScrolling: 'enabled',
+        scrollPositionRestoration: 'enabled'
+      })
+    )
   ]
 });

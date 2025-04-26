@@ -7,10 +7,30 @@
       
       <div class="mobile-nav" [class.open]="isMenuOpen">
         <nav>
-          <a href="#aboutme" (click)="closeMenu()">About me</a>
-          <a href="#skills" (click)="closeMenu()">Skills</a>
-          <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
-          <a href="#contact" (click)="closeMenu()">Contact</a>
+          <a
+          [routerLink]="['/']"
+          fragment="aboutMe"
+          (click)="closeMenu()"
+          >About me</a
+        >
+        <a
+        [routerLink]="['/']"
+        fragment="skills"
+        (click)="closeMenu()"
+        >Skills</a
+      >
+      <a
+      [routerLink]="['/']"
+      fragment="portfolio"
+      (click)="closeMenu()"
+      >Portfolio</a
+    >
+    <a
+    [routerLink]="['/']"
+    fragment="contact"
+    (click)="closeMenu()"
+    >Contact</a
+  >
           <div class="language-toggle">
             <span 
               (click)="switchLang('en')" 
@@ -25,9 +45,9 @@
       
     <img src="assets/img/Felix_Logo.png" class="felixLogo">
     <nav>
-      <a (click)="scrollTo('aboutMe')">About me</a>
-      <a (click)="scrollTo('skills')">Skills</a>
-      <a (click)="scrollTo('portfolio')">Portfolio</a>
+      <a [routerLink]="['/']" fragment="aboutMe">About me</a>
+      <a [routerLink]="['/']" fragment="skills">Skills</a>
+      <a [routerLink]="['/']" fragment="portfolio">Portfolio</a>
         <div class="language-toggle">
           <span 
             (click)="switchLang('en')" 
