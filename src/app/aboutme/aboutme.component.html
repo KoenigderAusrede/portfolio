@@ -42,7 +42,7 @@
     </div>
   </div>
   
-  <div id="aboutMe" class="main2">
+  <div class="main2" id="aboutMe">
     <div class="textBlock">
       <h1>{{ text().about.title }}</h1>
       <p [innerHTML]="text().about.intro">
@@ -60,7 +60,10 @@
   
     <div class="aboutPp">
       <img class="profileBlur" src="assets/blurrs/green_purple_shadow.png" alt="" />
-      <img class="profilePicture" [ngSrc]="'assets/img/file.png'" width="300" height="400" alt="Profilbild" priority />
+      <img class="profilePicture" 
+        [ngSrc]="'assets/img/profileImg.png'"
+        width="600" height="800"
+        alt="Profilbild" priority />
       <img class="curve curve-mobile" src="assets/img/curve.png" alt="Kurve Mobil" />
     </div>
   

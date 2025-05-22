@@ -1,61 +1,34 @@
 <header>
-    <button class="burger" [class.open]="isMenuOpen" (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <div class="mobile-nav" [class.open]="isMenuOpen">
-        <nav>
-          <a
-          [routerLink]="['/']"
-          fragment="aboutMe"
-          (click)="closeMenu()"
-          >About me</a
-        >
-        <a
-        [routerLink]="['/']"
-        fragment="skills"
-        (click)="closeMenu()"
-        >Skills</a
-      >
-      <a
-      [routerLink]="['/']"
-      fragment="portfolio"
-      (click)="closeMenu()"
-      >Portfolio</a
-    >
-    <a
-    [routerLink]="['/']"
-    fragment="contact"
-    (click)="closeMenu()"
-    >Contact</a
-  >
-          <div class="language-toggle">
-            <span 
-              (click)="switchLang('en')" 
-              [class.active]="language() === 'en'">EN</span>
-            |
-            <span 
-              (click)="switchLang('de')" 
-              [class.active]="language() === 'de'">DE</span>
-          </div>
-        </nav>
-      </div>
-      
-    <img src="assets/img/Felix_Logo.png" class="felixLogo">
+  <button class="burger" [class.open]="isMenuOpen" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="mobile-nav" [class.open]="isMenuOpen">
     <nav>
-      <a [routerLink]="['/']" fragment="aboutMe">About me</a>
-      <a [routerLink]="['/']" fragment="skills">Skills</a>
-      <a [routerLink]="['/']" fragment="portfolio">Portfolio</a>
-        <div class="language-toggle">
-          <span 
-            (click)="switchLang('en')" 
-            [class.active]="language() === 'en'">EN</span>
-          |
-          <span 
-            (click)="switchLang('de')" 
-            [class.active]="language() === 'de'">DE</span>
-        </div>
+      <a [routerLink]="['/']" fragment="aboutMe" (click)="closeMenu()">About me</a>
+      <a [routerLink]="['/']" fragment="skills" (click)="closeMenu()">Skills</a>
+      <a [routerLink]="['/']" fragment="portfolio" (click)="closeMenu()">Portfolio</a>
+      <a [routerLink]="['/']" fragment="contact" (click)="closeMenu()">Contact</a>
+      <div class="language-toggle">
+        <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
+        |
+        <span (click)="switchLang('de')" [class.active]="language() === 'de'">DE</span>
+      </div>
     </nav>
+  </div>
+
+  <img src="assets/img/Felix_Logo.png" class="felixLogo">
+  <nav>
+    <a href="#" (click)="scrollTo('aboutMe')">About Me</a>
+    <a href="#" (click)="scrollTo('skills')">Skills</a>
+    <a href="#" (click)="scrollTo('portfolio')">Portfolio</a>
+
+    <div class="language-toggle">
+      <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
+      |
+      <span (click)="switchLang('de')" [class.active]="language() === 'de'">DE</span>
+    </div>
+  </nav>
 </header>

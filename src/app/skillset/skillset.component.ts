@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { NgClass } from '@angular/common';
 import { LanguageService } from '../services/language.service';
@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./skillset.component.scss']
 })
 export class SkillsetComponent {
+  @Input() id?: string;
 
   constructor(private http: HttpClient, public lang: LanguageService) { }
 

@@ -33,11 +33,17 @@ scrollTo(id: string) {
   const element = document.getElementById(id);
   if (element) {
     const yOffset = -120;
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({top: y});
-    this.closeMenu();
+    const targetY = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const currentY = window.pageYOffset;
+
+    if (Math.abs(currentY - targetY) > 1) {
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+
+    this.closeMenu?.();
   }
 }
+
 
 
 }

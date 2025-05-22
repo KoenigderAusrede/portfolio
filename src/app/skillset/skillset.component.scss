@@ -1,8 +1,7 @@
-skills {
-    height: 100vh;
-}
-
 .skillsSection {
+    height: 100%;
+    max-height: 100vh;
+    overflow: auto;
     position: relative;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -16,10 +15,12 @@ skills {
     background-position: center top;
     background-size: contain;
     padding: 5rem 1.5rem 2rem 6rem;
-    gap: 2rem;
+    gap: 1rem;
     z-index: 3;
+    overflow: hidden;
 
     .symbols {
+        max-height: 60vh;
         grid-area: symbols;
       }
       
@@ -33,13 +34,16 @@ skills {
       }
       
       .textBody {
+        max-height: 60vh;
         width: fit-content;
         max-width: 80%;
         padding-right: 1rem;
         grid-area: textBody;
+        font-size: 0.7rem;
       }
 
     .textContainer {
+        max-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -224,6 +228,10 @@ skills {
 .learningIcon {
     width: 60px;
     height: auto;
+    background-image: url('../../assets/icons/learning.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
@@ -239,7 +247,7 @@ skills {
 .greenButton {
     font-family: 'poppins';
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 1rem 2rem;
     border-radius: 0.75rem;
     color: #fff;
@@ -263,15 +271,15 @@ skills {
 .skillExtension {
     width: 100%;
     color: white;
-    margin-top: 2rem;
+    margin-top: 0.2rem;
 
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         margin-bottom: 0.5rem;
     }
 
     p {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 }
 

@@ -32,6 +32,11 @@ header {
   @media (max-width: 820px) {
     height: 4.5rem;
     padding: 0 1rem;
+    
+    img {
+      margin-left: 0;
+      margin-right: 2rem;
+    }
 
     .felixLogo {
       height: 2rem;

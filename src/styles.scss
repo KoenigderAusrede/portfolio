@@ -1,14 +1,10 @@
-html, body {
-    margin: 0;
-    font-family: 'poppins';
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+html {
+  scroll-padding-top: 7.5rem !important;
+  scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  section {
-    scroll-margin-top: 7.5rem;
-  }
+body {
+  margin: 0;
+  font-family: 'poppins';
+  overflow-x: hidden;
+}

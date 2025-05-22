@@ -8,7 +8,21 @@
     background-color: #141D2F;
     color: white;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
+
+    .profilePicture {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        transform: scaleX(-1);
+        height: auto;
+        width: 100%;
+        max-width: 25rem;
+        object-fit: contain;
+        z-index: 2;
+        position: relative;
+    }
+
 
     .aboutPp {
         width: 40vw;
@@ -25,7 +39,7 @@
     }
 
     .textBlock {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         margin-left: 1.5rem;
         width: 40vw;
         height: 50%;
@@ -35,7 +49,7 @@
         }
 
         >p {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             margin: 0;
         }
     }
@@ -80,9 +94,9 @@
     }
 
     @media (max-width: 920px) {
-          height: 55vh;
-          padding-bottom: 0;
-      }
+        height: 55vh;
+        padding-bottom: 0;
+    }
 
     @media (max-width: 768px) {
         flex-direction: column-reverse;
@@ -110,8 +124,6 @@
             .profilePicture {
                 position: absolute;
                 z-index: 2;
-                margin-top: -10rem;
-                border-radius: 50%;
             }
 
             .profileBlur {
@@ -132,12 +144,12 @@
             top: -3rem;
 
             h1 {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
                 margin-bottom: 1rem;
             }
 
             p {
-                font-size: 0.7rem;
+                font-size: 0.9rem;
                 line-height: 1.6;
             }
         }
