@@ -11,6 +11,7 @@ import { LanguageService } from '../services/language.service';
   templateUrl: './aboutme.component.html',
   styleUrls: ['./aboutme.component.scss', './aboutme-profile.scss']
 })
+
 export class AboutmeComponent {
   language = this.langService.language;
   text = computed(() => translations[this.language()]);

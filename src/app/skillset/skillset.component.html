@@ -11,48 +11,48 @@
   
     <div class="symbols">
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/JavaScript.png" />
+        <img class="hoverEffect" src="assets/icons/JavaScript.png" />
         <p>JavaScript</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/Angular.png" />
+        <img class="hoverEffect" src="assets/icons/Angular.png" />
         <p>Angular</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/Typescript.png" />
+        <img class="hoverEffect" src="assets/icons/Typescript.png" />
         <p>TypeScript</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/HTML.png" />
+        <img class="hoverEffect" src="assets/icons/HTML.png" />
         <p>HTML</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/Git.png" />
+        <img class="hoverEffect" src="assets/icons/Git.png" />
         <p>GIT</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/Firebase.png" />
+        <img class="hoverEffect" src="assets/icons/Firebase.png" />
         <p>Firebase</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/CSS.png" />
+        <img class="hoverEffect" src="assets/icons/CSS.png" />
         <p>CSS</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/Scrum.png" />
+        <img class="hoverEffect" src="assets/icons/Scrum.png" />
         <p>Scrum</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/API.png" />
+        <img class="hoverEffect" src="assets/icons/API.png" />
         <p>API</p>
       </div>
       <div class="skillBox">
-        <img class="hover-effect-1" src="assets/icons/Test Automation.png" />
+        <img class="hoverEffect" src="assets/icons/Test Automation.png" />
         <p>Automation</p>
       </div>
-      <div class="skillBox learning" [ngClass]="{'show-tooltip': showTooltip}">
-        <img class="learningIcon" src="assets/icons/learningBlue.svg" alt="Continually Learning Icon" (click)="handleLearningTap()" />
-        <div class="tooltip" id="tooltip-learning">
+      <div class="skillBox learning" [ngClass]="{'showTooltip': showTooltip}">
+        <div class="learningIcon" (click)="handleLearningTap()"></div>
+        <div class="tooltip">
           <p>{{ text().skills.tooltipIntro }}</p>
           <div class="iconRow">
             <div class="tech">
@@ -76,7 +76,7 @@
           <h2>
             {{ text().skills.extraHeadingStart }}<span style="color: #9846ff">{{ text().skills.extraHeadingHighlight }}</span>?
           </h2>
-          <p>{{ text().skills.extraParagraph }}</p>
+          <p class="textBody">{{ text().skills.extraParagraph }}</p>
         </div>
         <button class="greenButton" (click)="scrollToContact()">{{ text().skills.cta }}</button>
       </div>

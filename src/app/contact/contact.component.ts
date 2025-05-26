@@ -111,17 +111,19 @@ export class ContactComponent {
 
       this.http.post(environment.apiUrl, formData).subscribe(
         (response) => {
-          console.log('✅ Server Response:', response);
+          console.log('Server Response:', response);
           this.messageSent = true;
           this.triggerMessageAnimation();
           this.resetForm();
         },
         (error) => {
-          console.error('❌ Failed to send email:', error);
+          console.error('Failed to send email:', error);
         }
       );
     }
   }
+
+  
   triggerMessageAnimation(): void {
     this.messageSent = true;
   

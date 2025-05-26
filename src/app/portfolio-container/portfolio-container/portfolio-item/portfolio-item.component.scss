@@ -1,4 +1,4 @@
-.portfolio-item {
+.portfolioItem {
   position: relative;
   overflow: hidden;
   border: 1px solid #1de6b5;
@@ -6,26 +6,26 @@
   transition: transform 0.3s ease-in-out;
 
   &:hover {
-    .portfolio-image {
+    .portfolioImage {
       transform: scale(2.3);
       filter: blur(2px);
     }
 
-    .portfolio-info,
-    .portfolio-buttons {
+    .portfolioInfo,
+    .portfolioButtons {
       font-size: 0.8rem;
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  .portfolio-image {
+  .portfolioImage {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
   }
 
-  .portfolio-buttons {
+  .portfolioButtons {
     position: absolute;
     top: 3rem;
     left: 34%;
@@ -36,7 +36,7 @@
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
-  .portfolio-button {
+  .portfolioButton {
     padding: 8px 16px;
     border-radius: 25px;
     border: none;
@@ -57,7 +57,7 @@
       }
     }
 
-    &.live-test {
+    &.liveTest {
       background-color: #8f00ff;
       color: white;
       
@@ -68,7 +68,7 @@
     }
   }
 
-  .portfolio-info {
+  .portfolioInfo {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -92,7 +92,7 @@
     color: black;
   }
 
-  .project-tags {
+  .projectTags {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
@@ -110,10 +110,16 @@
     font-weight: bold;
     text-transform: uppercase;
   }
+
+  .projectDescription {
+    font-size: 0.9rem;
+    color: #333;
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .portfolio-buttons {
+  .portfolioButtons {
     top: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
@@ -121,12 +127,12 @@
     flex-wrap: wrap;
   }
 
-  .portfolio-button {
+  .portfolioButton {
     padding: 6px 12px;
     font-size: 0.85rem;
   }
 
-  .portfolio-info {
+  .portfolioInfo {
     padding: 1rem 1rem 1.5rem;
     font-size: 0.9rem;
 
@@ -139,7 +145,7 @@
     }
   }
 
-  .project-tags {
+  .projectTags {
     gap: 4px;
     margin-top: 0.5rem;
   }
@@ -151,7 +157,7 @@
 }
 
 @media (max-width: 500px) {
-  .portfolio-item .portfolio-buttons {
+  .portfolioItem .portfolioButtons {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -162,13 +168,13 @@
     transform: translateY(20rem)
   }
 
-  .portfolio-button {
+  .portfolioButton {
     padding: 4px 10px;
     font-size: 0.75rem;
     border-radius: 20px;
   }
 
-  .portfolio-info {
+  .portfolioInfo {
     padding: 0.75rem 0.5rem;
     
     h3 {
@@ -180,7 +186,7 @@
     }
   }
 
-  .project-tags {
+  .projectTags {
     gap: 4px;
     flex-wrap: wrap;
     justify-content: center;

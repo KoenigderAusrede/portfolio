@@ -1,4 +1,4 @@
-.testimonial-wrapper {
+.testimonialWrapper {
     background-color: #141D2F;
     display: flex;
     justify-content: space-between;
@@ -6,7 +6,7 @@
     gap: 3rem;
     padding: 4rem;
   
-    .quote-box {
+    .quoteBox {
       flex: 1;
       height: 250px;
       border: 3px solid #8f00ff;
@@ -17,7 +17,7 @@
       flex-direction: column;
       justify-content: center;
   
-      .quote-symbol {
+      .quoteSymbol {
         font-size: 6rem;
         color: #70e61c;
         position: absolute;
@@ -25,7 +25,7 @@
         left: -1rem;
       }
   
-      .quote-text {
+      .quoteText {
         font-size: clamp(0.8rem, 1.3vw, 1.1rem);
         color: white;
         flex-grow: 1;
@@ -35,7 +35,7 @@
         text-align: center;
       }
   
-      .quote-footer {
+      .quoteFooter {
         display: flex;
         align-items: center;
         margin-top: 2rem;
@@ -53,7 +53,7 @@
       }
     }
   
-    .image-box {
+    .imageBox {
       flex: 0 0 250px;
   
       img {
@@ -121,14 +121,13 @@
     }
   }
   
-  /* 🔽 Responsive Design */
   @media (max-width: 900px) {
-    .testimonial-wrapper {
+    .testimonialWrapper {
       flex-direction: column;
       align-items: center;
       text-align: center;
   
-      .quote-box {
+      .quoteBox {
         order: 2;
         min-height: 12rem;
         max-height: 12rem;
@@ -137,11 +136,11 @@
         padding: 1.5rem;
       }
 
-      .quote-symbol {
+      .quoteSymbol {
         display: none;
       }
   
-      .image-box {
+      .imageBox {
         order: 1;
         margin-bottom: -5rem;
   
@@ -151,7 +150,7 @@
         }
       }
   
-      .quote-footer {
+      .quoteFooter {
         flex-direction: column;
         align-items: center;
         margin: 0 !important;
@@ -170,16 +169,16 @@
   }
   
   @media (max-width: 500px) {
-    .testimonial-wrapper {
+    .testimonialWrapper {
       padding: 2rem;
     }
   
-    .image-box img {
+    .imageBox img {
       width: 13rem;
       height: 13rem;
     }
   
-    .quote-text {
+    .quoteText {
       font-size: 0.6rem;
     }
 

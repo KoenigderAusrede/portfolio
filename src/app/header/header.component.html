@@ -5,13 +5,13 @@
     <span></span>
   </button>
 
-  <div class="mobile-nav" [class.open]="isMenuOpen">
+  <div class="mobileNav" [class.open]="isMenuOpen">
     <nav>
       <a [routerLink]="['/']" fragment="aboutMe" (click)="closeMenu()">About me</a>
       <a [routerLink]="['/']" fragment="skills" (click)="closeMenu()">Skills</a>
       <a [routerLink]="['/']" fragment="portfolio" (click)="closeMenu()">Portfolio</a>
       <a [routerLink]="['/']" fragment="contact" (click)="closeMenu()">Contact</a>
-      <div class="language-toggle">
+      <div class="languageToggle">
         <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
         |
         <span (click)="switchLang('de')" [class.active]="language() === 'de'">DE</span>
@@ -25,7 +25,7 @@
     <a href="#" (click)="scrollTo('skills')">Skills</a>
     <a href="#" (click)="scrollTo('portfolio')">Portfolio</a>
 
-    <div class="language-toggle">
+    <div class="languageToggle">
       <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
       |
       <span (click)="switchLang('de')" [class.active]="language() === 'de'">DE</span>

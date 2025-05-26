@@ -44,7 +44,7 @@ export class PortfolioContainerComponent {
     {
       id: 'pokedex',
       title: 'Pokédex',
-      image: 'assets/img/Laptop/screen_PoDe.png',
+      image: 'assets/img/Laptop/screen_PoDe2.png',
       description: 'Find your favorite Pokémon and learn more about them. Search for Pokémon by name and filter them by type. The Pokédex is based on the PokeAPI.',
       github: 'https://github.com/KoenigderAusrede/Pokedex',
       url: 'https://dieblasers.de/felix/Projekte/Pokedex/index.html',
