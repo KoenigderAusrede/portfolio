@@ -142,8 +142,8 @@ export class ContactComponent {
       }
     }, 100); 
   }
-  
+
   text() {
     return translations[this.lang.language()];
   }
-}  
+}
