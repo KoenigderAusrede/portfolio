@@ -124,26 +124,24 @@ export class ContactComponent {
   }
 
   
-  triggerMessageAnimation(): void {
-    this.messageSent = true;
-  
-    setTimeout(() => {
-      const message = document.querySelector('.message-container');
-      if (message) {
-        console.log('Nachricht', message);
-  
-        
-        setTimeout(() => {
-          this.messageSent = false;
-          console.log('📭 Nachricht wurde entfernt!');
-        }, 4000); 
-      } else {
-        console.log('❌ Nachricht nicht gefunden!');
-      }
-    }, 100); 
-  }
+triggerMessageAnimation(): void {
+  this.messageSent = true;
+
+  setTimeout(() => {
+    this.messageSent = false;
+    console.log('📭 Nachricht wurde entfernt!');
+  }, 4000); 
+}
+
 
   text() {
     return translations[this.lang.language()];
   }
+
+  scrollToTop(): void {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
 }

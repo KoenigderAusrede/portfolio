@@ -1,10 +1,25 @@
-html {
-  scroll-padding-top: 7.5rem !important;
-  scroll-behavior: smooth;
+/* Globale Layout-Vorgaben */
+* {
+  box-sizing: border-box;
 }
 
-body {
+body, html {
   margin: 0;
-  font-family: 'poppins';
-  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  scroll-padding-top: 7.5rem !important;
+  background-color: #141D2F;
+}
+
+header, footer {
+  width: 100vw;
+  background-color: #141D2F;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }

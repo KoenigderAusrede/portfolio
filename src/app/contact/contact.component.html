@@ -1,15 +1,20 @@
 <section class="contactSection" id="contact">
-  <div class="contactHeader">
-    <app-section-line [text]="text().contact.heading" tag="h1" position="right" color="#70E61C"
-      [class]="'contactHeading'"></app-section-line>
+<div class="contactHeader">
+  <div class="contactHeadingWrapper">
+    <h1 class="contactHeading">{{ text().contact.heading }}</h1>
+    <div class="secLine">
+      <app-section-line position="right" color="#70E61C"></app-section-line>
+    </div>
+  </div>
+</div>
+
+
+<div class="lineRow">
+  <div class="secLine2">
+    <app-section-line position="left" color="#1bdae5"></app-section-line>
   </div>
 
-  <div style="display: flex; flex-direction: row;">
-    <div class="lineWrapperContainer">
-      <app-section-line position="left" color="#1bdae5"></app-section-line>
-    </div>
     <div class="contactContent">
-
       <div class="contactTextBlock">
         <div class="contactText">
           <h2 class="problemHeading">{{ text().contact.subheading }}</h2>
@@ -19,38 +24,35 @@
       </div>
 
       <form class="contactForm" (submit)="onSubmit($event)">
-        <form class="contactForm" (submit)="onSubmit($event)">
-          <!-- Name Field -->
-          <div class="formGroup">
-            <input type="text" class="inputField" [placeholder]="text().contact.namePlaceholder" [(ngModel)]="userName"
-              name="name" [ngClass]="{ 'errorBorder': nameError, 'successBorder': nameValid }"
-              (blur)="validateName()" />
-            <div class="errorMessage" [ngClass]="{ 'visible': nameError }">
-              {{ text().contact.nameError }}
-            </div>
+        <!-- Name Field -->
+        <div class="formGroup">
+          <input type="text" class="inputField" [placeholder]="text().contact.namePlaceholder" [(ngModel)]="userName"
+            name="name" [ngClass]="{ 'errorBorder': nameError, 'successBorder': nameValid }" (blur)="validateName()" />
+          <div class="errorMessage" [ngClass]="{ 'visible': nameError }">
+            {{ text().contact.nameError }}
           </div>
+        </div>
 
-          <!-- Email Field -->
-          <div class="formGroup">
-            <input type="email" class="inputField" [placeholder]="text().contact.emailPlaceholder"
-              [(ngModel)]="userEmail" name="email"
-              [ngClass]="{ 'errorBorder': emailError, 'successBorder': emailValid }" (blur)="validateEmail()" />
-            <div class="errorMessage" [ngClass]="{ 'visible': emailError }">
-              <span *ngIf="userEmail === ''">{{ text().contact.emailErrorEmpty }}</span>
-              <span *ngIf="userEmail !== ''">{{ text().contact.emailErrorInvalid }}</span>
-            </div>
+        <!-- Email Field -->
+        <div class="formGroup">
+          <input type="email" class="inputField" [placeholder]="text().contact.emailPlaceholder" [(ngModel)]="userEmail"
+            name="email" [ngClass]="{ 'errorBorder': emailError, 'successBorder': emailValid }"
+            (blur)="validateEmail()" />
+          <div class="errorMessage" [ngClass]="{ 'visible': emailError }">
+            <span *ngIf="userEmail === ''">{{ text().contact.emailErrorEmpty }}</span>
+            <span *ngIf="userEmail !== ''">{{ text().contact.emailErrorInvalid }}</span>
           </div>
+        </div>
 
-          <!-- Message Field -->
-          <div class="formGroup">
-            <textarea class="textarea-field" [placeholder]="text().contact.messagePlaceholder" [(ngModel)]="userMessage"
-              name="message" [ngClass]="{ 'errorBorder': messageError, 'successBorder': messageValid }"
-              (blur)="validateMessage()"></textarea>
-            <div class="errorMessage" [ngClass]="{ 'visible': messageError }">
-              {{ text().contact.messageError }}
-            </div>
+        <!-- Message Field -->
+        <div class="formGroup">
+          <textarea class="textarea-field" [placeholder]="text().contact.messagePlaceholder" [(ngModel)]="userMessage"
+            name="message" [ngClass]="{ 'errorBorder': messageError, 'successBorder': messageValid }"
+            (blur)="validateMessage()"></textarea>
+          <div class="errorMessage" [ngClass]="{ 'visible': messageError }">
+            {{ text().contact.messageError }}
           </div>
-        </form>
+        </div>
 
 
         <!-- Privacy Checkbox -->
@@ -68,10 +70,17 @@
       </form>
 
       <!-- Success-Overlay -->
-      <div *ngIf="messageSent" class="messageContainer">
+      <div class="messageContainer" [class.hidden]="!messageSent">
         <p>{{ text().contact.success }}</p>
       </div>
 
     </div>
   </div>
+       <!-- Back-to-top Button -->
+        <div class="backToTopWrapper">
+      <div class="backToTop" (click)="scrollToTop()">
+        <img src="assets/icons/arrowUP.png" alt="Back to top" />
+      </div>
+    </div>
+
 </section>

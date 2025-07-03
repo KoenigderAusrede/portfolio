@@ -1,4 +1,4 @@
-<header>
+<div class="headerWrapper">
   <button class="burger" [class.open]="isMenuOpen" (click)="toggleMenu()">
     <span></span>
     <span></span>
@@ -19,16 +19,17 @@
     </nav>
   </div>
 
-  <img src="assets/img/Felix_Logo.png" class="felixLogo">
-  <nav>
-    <a href="#" (click)="scrollTo('aboutMe')">About Me</a>
-    <a href="#" (click)="scrollTo('skills')">Skills</a>
-    <a href="#" (click)="scrollTo('portfolio')">Portfolio</a>
-
-    <div class="languageToggle">
-      <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
-      |
-      <span (click)="switchLang('de')" [class.active]="language() === 'de'">DE</span>
-    </div>
-  </nav>
-</header>
+  <div class="container">
+    <img src="assets/img/Felix_Logo.png" class="felixLogo">
+    <nav>
+      <a href="#" (click)="scrollTo('aboutMe')">About Me</a>
+      <a href="#" (click)="scrollTo('skills')">Skills</a>
+      <a href="#" (click)="scrollTo('portfolio')">Portfolio</a>
+      <div class="languageToggle">
+        <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
+        |
+        <span (click)="switchLang('de')" [class.active]="language() === 'de'">DE</span>
+      </div>
+    </nav>
+  </div>
+</div>

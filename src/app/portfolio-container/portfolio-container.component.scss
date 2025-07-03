@@ -1,20 +1,43 @@
 .main {
     background-color: #141D2F;
     height: fit-content;
+    padding: 2rem;
 }
 
 .portfolioHeading {
-    width: 50%;
+    position: relative;
+    top: 50%;
     font-size: 2rem;
     font-weight: bold;
     color: white;
     margin: 0;
+    gap: 2rem;
 
     @media (max-width: 430px) {
         width: 90%;
         font-size: 1.2rem;
     }
   }
+
+.secLine {
+    position: absolute;
+    left: calc((100dvw - 1600px) / -2 - 9rem);
+    width: calc((100vw - 1600px) / 2 + 8rem); // fixed position for larger screens
+    top: 50%;
+    height: 2px;
+    z-index: 10;
+    transform: translateY(-50%);
+    display: flex;
+    pointer-events: none;
+}
+
+
+app-section-line {
+  width: 100%;
+  height: 2px;
+  display: block;
+}
+
 
 .subLine {
     margin-left: 4rem;

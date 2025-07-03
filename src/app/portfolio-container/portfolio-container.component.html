@@ -1,12 +1,10 @@
 <section id="portfolio">
   <div class="main">
     <div class="portfolioHeading">
-      <app-section-line
-        [text]="text().portfolio.heading"
-        tag="h1"
-        position="left"
-        color="#9747FF"
-      ></app-section-line>
+      <div class="secLine">
+      <app-section-line position="left" color="#9747FF"></app-section-line>
+      </div>
+            <h1>{{ text().portfolio.heading }}</h1>
     </div>
     <div class="subLine">
       <p [innerHTML]="text().portfolio.subheading"></p>

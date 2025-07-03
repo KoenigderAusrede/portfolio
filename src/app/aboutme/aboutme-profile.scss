@@ -1,14 +1,37 @@
-// contains lower part (main2)
+// contains lower part of aboutMe section (main2)
 
 .main2 {
-    position: relative;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
     background-color: #141D2F;
     color: white;
-    width: 100%;
-    height: 100vh;
+    height: fit-content;
+
+    .main2Left {
+        width: 60%;
+        height: 100%;
+        position: relative;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .main2Right {
+        width: 40%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
     .profilePicture {
         display: block;
@@ -17,20 +40,20 @@
         transform: scaleX(-1);
         height: auto;
         width: 100%;
-        max-width: 25rem;
+        max-width: unset;
         object-fit: contain;
         z-index: 2;
-        position: relative;
     }
 
 
     .aboutPp {
-        width: 40vw;
-        height: 40vh;
         position: relative;
         margin: 0;
         display: flex;
         justify-content: center;
+        width: 100%;
+        height: auto;
+
 
         >img {
             position: absolute;
@@ -39,9 +62,8 @@
     }
 
     .textBlock {
-        font-size: 0.755rem;
+        font-size: 1rem;
         margin-left: 1.5rem;
-        width: 40vw;
         height: 50%;
 
         >h3 {
@@ -49,7 +71,7 @@
         }
 
         >p {
-            font-size: 0.755rem;
+            font-size: 1rem;
             margin: 0;
         }
     }
@@ -70,27 +92,8 @@
         }
     }
 
-    .curve {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 100%;
-        pointer-events: none;
-        z-index: 3;
-    }
-
     .curveMobile {
         display: none;
-    }
-
-    .curveDesktop {
-        display: block;
-        position: relative;
-        width: 100%;
-        z-index: 3;
-        pointer-events: none;
-        bottom: 5rem;
     }
 
     @media (max-width: 920px) {
@@ -179,3 +182,12 @@
         }
     }
 }
+
+    .curveDesktop {
+        position: relative;
+        width: 100vw;
+        pointer-events: none;
+        margin-left: calc((100vw - 100%) / -2); 
+        margin-top: -15rem;
+        z-index: 30;
+    }
