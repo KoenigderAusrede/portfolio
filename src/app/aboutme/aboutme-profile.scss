@@ -1,5 +1,4 @@
 // contains lower part of aboutMe section (main2)
-
 .main2 {
     display: flex;
     flex-direction: row;
@@ -185,9 +184,9 @@
 
     .curveDesktop {
         position: relative;
-        width: 100vw;
+        width: 100dvw;
         pointer-events: none;
-        margin-left: calc((100vw - 100%) / -2); 
+        margin-left: calc((100dvw - 100%) / -2); 
         margin-top: -15rem;
         z-index: 30;
     }

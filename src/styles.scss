@@ -1,4 +1,4 @@
-/* Globale Layout-Vorgaben */
+/* global layout */
 * {
   box-sizing: border-box;
 }
@@ -10,6 +10,7 @@ body, html {
   font-family: 'Poppins', sans-serif;
   scroll-padding-top: 7.5rem !important;
   background-color: #141D2F;
+  overflow-x: clip // global overflow-x fix due to section lines on large screens
 }
 
 header, footer {
