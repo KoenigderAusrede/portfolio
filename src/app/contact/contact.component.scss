@@ -68,20 +68,18 @@ select:-webkit-autofill {
   position: relative;
   display: flex;
   align-items: center;
-  // Optional: justify-content, falls du weitere Inhalte in die Zeile legst
-  margin-bottom: 2rem; // Abstand nach unten falls gewünscht
+  margin-bottom: 2rem;
 }
 
 .secLine2 {
   position: absolute;
   left: calc((100dvw - 1600px) / -2 - 9rem);
   top: 10%;
-  width: calc((100vw - 1600px) / 2 + 20rem); // oder den Wert, der zu deinem Layout passt!
+  width: calc((100vw - 1600px) / 2 + 20rem); // fixed position for larger screens
   height: 2px;
   transform: translateY(-50%);
   z-index: 1;
   pointer-events: none;
-  // Optional: padding-top, falls die Linie weiter unten starten soll
 }
 
   .problemHeading {
