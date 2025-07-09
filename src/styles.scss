@@ -23,4 +23,11 @@ header, footer {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+  @media (max-width: 500px) {
+    padding: 0;
+  }
 }
