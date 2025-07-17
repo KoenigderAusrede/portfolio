@@ -42,6 +42,10 @@ select:-webkit-autofill {
     transform: translateY(-50%);
     z-index: 1;
     pointer-events: none;
+
+    @media (max-width: 768px) {
+      right: calc((100dvw - 1600px) / -2 + 3rem)
+    }
   }
 
   .contactContent {

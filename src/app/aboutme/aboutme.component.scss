@@ -173,6 +173,11 @@
     }
   }
 
+  @media (max-width: 900px) {
+    width: 80%;
+    margin-left: calc((100vw - 80%) / -2);
+  }
+
   @media (max-width: 480px) {
     left: 0;
     bottom: 5rem;

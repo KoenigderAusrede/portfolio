@@ -2,6 +2,13 @@ section {
     margin-top: -15rem;
     z-index: 40;
     position: relative;
+
+    @media (max-width: 768px) {
+        margin-top: -1rem;
+    }
+    @media (max-width: 480px) {
+        margin-top: unset;
+    }
 }
 
 .skillsSection {
@@ -24,14 +31,25 @@ section {
 
     .symbols {
         grid-area: symbols;
-        width: 55%;
+        position: relative;
+            left: 0;
+        width: 100%;
         max-width: 800px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         margin: 0 auto;
         padding: 20px;
+
+        @media (max-width: 768px) {
+            
+            img {
+                height: 40px;
+                width: auto;
+            }
+        }
       }
+
       
       .textHead {
         position: relative;
@@ -45,10 +63,15 @@ section {
       
       .textBody {
         max-height: 60vh;
-        width: fit-content;
-        padding-right: 1rem;
+        width: 100%;
         grid-area: textBody;
         font-size: 1rem;
+
+        @media (max-width: 768px) {
+            p {
+                font-size: 0.7rem;
+            }
+        }
       }
 
       .secLine {
@@ -76,19 +99,18 @@ section {
 
         @media (max-width: 768px) {
             width: 100%;
-            font-size: 0.9rem;
-            padding: 0 1.5rem 0 0;
+            font-size: 0.7rem;
 
             .textHead {
                 h1 {
-                    font-size: 3.5rem !important;
+                    font-size: 2rem !important;
                 }
             }
         }
     }
 
     @media (max-width: 768px) {
-        flex-direction: column;
+             grid-template-columns: 1fr 1fr;
         padding: 2rem 1.5rem;
 
         .symbols {
@@ -139,7 +161,18 @@ section {
         .textBody {
             width: 100%;
             max-width: unset;
-            padding: 0.5rem;
+            padding: unset;
+            margin: unset;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .textHead {
+            font-size: 1.2rem;
+        }
+
+        .textBody {
+            font-size: 0.8rem;
         }
     }
 }
@@ -147,6 +180,10 @@ section {
 .skillBox {
     color: white;
     text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+    }
 
     &.learning {
         position: relative;
@@ -234,8 +271,8 @@ section {
 }
 
 .learningIcon {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background-image: url("../../assets/icons/learningBlue.svg");
     display: inline-block;  
     background-repeat: no-repeat;
@@ -290,6 +327,10 @@ section {
     h2 {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 0.8rem;
+        }
     }
 
     p {
