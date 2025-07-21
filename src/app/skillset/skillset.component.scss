@@ -3,7 +3,7 @@ section {
     z-index: 40;
     position: relative;
 
-    @media (max-width: 768px) {
+    @media (max-width: 820px) {
         margin-top: -1rem;
     }
     @media (max-width: 480px) {
@@ -75,10 +75,20 @@ section {
       }
 
       .secLine {
+        height: 2px;
         position: absolute;
         right: calc((100dvw - 1600px) / -2 - 9rem); // fixed position for larger screens
         width: calc((100dvw - 1600px) / 2 + 100%);
         top: 50%;
+
+        @media (max-width: 820px) {
+            width: 100%;
+            right: calc((100dvw - 1600px) / -2 - 35rem);
+        }
+
+        @media (max-width: 480px) {
+            right: calc((100dvw - 1600px) / -2 - 20rem);
+        }
       }
 
     .textContainer {
@@ -109,8 +119,8 @@ section {
         }
     }
 
-    @media (max-width: 768px) {
-             grid-template-columns: 1fr 1fr;
+    @media (max-width: 820px) {
+        grid-template-columns: 1fr 1fr;
         padding: 2rem 1.5rem;
 
         .symbols {
@@ -125,6 +135,7 @@ section {
 
     @media (max-width: 480px) {
         display: flex;
+        flex-direction: column;
         height: fit-content;
 
         .symbols {
@@ -180,6 +191,16 @@ section {
 .skillBox {
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 60px;
+        width: 60px;
+        margin-bottom: 0.5rem;
+    }
 
     @media (max-width: 768px) {
         font-size: 0.8rem;
@@ -271,8 +292,8 @@ section {
 }
 
 .learningIcon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-image: url("../../assets/icons/learningBlue.svg");
     display: inline-block;  
     background-repeat: no-repeat;
@@ -287,6 +308,8 @@ section {
 
     @media (max-width: 768px) {
         background-image: url("../../assets/icons/learningPurple.svg");
+        width: 40px;
+        height: 40px;
     }
 }
 

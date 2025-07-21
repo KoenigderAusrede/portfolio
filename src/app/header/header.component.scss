@@ -10,7 +10,7 @@
   align-items: center;
   z-index: 100;
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     height: 5rem;
   }
 }
@@ -36,7 +36,9 @@
 .languageToggle {
       color: white;
       font-size: 1.2rem;
-      align-self: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-left: 2rem;
 
       span {
@@ -112,16 +114,9 @@
     nav {
       display: flex;
       gap: 0.5rem;
-      margin-right: 3rem;
+      align-items: center;
     }
-
-    img {
-      margin-left: 3rem;
-
-      @media (max-width: 820px) {
-        margin-left: -37px;
-      }
-    }
+    
 
     .felixLogo {
       height: 1.7rem;

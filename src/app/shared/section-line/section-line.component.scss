@@ -1,6 +1,7 @@
 .sectionLineWrapper {
-  position: relative;
-  width: 100%;
+  opacity: 1;
+  transform: scaleX(1);
+  transition: opacity 0.3s, transform 0.3s;
 
   .line {
     position: absolute;
@@ -10,7 +11,6 @@
     width: 100%;
     transform: scaleX(0);
     opacity: 0;
-    animation: lineGrow 1.2s ease-out forwards;
   }
 
   &.left .line {
@@ -24,8 +24,19 @@
     right: 0;
     transform-origin: right;
   }
+
+  &.inView .line {
+    animation: lineGrow 1.2s ease-out forwards;
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
+.sectionLineWrapper.inView .line {
+  animation: lineGrow 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+  opacity: 1;
+  transform: scaleX(1);
+}
 
 @keyframes lineGrow {
   0% {
