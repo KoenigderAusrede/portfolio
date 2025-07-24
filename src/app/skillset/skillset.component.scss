@@ -86,8 +86,14 @@ section {
             right: calc((100dvw - 1600px) / -2 - 35rem);
         }
 
+        @media (max-width: 768px) {
+            right: calc((100dvw - 1600px) / -2 - 42rem);
+            width: 100%;
+
+        }
+
         @media (max-width: 480px) {
-            right: calc((100dvw - 1600px) / -2 - 20rem);
+            right: calc((100dvw - 1600px) / -2 - 50rem);
         }
       }
 

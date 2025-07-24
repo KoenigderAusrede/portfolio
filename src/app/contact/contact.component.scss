@@ -43,6 +43,11 @@ select:-webkit-autofill {
     z-index: 1;
     pointer-events: none;
 
+    @media (max-width: 1599px) {
+      width: 50%;
+      right: -8rem;
+    }
+
     @media (max-width: 820px) {
       right: calc((100dvw - 1600px) / -2 + 5rem);
     }
@@ -82,12 +87,17 @@ select:-webkit-autofill {
 .secLine2 {
   position: absolute;
   left: calc((100dvw - 1600px) / -2 - 9rem);
-  top: 10%;
+  top: 9.5%;
   width: calc((100vw - 1600px) / 2 + 20rem); // fixed position for larger screens
   height: 2px;
   transform: translateY(-50%);
   z-index: 1;
   pointer-events: none;
+
+  @media (max-width: 1599px) {
+    left: -20rem;
+    width: 30%;
+  }
 }
 
   .problemHeading {
