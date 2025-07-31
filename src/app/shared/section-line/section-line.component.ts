@@ -25,12 +25,12 @@ export class SectionLineComponent implements AfterViewInit {
       this.wrapperRef.nativeElement &&
       'IntersectionObserver' in window
     ) {
-      console.log('Observer attached to:', this.wrapperRef.nativeElement);
+      // console.log('Observer attached to:', this.wrapperRef.nativeElement);
       const observer = new window.IntersectionObserver(
         ([entry]) => {
-          console.log('Intersection event', entry);
+         //  console.log('Intersection event', entry);
           if (entry.isIntersecting) {
-            console.log('SectionLine entered viewport!');
+            // console.log('SectionLine entered viewport!');
             this.renderer.addClass(this.wrapperRef.nativeElement, 'inView');
             observer.disconnect();
           }
@@ -39,7 +39,7 @@ export class SectionLineComponent implements AfterViewInit {
       );
       observer.observe(this.wrapperRef.nativeElement);
     } else {
-      console.log('Observer NOT attached:', this.wrapperRef);
+      // console.log('Observer NOT attached:', this.wrapperRef);
     }
   }
 }

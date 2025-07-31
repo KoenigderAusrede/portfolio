@@ -22,7 +22,7 @@ export class TestimonialsComponent {
   get testimonials() {
     return this.text().testimonials.quotes.map((quote, index) => ({
       ...quote,
-      image: `assets/testimonials/avatar${index + 1}.png`
+      image: `assets/testimonials/avatar${index + 1}s.png`
     }));
   }
 
