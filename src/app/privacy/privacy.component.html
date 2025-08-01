@@ -1,0 +1,7 @@
+<main class="privacyContainer" *ngIf="privacySections?.length">
+  <h1>{{ privacySections[0].heading }}</h1>
+  <section *ngFor="let sec of privacySections; let i = index" [hidden]="i === 0">
+    <h2>{{ sec.heading }}</h2>
+    <p [innerHTML]="sec.text"></p>
+  </section>
+</main>

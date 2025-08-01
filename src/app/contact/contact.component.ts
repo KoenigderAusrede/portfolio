@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
 import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { LanguageService } from '../services/language.service';
 import { translations } from '../../../translations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -45,7 +46,7 @@ export class ContactComponent {
   }
 
 
-  constructor(private http: HttpClient, public lang: LanguageService) { }
+  constructor(private http: HttpClient, public lang: LanguageService, private router: Router) { }
 
   validateName(): void {
     if (this.userName.trim() === '') {
@@ -144,4 +145,17 @@ triggerMessageAnimation(): void {
     behavior: 'smooth',
   });
 }
+onPrivacyLabelClick(event: MouseEvent) {
+  console.log('Privacy label clicked');
+  let target = event.target as HTMLElement;
+  while (target && target !== event.currentTarget) {
+    if (target.tagName.toLowerCase() === 'a') {
+      event.preventDefault();
+      this.router.navigate(['/privacy']);
+      break;
+    }
+    target = target.parentElement as HTMLElement;
+  }
+}
+
 }

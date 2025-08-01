@@ -67,7 +67,7 @@ section {
         grid-area: textBody;
         font-size: 1rem;
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             p {
                 font-size: 0.7rem;
             }

@@ -59,8 +59,12 @@
         <div class="privacyCheck">
           <input type="checkbox" id="privacy" [(ngModel)]="privacyChecked"
             (change)="handlePrivacyCheckboxChange($event)" [ngModelOptions]="{ standalone: true }" />
-          <label [class.checked]="privacyChecked" for="privacy" class="customCheckbox"
-            [innerHTML]="text().contact.privacy"></label>
+          <label 
+          [class.checked]="privacyChecked" 
+          for="privacy" class="customCheckbox"
+          [innerHTML]="text().contact.privacy"
+          (click)="onPrivacyLabelClick($event)">
+        </label>
         </div>
 
         <!-- Submit Button -->

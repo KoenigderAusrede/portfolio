@@ -70,7 +70,7 @@ export const translations = {
             emailErrorInvalid: 'Invalid email format',
             messagePlaceholder: 'Your message',
             messageError: 'Your message is empty',
-            privacy: `I've read the <a href='#' class='privacy-link'>privacy policy</a> and agree to the processing of my data as outlined.`
+            privacy: `I've read the <a href='/privacy' class='privacy-link'>privacy policy</a> and agree to the processing of my data as outlined.`
         },
         footer: {
             legal: 'Legal Notice',
@@ -80,7 +80,95 @@ export const translations = {
             pollo: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
             join: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
             pokedex: 'Find your favorite Pokémon and learn more about them. Search for Pokémon by name and filter them by type. The Pokédex is based on the PokeAPI.'
-        }
+        },
+        privacy: [
+            {
+                heading: 'Privacy Policy',
+                text: ''
+            },
+            {
+                heading: '1. Privacy at a Glance',
+                text: `These notes provide a simple overview of what happens to your personal data when you use this app. Personal data is all data with which you can be personally identified.`
+            },
+            {
+                heading: '2. Responsible Entity',
+                text: `Responsible for data processing in this app:<br>
+<strong>Felix Blaser</strong><br>
+Lamontstraße 10<br>
+81679 Munich<br>
+Germany<br>
+Phone: +49 (0) 170 234 92 80<br>
+Email: felix&#64;dieblasers.de`
+            },
+            {
+                heading: '3. Collection and Storage of Personal Data',
+                text: `Your data is collected, on the one hand, when you provide it to us (e.g., by entering it in the contact form). Other data is automatically collected by our IT systems when you visit the app. These are primarily technical data (e.g., internet browser, operating system, time of page visit). The collection of this data occurs automatically as soon as you use this app.`
+            },
+            {
+                heading: '4. Purposes of Data Processing',
+                text: `Part of the data is collected to ensure the error-free provision of the app. Other data may be used to analyze your user behavior, provided you have consented.`
+            },
+            {
+                heading: '5. User Rights',
+                text: `You have the right at any time to receive free information about the origin, recipient, and purpose of your stored personal data. You also have the right to request the correction or deletion of this data. If you have given consent to data processing, you can revoke this consent at any time for the future. Furthermore, you have the right to lodge a complaint with the responsible supervisory authority.`
+            },
+            {
+                heading: '6. Data Security',
+                text: `We use technical and organizational security measures to protect your data against manipulation, loss, or unauthorized access. Our security measures are continuously improved in line with technological developments.`
+            },
+            {
+                heading: '7. Plugins and Tools',
+                text: `If external tools, plugins, or third-party services (such as Google Fonts, maps, YouTube, etc.) are integrated into this app, we explicitly point this out. Corresponding data transmissions only occur with your consent or based on legitimate interests.`
+            },
+            {
+                heading: '8. Contact Form',
+                text: `If you send us inquiries via the contact form, your information from the inquiry form, including the contact details you provide there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent.`
+            },
+            {
+                heading: '9. Right to Complain to the Supervisory Authority',
+                text: `In the event of data protection violations, you have the right to complain to the responsible supervisory authority. The responsible supervisory authority for data protection matters is the data protection officer of the federal state in which our company is located.`
+            },
+            {
+                heading: '10. Further Information',
+                text: `If you have any questions about data protection, you can contact us at any time. The contact details can be found in the legal notice.`
+            }
+        ],
+        legal: [
+            {
+                heading: 'Legal Notice',
+                text: ''
+            },
+            {
+                heading: 'Information according to § 5 TMG',
+                text: `
+<strong>Felix Blaser</strong><br>
+Lamontstraße 10<br>
+81679 Munich<br>
+Germany
+`
+            },
+            {
+                heading: 'Represented by',
+                text: `Felix Blaser`
+            },
+            {
+                heading: 'Contact',
+                text: `
+Phone: +49 (0) 170 234 92 80<br>
+Email: felix&#64;dieblasers.de
+`
+            },
+            {
+                heading: 'Regulatory Authority',
+                text: `Chamber of Industry and Commerce Munich`
+            },
+            {
+                heading: 'Liability for Content',
+                text: `
+As a service provider, we are responsible for our own content on these pages in accordance with § 7 Para.1 TMG under the general laws.`
+            }
+        ],
+
     },
 
     de: {
@@ -155,7 +243,7 @@ export const translations = {
             emailErrorInvalid: 'Ungültiges E-Mail-Format',
             messagePlaceholder: 'Deine Nachricht',
             messageError: 'Deine Nachricht ist leer',
-            privacy: `Ich habe die <a href='#' class='privacy-link'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.`
+            privacy: `Ich habe die <a href='/privacy' class='privacy-link'>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.`
         },
         footer: {
             legal: 'Impressum',
@@ -165,6 +253,94 @@ export const translations = {
             pollo: 'Spring-, Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
             join: 'Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
             pokedex: 'Finde dein Lieblings-Pokémon und erfahre mehr darüber. Suche nach Pokémon-Namen und filtere sie nach Typ. Der Pokédex basiert auf der PokeAPI.'
-        }
+        },
+        privacy: [
+            {
+                heading: 'Datenschutzerklärung',
+                text: ''
+            },
+            {
+                heading: '1. Datenschutz auf einen Blick',
+                text: `Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese App nutzen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.`
+            },
+            {
+                heading: '2. Verantwortliche Stelle',
+                text: `Verantwortlich für die Datenverarbeitung in dieser App ist:<br>
+<strong>Felix Blaser</strong><br>
+Lamontstraße 10<br>
+81679 München<br>
+Deutschland<br>
+Telefon: +49 (0) 170 234 92 80<br>
+E-Mail: felix&#64;dieblasers.de`
+            },
+            {
+                heading: '3. Erhebung und Speicherung personenbezogener Daten',
+                text: `Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z.&nbsp;B. durch Eingaben im Kontaktformular). Andere Daten werden automatisch beim Besuch der App durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem, Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese App nutzen.`
+            },
+            {
+                heading: '4. Zwecke der Datenverarbeitung',
+                text: `Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der App zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden, sofern Sie dem zugestimmt haben.`
+            },
+            {
+                heading: '5. Rechte der Nutzer',
+                text: `Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese jederzeit für die Zukunft widerrufen. Außerdem steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.`
+            },
+            {
+                heading: '6. Datensicherheit',
+                text: `Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten gegen Manipulation, Verlust oder unbefugten Zugriff zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.`
+            },
+            {
+                heading: '7. Plugins und Tools',
+                text: `Sofern in dieser App externe Tools, Plugins oder Dienste Dritter (wie Google Fonts, Karten, YouTube, etc.) eingebunden werden, weisen wir explizit darauf hin. Entsprechende Datenübermittlungen erfolgen nur mit Ihrer Zustimmung oder aufgrund berechtigter Interessen.`
+            },
+            {
+                heading: '8. Kontaktformular',
+                text: `Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.`
+            },
+            {
+                heading: '9. Beschwerderecht bei der Aufsichtsbehörde',
+                text: `Im Falle datenschutzrechtlicher Verstöße steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde in datenschutzrechtlichen Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem unser Unternehmen seinen Sitz hat.`
+            },
+            {
+                heading: '10. Weitere Informationen',
+                text: `Wenn Sie Fragen zum Datenschutz haben, können Sie sich jederzeit an uns wenden. Die Kontaktdaten finden Sie im Impressum.`
+            }
+        ],
+        legal: [
+            {
+                heading: 'Impressum',
+                text: ''
+            },
+            {
+                heading: 'Angaben gemäß § 5 TMG',
+                text: `
+<strong>Felix Blaser</strong><br>
+Lamontstraße 10<br>
+81679 München<br>
+Deutschland
+`
+            },
+            {
+                heading: 'Vertreten durch',
+                text: `Felix Blaser`
+            },
+            {
+                heading: 'Kontakt',
+                text: `
+Telefon: +49 (0) 170 234 92 80<br>
+E-Mail: felix&#64;dieblasers.de
+`
+            },
+            {
+                heading: 'Aufsichtsbehörde',
+                text: `Industrie- und Handelskammer München`
+            },
+            {
+                heading: 'Haftung für Inhalte',
+                text: `
+Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.`
+            }
+        ],
+
     }
 };
