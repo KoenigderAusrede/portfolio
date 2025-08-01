@@ -1,9 +1,16 @@
 <div class="footerWrapper">
   <div class="footer">
   <div style="display: flex; flex-direction: column;">
-    <img src="assets/img/Felix_Logo.png" class="felixLogo">
+    <a href="/" aria-label="Zurück zur Startseite" class="logoLink">
+       <img src="assets/img/Felix_Logo.png" class="felixLogo">
+    </a>
   </div>
-  <a routerLink="/legal" class="impressum">{{ text().footer.legal }}</a>
+  <a 
+  routerLink="/legal" 
+  class="impressum" 
+  (click)="onLegalLinkClick($event)">
+  {{ text().footer.legal }}
+</a>
 
   <p>{{ text().footer.copyright }}</p>
   <div class="gap">

@@ -145,13 +145,15 @@ triggerMessageAnimation(): void {
     behavior: 'smooth',
   });
 }
+
 onPrivacyLabelClick(event: MouseEvent) {
-  console.log('Privacy label clicked');
   let target = event.target as HTMLElement;
   while (target && target !== event.currentTarget) {
     if (target.tagName.toLowerCase() === 'a') {
       event.preventDefault();
-      this.router.navigate(['/privacy']);
+       this.router.navigate(['/privacy']).then(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
       break;
     }
     target = target.parentElement as HTMLElement;

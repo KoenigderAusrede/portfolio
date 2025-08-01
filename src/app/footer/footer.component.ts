@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { translations } from '../../../translations';
 import { LanguageService } from '../services/language.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -12,9 +12,17 @@ import { RouterLink } from '@angular/router';
 })
 export class FooterComponent {
   
-  constructor(public lang: LanguageService) {}
+  constructor(public lang: LanguageService, private router: Router) {}
 
   text() {
     return translations[this.lang.language()];
   }
+  
+  onLegalLinkClick(event: MouseEvent) {
+    event.preventDefault();
+    this.router.navigate(['/legal']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
 }
