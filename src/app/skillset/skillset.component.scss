@@ -1,11 +1,40 @@
 section {
-    margin-top: -15rem;
+    margin-top: -100rem;
     z-index: 40;
     position: relative;
 
-    @media (max-width: 820px) {
-        margin-top: -1rem;
+    @media (max-width: 3500px) {
+        margin-top: -90rem;
     }
+
+    @media (max-width: 3000px) {
+        margin-top: -80rem;
+    }
+
+    @media (max-width: 2600px) {
+        margin-top: -70rem;
+    }
+
+    @media (max-width: 2250px) {
+        margin-top: -60rem;
+    }
+
+    @media (max-width: 2000px) {
+        margin-top: -50rem;
+    }
+
+    @media (max-width: 1800px) {
+        margin-top: -40rem;
+    }
+
+    @media (max-width: 1200px) {
+        margin-top: -30rem;
+    }
+
+    @media (max-width: 920px) {
+        margin-top: 10rem;
+    }
+
     @media (max-width: 480px) {
         margin-top: unset;
     }
@@ -20,7 +49,7 @@ section {
         "symbols textHead"
         "symbols textBody";
     justify-content: space-between;
-    background-color: #141D2F;
+
     background-image: url('../../assets/blurrs/green_shadow_3.png');
     background-repeat: no-repeat;
     background-position: center top;
@@ -69,7 +98,7 @@ section {
 
         @media (max-width: 900px) {
             p {
-                font-size: 0.7rem;
+                font-size: 1rem;
             }
         }
       }
@@ -115,7 +144,7 @@ section {
 
         @media (max-width: 768px) {
             width: 100%;
-            font-size: 0.7rem;
+            font-size: 1rem;
 
             .textHead {
                 h1 {
@@ -139,7 +168,7 @@ section {
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 625px) {
         display: flex;
         flex-direction: column;
         height: fit-content;
@@ -156,7 +185,7 @@ section {
             }
 
             p {
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
 
             .skillBox:nth-last-child(1) {
@@ -167,7 +196,7 @@ section {
         .textContainer {
             width: 100%;
             padding: 0;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .textHead {
@@ -189,7 +218,7 @@ section {
         }
 
         .textBody {
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
     }
 }
@@ -224,7 +253,7 @@ section {
             margin-bottom: 1.25rem;
             background-color: white;
             color: #0d0d0d;
-            font-size: 0.9rem;
+            font-size: 1rem;
             padding: 1rem;
             border-radius: 1rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
@@ -238,7 +267,7 @@ section {
             p {
                 margin: 0 0 0.8rem 0;
                 font-weight: 500;
-                font-size: 0.95rem;
+                font-size: 1rem;
                 text-align: center;
             }
 
@@ -260,7 +289,7 @@ section {
 
                     span {
                         font-weight: bold;
-                        font-size: 0.85rem;
+                        font-size: 1rem;
                     }
                 }
             }
@@ -358,12 +387,12 @@ section {
         margin-bottom: 0.5rem;
 
         @media (max-width: 768px) {
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
     }
 
     p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 }
 

@@ -9,7 +9,7 @@
   position: relative;
 
   @media (max-width: 900px) {
-    margin-top: 4.5rem;
+    margin-top: 7.5rem;
     padding: 0 2rem 3rem 2rem;
   }
 
@@ -17,6 +17,8 @@
     width: 100vw;
     padding: 0;
   }
+
+
 }
 
 .heroBox {
@@ -92,7 +94,7 @@
       transition: none;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 500px) {
       flex-direction: column;
       align-items: center;
       gap: 0.3rem;
@@ -127,7 +129,7 @@
     font-family: 'poppins';
     cursor: pointer;
     font-size: 1.5rem;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     border-radius: 0.75rem;
     color: #fff;
     border: none;
@@ -170,6 +172,15 @@
     &:hover {
       transform: scale(1.1);
     }
+  }
+
+  @media (min-width: 3000px) {
+    width: 100%;
+  }
+
+  @media (max-width: 2400px) {
+    width: 70%;
+    margin-left: calc((100vw - 90%) / -2);
   }
 
   @media (max-width: 900px) {
