@@ -9,7 +9,7 @@
   
     .quoteBox {
       flex: 1;
-      height: 250px;
+      height: fit-content;
       border: 3px solid #8f00ff;
       border-radius: 2rem;
       padding: 2rem;
@@ -27,7 +27,7 @@
       }
   
       .quoteText {
-        font-size: clamp(0.8rem, 1.3vw, 1.1rem);
+        font-size: clamp(1rem, 1.3vw, 1.1rem);
         color: white;
         flex-grow: 1;
         display: flex;
@@ -131,7 +131,6 @@
       .quoteBox {
         order: 2;
         min-height: 12rem;
-        max-height: 12rem;
         box-sizing: border-box;
         padding: 1.5rem;
       }
@@ -170,7 +169,9 @@
   
   @media (max-width: 500px) {
     .testimonialWrapper {
+      position: relative;
       padding: 2rem;
+      top: 10rem;
     }
   
     .imageBox img {
@@ -179,15 +180,11 @@
     }
   
     .quoteText {
-      font-size: 0.6rem;
+      font-size: 1rem;
     }
 
     .author {
-      font-size: 0.8rem;
-    }
-  
-    .navigation {
-      gap: 1rem;
+      font-size: 1rem;
     }
 
   }

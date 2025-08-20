@@ -4,7 +4,6 @@
     flex-direction: row;
     justify-content: center;
     color: white;
-    height: fit-content;
 
     .main2Left {
         width: 60%;
@@ -97,7 +96,7 @@
         display: none;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 900px) {
         flex-direction: column-reverse;
         padding: 0;
         height: fit-content;
@@ -108,6 +107,7 @@
             padding: 1rem;
             align-items: center;
             height: fit-content;
+            top: -5.5rem;
 
             h1 {
                 font-size: 1.5rem;
@@ -124,18 +124,18 @@
 
         .aboutPp {
             width: 100%;
-            height: 70vh;
+            height: 45vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
 
-            .profileBlur,
-            .profilePicture {
+            .profilePicture,
+            .profileBlur {
                 position: relative;
                 display: block;
                 margin: 0 auto;
-                height: 50vh;
+                height: clamp(22rem, 50vh, 28rem);
                 max-height: 100%;
                 width: auto;
             }
@@ -147,7 +147,37 @@
             }
 
             .profileBlur {
+                filter: blur(40px);
                 z-index: 1;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .aboutPp {
+
+                .profilePicture,
+                .profileBlur {
+                    height: clamp(18rem, 40vh, 24rem);
+                }
+
+                .profileBlur {
+                    filter: blur(30px);
+                }
+            }
+        }
+
+        @media (max-width: 600px) {
+            .aboutPp {
+
+                .profilePicture,
+                .profileBlur {
+                    height: clamp(16rem, 34vh, 22rem);
+                }
+
+                .profileBlur {
+                    filter: blur(24px);
+                }
             }
         }
 
@@ -161,7 +191,7 @@
             flex-direction: column;
             justify-content: center;
             z-index: 4;
-            top: -3rem;
+            top: 5rem;
 
             h1 {
                 font-size: 1.6rem;
@@ -193,11 +223,11 @@
             bottom: -13.5rem;
             position: absolute;
             z-index: 3;
-        
-        @media (max-width: 900px) {
-            bottom: -21rem;
+
+            @media (max-width: 900px) {
+                bottom: -21rem;
+            }
         }
-    }
     }
 
     @media (max-width: 480px) {
@@ -214,6 +244,7 @@
             height: fit-content;
             padding: 1rem;
             align-items: center;
+            top: 5.5rem;
 
             h1 {
                 font-size: 1.5rem;
@@ -235,23 +266,23 @@
     }
 }
 
-    .curveDesktop {
-        position: relative;
-        width: 100dvw;
-        pointer-events: none;
-        margin-left: calc((100dvw - 100%) / -2); 
-        margin-top: -25rem;
-        z-index: 30;
+.curveDesktop {
+    position: relative;
+    width: 100dvw;
+    pointer-events: none;
+    margin-left: calc((100dvw - 100%) / -2);
+    margin-top: -25rem;
+    z-index: 30;
 
-        @media (max-width: 3000px) {
-            margin-top: -15rem;
-        }
-
-        @media (max-width: 1700px) {
-            margin-top: -10rem;
-        }
-
-        @media (max-width: 920px) {
-            display: none;
-        }    
+    @media (max-width: 3000px) {
+        margin-top: -15rem;
     }
+
+    @media (max-width: 1700px) {
+        margin-top: -10rem;
+    }
+
+    @media (max-width: 900px) {
+        display: none;
+    }
+}

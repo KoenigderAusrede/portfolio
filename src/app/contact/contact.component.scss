@@ -12,6 +12,11 @@ select:-webkit-autofill {
 .contactSection {
   color: white;
 
+  @media (max-width: 500px) {
+    position: relative;
+   top: 10rem;
+  }
+
   .contactHeader {
     position: relative;
     width: 100%;
@@ -229,7 +234,7 @@ select:-webkit-autofill {
       }
 
       .privacy-link {
-        color: #8f00ff;
+        color: #b95eff !important;
         text-decoration: underline;
       }
     }

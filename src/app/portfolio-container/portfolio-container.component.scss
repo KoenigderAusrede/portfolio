@@ -6,6 +6,11 @@ section {
 .main {
     height: fit-content;
     padding: 2rem;
+
+    @media (max-width: 420px) {
+        position: relative;
+        top: 13.5rem;
+    }
 }
 
 nav {

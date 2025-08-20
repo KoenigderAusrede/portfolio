@@ -31,3 +31,8 @@ header, footer {
     padding: 0;
   }
 }
+
+.contact-root :where(.privacy-link) {
+  color: #b95eff;
+  text-decoration: underline;
+}

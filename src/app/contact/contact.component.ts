@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact.component.scss'],
   standalone: true,
   imports: [FormsModule, CommonModule, HttpClientModule, SectionLineComponent],
+  host: { class: 'contact-root' },
 })
 export class ContactComponent {
   privacyChecked: boolean = false;
