@@ -4,12 +4,14 @@ section {
 }
 
 .main {
+    position: relative;
+    top: 7rem;
     height: fit-content;
     padding: 2rem;
 
     @media (max-width: 420px) {
         position: relative;
-        top: 13.5rem;
+        margin-top: 22rem;
     }
 }
 
@@ -49,8 +51,7 @@ nav {
     }
 
     @media (max-width: 480px) {
-        left: -21rem;
-        width: 100%;
+        display: none;
     }
 }
 

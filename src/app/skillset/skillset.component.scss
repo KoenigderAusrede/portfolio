@@ -172,6 +172,7 @@ section {
         display: flex;
         flex-direction: column;
         height: fit-content;
+        top: 10rem;
 
         .symbols {
             grid-template-columns: repeat(3, 1fr);

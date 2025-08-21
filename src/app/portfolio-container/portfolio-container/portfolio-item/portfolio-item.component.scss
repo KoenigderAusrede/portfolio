@@ -13,7 +13,7 @@
 
     .portfolioInfo,
     .portfolioButtons {
-      font-size: 0.8rem;
+      font-size: 1rem;
       opacity: 1;
       transform: translateY(0);
     }
@@ -103,7 +103,7 @@
   .tag {
     background-color: rgba(29, 230, 181, 0.1);
     color: #1de6b5;
-    font-size: 0.85rem;
+    font-size: 1rem;
     padding: 5px 10px;
     border-radius: 15px;
     border: 1px solid #1de6b5;
@@ -112,7 +112,7 @@
   }
 
   .projectDescription {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #333;
     padding: 1rem;
   }
@@ -129,7 +129,7 @@
 
   .portfolioButton {
     padding: 6px 12px;
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
     .projectDescription {
@@ -143,12 +143,11 @@
   }
 
   .projectTags {
-    gap: 4px;
-    margin-top: 0.5rem;
+    display: none !important;
   }
 
   .tag {
-    font-size: 0.75rem;
+    font-size: 1rem;
     padding: 4px 8px;
   }
 }
@@ -156,30 +155,31 @@
 @media (max-width: 500px) {
   .portfolioItem .portfolioButtons {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 0.5rem;
     top: 0.5rem;
-    left: 20%;
     transform: translateY(20rem)
   }
 
   .portfolioButton {
-    padding: 4px 10px;
-    font-size: 0.75rem;
+    padding: unset;
+    font-size: 1rem;
     border-radius: 20px;
   }
 
   .portfolioInfo {
+    display: none;
+    height: 15%;
     padding: 0.75rem 0.5rem;
     
     h3 {
-      font-size: 0.8rem;
+      font-size: 1rem;
+      padding: unset;
     }
 
     p {
-      font-size: 0.55rem !important;
+      display: none;
     }
   }
 
