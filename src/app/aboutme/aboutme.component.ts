@@ -19,6 +19,7 @@ export class AboutmeComponent {
   constructor(private langService: LanguageService) {}
   
   scrollToContact(): void {
+    event?.preventDefault();
     const contact = document.getElementById('contact');
     if (contact) {
       contact.scrollIntoView({ behavior: 'smooth' });

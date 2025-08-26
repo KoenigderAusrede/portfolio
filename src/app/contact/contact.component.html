@@ -1,18 +1,18 @@
 <section class="contactSection" id="contact">
-<div class="contactHeader">
-  <div class="contactHeadingWrapper">
-    <h1 class="contactHeading">{{ text().contact.heading }}</h1>
-    <div class="secLine">
-      <app-section-line position="right" color="#70E61C"></app-section-line>
+  <div class="contactHeader">
+    <div class="contactHeadingWrapper">
+      <h1 class="contactHeading">{{ text().contact.heading }}</h1>
+      <div class="secLine">
+        <app-section-line position="right" color="#70E61C"></app-section-line>
+      </div>
     </div>
   </div>
-</div>
 
 
-<div class="lineRow">
-  <div class="secLine2">
-    <app-section-line position="left" color="#1bdae5"></app-section-line>
-  </div>
+  <div class="lineRow">
+    <div class="secLine2">
+      <app-section-line position="left" color="#1bdae5"></app-section-line>
+    </div>
 
     <div class="contactContent">
       <div class="contactTextBlock">
@@ -59,12 +59,9 @@
         <div class="privacyCheck">
           <input type="checkbox" id="privacy" [(ngModel)]="privacyChecked"
             (change)="handlePrivacyCheckboxChange($event)" [ngModelOptions]="{ standalone: true }" />
-          <label 
-          [class.checked]="privacyChecked" 
-          for="privacy" class="customCheckbox"
-          [innerHTML]="text().contact.privacy"
-          (click)="onPrivacyLabelClick($event)">
-        </label>
+          <label [class.checked]="privacyChecked" for="privacy" class="customCheckbox"
+            [innerHTML]="text().contact.privacy" (click)="onPrivacyLabelClick($event)">
+          </label>
         </div>
 
         <!-- Submit Button -->
@@ -80,11 +77,11 @@
 
     </div>
   </div>
-       <!-- Back-to-top Button -->
-        <div class="backToTopWrapper">
-      <div class="backToTop" (click)="scrollToTop()">
-        <img src="assets/icons/arrowUP.png" alt="Back to top" />
-      </div>
+  <!-- Back-to-top Button -->
+  <div class="backToTopWrapper">
+    <div class="backToTop" (click)="scrollToTop()">
+      <img src="assets/icons/arrowUP.png" alt="Back to top" />
     </div>
+  </div>
 
 </section>

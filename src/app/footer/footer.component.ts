@@ -25,4 +25,12 @@ export class FooterComponent {
     });
   }
 
+    scrollToContact(): void {
+      event?.preventDefault();
+    const contact = document.getElementById('contact');
+    if (contact) {
+      contact.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }

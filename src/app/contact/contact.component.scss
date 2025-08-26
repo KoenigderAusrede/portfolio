@@ -13,8 +13,8 @@ select:-webkit-autofill {
   color: white;
 
   @media (max-width: 500px) {
-    position: relative;
-   top: 10rem;
+    position: static;
+   top: auto;
   }
 
   .contactHeader {
