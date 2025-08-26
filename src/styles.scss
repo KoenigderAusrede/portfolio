@@ -1,7 +1,26 @@
-/* global layout */
-* {
-  box-sizing: border-box;
+:root{
+  --header-h: 7.5rem;          /* fixed header-hight */
+  --section-gap: 4rem;       /* setion gaps */
+  --section-py: 4rem;        /* inner gap to sectios */
 }
+
+@media (max-width: 768px){
+  :root{
+    --header-h: 5rem;
+    --section-gap: 3rem;
+    --section-py: 3rem;
+  }
+}
+
+/* fixed anchors global for scrolling */
+html{ scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+
+/* safety-net margin colapse */
+section{ display: flow-root; }
+
+/* unified box-model */
+*,*::before,*::after{ box-sizing: border-box; }
+
 
 body, html {
   margin: 0;
@@ -10,7 +29,7 @@ body, html {
   font-family: 'Poppins', sans-serif;
   scroll-padding-top: 7.5rem !important;
   background-color: #141D2F;
-  overflow-x: clip // global overflow-x fix due to section lines on large screens 
+  overflow-x: clip // global overflow-x fix due to section lines on ultrawide screens 
 }
 
 header, footer {
@@ -18,19 +37,14 @@ header, footer {
   background-color: #141D2F;
 }
 
-.container {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 2rem;
-
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
-  @media (max-width: 500px) {
-    padding: 0;
-  }
+.container{
+  max-width: 100rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: var(--section-gap);
 }
+
+section{ margin: 0; padding-block: var(--section-py); }
 
 .contact-root :where(.privacy-link) {
   color: #b95eff;

@@ -13,8 +13,7 @@ select:-webkit-autofill {
   color: white;
 
   @media (max-width: 500px) {
-    position: static;
-   top: auto;
+    padding-block-start: calc(var(--section-py) + 6rem);
   }
 
   .contactHeader {
@@ -319,12 +318,15 @@ select:-webkit-autofill {
   }
 }
 
-.backToTopWrapper {
+.backToTopWrapper{
+  position: sticky;
+  bottom: 1rem;
   display: flex;
   justify-content: flex-end;
-  margin-top: 4rem;
   padding-right: 2rem;
+  z-index: 1; /* unter Header, über Content */
 }
+
 
 .backToTop {
   width: 2rem;
