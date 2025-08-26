@@ -3,17 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { LanguageService } from '../services/language.service';
 import { translations } from '../../../translations';
 import { Router } from '@angular/router';
+import { InViewDirective } from '../shared/in-view.directive';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule, SectionLineComponent],
+  imports: [FormsModule, CommonModule, HttpClientModule, InViewDirective],
   host: { class: 'contact-root' },
 })
 export class ContactComponent {

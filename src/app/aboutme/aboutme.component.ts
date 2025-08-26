@@ -3,11 +3,12 @@ import { Component, computed } from '@angular/core';
 import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { translations } from '../../../translations';
 import { LanguageService } from '../services/language.service';
+import { InViewDirective } from '../shared/in-view.directive';
 
 @Component({
   selector: 'app-aboutme',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, SectionLineComponent],
+  imports: [CommonModule, NgOptimizedImage, InViewDirective],
   templateUrl: './aboutme.component.html',
   styleUrls: ['./aboutme.component.scss', './aboutme-profile.scss']
 })

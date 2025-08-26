@@ -1,14 +1,12 @@
 <section id="skills">
   <div class="skillsSection">
     <div class="textContainer">
-      <div class="textHead">
+      <div class="textHead secLine secLineRight">
         <h1>{{ text().skills.heading }}</h1>
-        <div class="secLine">
-          <app-section-line position="right" color="#00CFFF"></app-section-line>
-        </div>
+        <div class="secLineLine bleedRight" style="--line-color:#00CFFF" appInView></div>
       </div>
     </div>
-  
+
     <div class="symbols">
       <div class="skillBox">
         <img class="hoverEffect" src="assets/icons/JavaScript.png" />
@@ -68,13 +66,14 @@
         <p>{{ text().skills.learning }}</p>
       </div>
     </div>
-  
+
     <div class="textContainer">
       <div class="textBody">
         <p [innerHTML]="text().skills.description"></p>
         <div class="skillExtension">
           <h2>
-            {{ text().skills.extraHeadingStart }}<span style="color: #9846ff">{{ text().skills.extraHeadingHighlight }}</span>?
+            {{ text().skills.extraHeadingStart }}<span style="color: #9846ff">{{ text().skills.extraHeadingHighlight
+              }}</span>?
           </h2>
           <p class="textBody">{{ text().skills.extraParagraph }}</p>
         </div>

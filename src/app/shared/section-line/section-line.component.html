@@ -1,25 +1,3 @@
-<div class="sectionLineWrapper"
-      [ngClass]="position"
-      #wrapper>
-    <div
-      class="line"
-      *ngIf="position === 'left'"
-      [ngStyle]="{ 'background-color': color }"
-    ></div>
-  
-    <ng-container *ngIf="text">
-      <ng-container [ngSwitch]="tag">
-        <h1 *ngSwitchCase="'h1'" [class]="textClass">{{ text }}</h1>
-        <h2 *ngSwitchCase="'h2'" [class]="textClass">{{ text }}</h2>
-        <h3 *ngSwitchCase="'h3'" [class]="textClass">{{ text }}</h3>
-        <div *ngSwitchDefault [class]="textClass">{{ text }}</div>
-      </ng-container>
-    </ng-container>
-  
-    <div
-      class="line"
-      *ngIf="position === 'right'"
-      [ngStyle]="{ 'background-color': color }"
-    ></div>
-  </div>
-  
+<div #wrapper class="sectionLineWrapper {{position}}" [style.color]="color">
+  <div class="line"></div>
+</div>

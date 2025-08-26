@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { PortfolioItemComponent } from './portfolio-container/portfolio-item/portfolio-item.component';
 import { CommonModule } from '@angular/common';
 import { Project } from '../models/project';
-import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { LanguageService } from '../services/language.service';
 import { translations } from '../../../translations';
 import { HttpClient } from '@angular/common/http';
+import { InViewDirective } from '../shared/in-view.directive';
 
 @Component({
   selector: 'app-portfolio-container',
   standalone: true,
-  imports: [CommonModule, PortfolioItemComponent, SectionLineComponent],
+  imports: [CommonModule, PortfolioItemComponent, InViewDirective],
   templateUrl: './portfolio-container.component.html',
   styleUrl: './portfolio-container.component.scss'
 })

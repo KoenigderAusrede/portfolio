@@ -12,6 +12,12 @@
   }
 }
 
+body {
+  color: white;
+  background-color: #141D2F;
+  font-family: poppins, sans-serif;
+}
+
 /* fixed anchors global for scrolling */
 html{ scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
 
@@ -21,24 +27,11 @@ section{ display: flow-root; }
 /* unified box-model */
 *,*::before,*::after{ box-sizing: border-box; }
 
-
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  font-family: 'Poppins', sans-serif;
-  scroll-padding-top: 7.5rem !important;
-  background-color: #141D2F;
-  overflow-x: clip // global overflow-x fix due to section lines on ultrawide screens 
-}
-
-header, footer {
-  width: 100vw;
-  background-color: #141D2F;
-}
+header, footer{ width: 100%; background-color:#141D2F; }
 
 .container{
-  max-width: 100rem;
+  width: min(100%, 100rem);
+  margin-inline: auto;   
   display: grid;
   grid-template-columns: 1fr;
   row-gap: var(--section-gap);
@@ -50,3 +43,40 @@ section{ margin: 0; padding-block: var(--section-py); }
   color: #b95eff;
   text-decoration: underline;
 }
+
+/* Utility: full VP-width, centered relativ to container */
+/* Basis: heading + line */
+.secLine{ display:grid; align-items:center; column-gap:clamp(1rem,2vw,2rem); }
+.secLineRight{ grid-template-columns:auto 1fr; } /* heading | line */
+.secLineLeft { grid-template-columns:1fr auto; } /* line | heading */
+
+.secLineLine{ position:relative; height:2px; }
+
+/* directed bleed ONLY right (start left, up to right vp-edge) */
+.bleedRight::before{
+  content:"";
+  position:absolute; top:50%; left:0; right:calc(50% - 50dvw);
+  height:2px; background:var(--line-color, currentColor);
+  transform:translateY(-50%) scaleX(0); transform-origin:left; opacity:0;
+}
+
+/* directed bleed ONLY left (start right, up to left vp-edge) */
+.bleedLeft::before{
+  content:"";
+  position:absolute; top:50%; right:0; left:calc(50% - 50dvw);
+  height:2px; background:var(--line-color, currentColor);
+  transform:translateY(-50%) scaleX(0); transform-origin:right; opacity:0;
+}
+
+/* grow-animation for inView */
+.bleedRight.inView::before,
+.bleedLeft.inView::before{
+  animation: lineGrow 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+@keyframes lineGrow{
+  from{ opacity:0; transform:translateY(-50%) scaleX(0); }
+  to  { opacity:1; transform:translateY(-50%) scaleX(1); }
+}
+
+/* masks line for clean contact */
+.secLine h1{ position:relative; z-index:1; background:#141D2F; padding-inline:.25rem; }

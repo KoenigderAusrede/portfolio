@@ -9,11 +9,9 @@ import { Component, Input, AfterViewInit, ElementRef, ViewChild, Renderer2 } fro
   standalone: true,
 })
 export class SectionLineComponent implements AfterViewInit {
-  @Input() text: string = '';
-  @Input() position: 'left' | 'right' = 'right';
-  @Input() color: string = '#70E61C';
-  @Input() tag: string = 'h2';
-  @Input() textClass: string = '';
+@Input() position: 'left' | 'right' = 'right';
+@Input() color = '#70E61C';
+
 
   @ViewChild('wrapper', { static: true }) wrapperRef!: ElementRef;
 
@@ -25,12 +23,9 @@ export class SectionLineComponent implements AfterViewInit {
       this.wrapperRef.nativeElement &&
       'IntersectionObserver' in window
     ) {
-      // console.log('Observer attached to:', this.wrapperRef.nativeElement);
       const observer = new window.IntersectionObserver(
         ([entry]) => {
-         //  console.log('Intersection event', entry);
           if (entry.isIntersecting) {
-            // console.log('SectionLine entered viewport!');
             this.renderer.addClass(this.wrapperRef.nativeElement, 'inView');
             observer.disconnect();
           }

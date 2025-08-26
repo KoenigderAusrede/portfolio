@@ -1,91 +1,50 @@
-
-.main {
-    position: relative;
-    height: fit-content;
-    padding: 2rem;
-
-    @media (max-width: 420px) {
-        position: relative;
-        margin-top: 22rem;
-    }
+.portfolioHead{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.portfolioHead h1{
+  font-size: 48px; 
+  margin: 0; 
+  padding-left: .5rem; 
+  background: #141D2F;  
 }
 
-nav {
-    align-items: center;
-}
-
-.portfolioHeading {
-    position: relative;
-    top: 50%;
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-    gap: 2rem;
-
-    @media (max-width: 430px) {
-        width: 90%;
-        font-size: 1.2rem;
-    }
-  }
-
-.secLine {
-    position: absolute;
-    left: calc((100dvw - 1600px) / -2 - 9rem);
-    width: calc((100vw - 1600px) / 2 + 8rem); // fixed position for larger screens
-    top: 50%;
-    height: 2px;
-    z-index: 10;
-    transform: translateY(-50%);
-    display: flex;
-    pointer-events: none;
-
-    @media (max-width: 820px) {
-        left: calc((100dvw - 1600px) / -2 - 6rem);
-        width: 100%;
-    }
-
-    @media (max-width: 480px) {
-        display: none;
-    }
-}
-
-
-app-section-line {
-  width: 100%;
+.portfolioHead .secLineLine{
+  position: absolute;
+  left: 0; 
+  top: 50%;
+  width: 0; 
   height: 2px;
-  display: block;
+  transform: translateY(-50%);
 }
 
-
-.subLine {
-    margin-left: 4rem;
-    color: white;
-
-    @media (max-width: 430px) {
-        margin-left: 2rem;
-    }
+.bleedLeft::before{
+  content:"";
+  position:absolute; 
+  top:0; 
+  bottom:0;
+  right: 0;
+  left: calc(50% - 50dvw);
+  background: var(--line-color, currentColor);
+  transform: scaleX(0); 
+  transform-origin: right; 
+  opacity: 0;
+}
+.bleedLeft.inView::before{
+  animation: lineGrow 1.2s cubic-bezier(.4,0,.2,1) forwards;
 }
 
-.container {
-    min-height: fit-content;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2rem;
+.subLine{ margin: 0;}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
 }
-
-.grid {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; 
-    width: 100%;
-    max-width: 75rem;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 768px){
+  .grid{ grid-template-columns: 1fr; }
 }

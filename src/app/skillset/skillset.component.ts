@@ -4,11 +4,12 @@ import { NgClass } from '@angular/common';
 import { LanguageService } from '../services/language.service';
 import { translations } from '../../../translations';
 import { HttpClient } from '@angular/common/http';
+import { InViewDirective } from '../shared/in-view.directive';
 
 @Component({
   selector: 'app-skillset',
   standalone: true,
-  imports: [SectionLineComponent, NgClass],
+  imports: [ NgClass, InViewDirective],
   templateUrl: './skillset.component.html',
   styleUrls: ['./skillset.component.scss']
 })

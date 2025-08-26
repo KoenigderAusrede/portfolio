@@ -1,18 +1,16 @@
 <section id="portfolio">
-  <div class="main">
-    <div class="portfolioHeading">
-      <div class="secLine">
-      <app-section-line position="left" color="#9747FF"></app-section-line>
-      </div>
-            <h1>{{ text().portfolio.heading }}</h1>
+  <div class="container">
+    <div class="portfolioHead">
+      <h1>{{ text().portfolio.heading }}</h1>
+      <div class="secLineLine bleedLeft" style="--line-color:#B95EFF" appInView></div>
     </div>
+
     <div class="subLine">
       <p [innerHTML]="text().portfolio.subheading"></p>
     </div>
-    <div class="container">
-      <div class="grid">
-        <app-portfolio-item *ngFor="let project of projects" [project]="project"></app-portfolio-item>
-      </div>
+
+    <div class="grid">
+      <app-portfolio-item *ngFor="let project of projects" [project]="project"></app-portfolio-item>
     </div>
   </div>
 </section>

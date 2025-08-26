@@ -1,10 +1,141 @@
 // contains lower part of aboutMe section (main2)
-.main2 {
-    max-width: 1600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: white;
+
+.main2{
+  --curve-h: clamp(10rem, 24vw, 38rem);
+  --curve-overlap: 4rem;
+
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+
+  position: relative;
+  isolation: isolate;
+  padding-block-end: calc(var(--section-py) + max(0px, var(--curve-h) - var(--curve-overlap)));
+  z-index: 2;
+
+ &::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(var(--curve-overlap) * -1);
+    width: 100dvw;
+    height: var(--curve-h);
+    background: url("../../assets/img/curve.png") no-repeat center top / cover;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  @media (max-width: 900px){
+    flex-direction: column-reverse;
+    padding: 0;
+    height: fit-content;
+
+    .main2Left{
+      width: 100%;
+      height: fit-content;
+      padding: 1rem;
+      align-items: center;
+      top: -5.5rem;
+
+      h1{ font-size: 1.5rem; text-align: center; }
+    }
+
+     .main2Right{
+      width: 100%;
+      height: 60vh;
+      padding: 1rem;
+      align-items: center;
+    }
+
+    .aboutPp{
+      width: 100%;
+      height: 45vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .profilePicture,
+      .profileBlur{
+        top: -4.5rem;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        height: clamp(22rem, 50vh, 28rem);
+        max-height: 100%;
+        width: auto;
+      }
+
+      .profilePicture{ position: absolute; z-index: 2; bottom: -2rem; }
+      .profileBlur   { filter: blur(40px); z-index: 1; }
+    }
+
+    .textBlock{
+      position: relative;
+      height: fit-content;
+      width: 100%;
+      padding: 0 1rem;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 4;
+      top: 5rem;
+
+      h1{ font-size: 1.6rem; margin-bottom: 1rem; }
+      p { font-size: 1rem;  line-height: 1.6; }
+    }
+
+    .aboutBlock{
+      align-items: center;
+      padding: 0 1.5rem;
+
+      >img{ margin: 1rem 1rem 0 0; }
+    }
+
+    .curveMobile{
+      width: 100vw;
+      display: block;
+      bottom: -13.5rem;
+      position: absolute;
+      z-index: 3;
+    }
+  }
+
+  @media (max-width: 600px){
+    .aboutPp .profileBlur{ filter: blur(24px); }
+  }
+
+  @media (max-width: 480px){
+    img{ display: none; }
+    .aboutBlock{ padding: 0; }
+
+    .main2Left{
+      width: 100%;
+      height: fit-content;
+      padding: 1rem;
+      align-items: center;
+      top: 5.5rem;
+
+      h1{ font-size: 1.5rem; text-align: center; }
+    }
+
+    .main2Right{
+      width: 100%;
+      height: fit-content;
+      padding: 1rem;
+      align-items: center;
+    }
+
+    .textBlock{ width: 100%; font-size: 1rem; }
+  }
+}
 
     .main2Left {
         width: 60%;
@@ -96,190 +227,3 @@
     .curveMobile {
         display: none;
     }
-
-    @media (max-width: 900px) {
-        flex-direction: column-reverse;
-        padding: 0;
-        height: fit-content;
-
-        .main2Left {
-            width: 100%;
-            height: fit-content;
-            padding: 1rem;
-            align-items: center;
-            height: fit-content;
-            top: -5.5rem;
-
-            h1 {
-                font-size: 1.5rem;
-                text-align: center;
-            }
-        }
-
-        .main2Right {
-            width: 100%;
-            height: 60vh;
-            padding: 1rem;
-            align-items: center;
-        }
-
-        .aboutPp {
-            width: 100%;
-            height: 45vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-
-            .profilePicture,
-            .profileBlur {
-                top: -4.5rem;
-                position: relative;
-                display: block;
-                margin: 0 auto;
-                height: clamp(22rem, 50vh, 28rem);
-                max-height: 100%;
-                width: auto;
-            }
-
-            .profilePicture {
-                position: absolute;
-                z-index: 2;
-                bottom: -2rem;
-            }
-
-            .profileBlur {
-                filter: blur(40px);
-                z-index: 1;
-            }
-        }
-
-        @media (max-width: 900px) {
-
-            .aboutPp {
-
-                .profilePicture,
-                .profileBlur {
-                    height: clamp(18rem, 40vh, 24rem);
-                }
-
-                .profileBlur {
-                    filter: blur(30px);
-                }
-            }
-        }
-
-        @media (max-width: 600px) {
-            .aboutPp {
-
-                .profileBlur {
-                    filter: blur(24px);
-                }
-            }
-        }
-
-        .textBlock {
-            position: relative;
-            height: fit-content;
-            width: 100%;
-            padding: 0 1rem 0 1rem;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            z-index: 4;
-            top: 5rem;
-
-            h1 {
-                font-size: 1.6rem;
-                margin-bottom: 1rem;
-            }
-
-            p {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-        }
-
-        .aboutBlock {
-            align-items: center;
-            padding: 0 1.5rem;
-
-            >img {
-                margin: 1rem 1rem 0 0;
-            }
-
-            p {
-                padding: 0;
-            }
-        }
-
-        .curveMobile {
-            width: 100vw;
-            display: block;
-            bottom: -13.5rem;
-            position: absolute;
-            z-index: 3;
-
-            @media (max-width: 900px) {
-                bottom: -21rem;
-            }
-        }
-    }
-
-    @media (max-width: 480px) {
-        img {
-            display: none;
-        }
-
-        .aboutBlock {
-            padding: unset;
-        }
-
-        .main2Left {
-            width: 100%;
-            height: fit-content;
-            padding: 1rem;
-            align-items: center;
-            top: 5.5rem;
-
-            h1 {
-                font-size: 1.5rem;
-                text-align: center;
-            }
-        }
-
-        .main2Right {
-            width: 100%;
-            height: fit-content;
-            padding: 1rem;
-            align-items: center;
-        }
-
-        .textBlock {
-            width: 100%;
-            font-size: 1rem;
-        }
-    }
-}
-
-.curveDesktop {
-    position: relative;
-    width: 100dvw;
-    pointer-events: none;
-    margin-left: calc((100dvw - 100%) / -2);
-    margin-top: -25rem;
-    z-index: 30;
-
-    @media (max-width: 3000px) {
-        margin-top: -15rem;
-    }
-
-    @media (max-width: 1700px) {
-        margin-top: -10rem;
-    }
-
-    @media (max-width: 900px) {
-        display: none;
-    }
-}

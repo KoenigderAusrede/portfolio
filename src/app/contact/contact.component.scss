@@ -17,57 +17,31 @@ select:-webkit-autofill {
   }
 
   .contactHeader {
-    position: relative;
     width: 100%;
   }
 
-    .contactHeadingWrapper {
-    position: relative;
-    display: flex;
+  .contactHeadingWrapper {
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
   }
 
   .contactHeading {
-    font-size: 2.5rem;
-  }
-
-    .secLine {
-    position: absolute;
-    right: calc((100dvw - 1600px) / -2 - 9rem); // fixed position for larger screens
-    top: 50%;
-    width: calc((100vw - 1600px) / 2 + 50rem);
-    height: 2px;
-    transform: translateY(-50%);
+    font-size: 48px;
+    margin: 0;
+    position: relative;
     z-index: 1;
-    pointer-events: none;
-
-    @media (max-width: 1599px) {
-      width: 50%;
-      right: -8rem;
-    }
-
-    @media (max-width: 820px) {
-      right: calc((100dvw - 1600px) / -2 + 5rem);
-    }
-
-    @media (max-width: 480px) {
-      right: -6.5rem;
-    }
+    background: #141D2F;
+    padding-right: .25rem;
   }
 
-  .contactContent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+  .secLineLine{
+  position: relative;
+  height: 2px;
+}
+
+.secLineCenter{ grid-template-columns: 1fr auto 1fr; } /* Spacer | H1 | Line */
+.secLineLine{ position: relative; height: 2px; }
+
+.contactContent{ grid-column: 2; width: 100%; 
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -80,27 +54,11 @@ select:-webkit-autofill {
     gap: 1rem;
   }
 
-.lineRow {
-  position: relative;
-  display: flex;
+.lineRow{
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 48rem) 1fr;
+  column-gap: clamp(1rem, 3vw, 4rem);
   align-items: center;
-  margin-bottom: 2rem;
-}
-
-.secLine2 {
-  position: absolute;
-  left: calc((100dvw - 1600px) / -2 - 9rem);
-  top: 9.5%;
-  width: calc((100vw - 1600px) / 2 + 20rem); // fixed position for larger screens
-  height: 2px;
-  transform: translateY(-50%);
-  z-index: 1;
-  pointer-events: none;
-
-  @media (max-width: 1599px) {
-    left: -20rem;
-    width: 30%;
-  }
 }
 
   .problemHeading {
@@ -288,14 +246,14 @@ select:-webkit-autofill {
   }
 
   .messageContainer.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+    opacity: 0;
+    pointer-events: none;
+  }
 
   @media (max-width: 500px) {
 
     margin: 0 1rem 0 1rem;
- 
+
     .contactContent {
       padding-top: 0;
       padding-left: 0;
@@ -318,13 +276,13 @@ select:-webkit-autofill {
   }
 }
 
-.backToTopWrapper{
+.backToTopWrapper {
   position: sticky;
   bottom: 1rem;
   display: flex;
   justify-content: flex-end;
   padding-right: 2rem;
-  z-index: 1; /* unter Header, über Content */
+  z-index: 1;
 }
 
 
@@ -338,7 +296,7 @@ select:-webkit-autofill {
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0.8;
-  display: block; 
+  display: block;
 
   &:hover {
     opacity: 1;
@@ -351,4 +309,3 @@ select:-webkit-autofill {
     object-fit: contain;
   }
 }
-
