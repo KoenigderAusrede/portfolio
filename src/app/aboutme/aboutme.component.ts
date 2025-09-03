@@ -1,6 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, computed } from '@angular/core';
-import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { translations } from '../../../translations';
 import { LanguageService } from '../services/language.service';
 import { InViewDirective } from '../shared/in-view.directive';

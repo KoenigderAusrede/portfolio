@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { SectionLineComponent } from '../shared/section-line/section-line.component';
 import { NgClass } from '@angular/common';
 import { LanguageService } from '../services/language.service';
 import { translations } from '../../../translations';

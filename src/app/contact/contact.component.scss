@@ -1,4 +1,9 @@
 $checkbox-path: '../../assets/checkbox';
+:root{
+  --page-max: 1600px;
+  --page-pad: clamp(0.75rem, 4vw, 2rem);
+  --content-max: 48rem;
+}
 
 input:-webkit-autofill,
 textarea:-webkit-autofill,
@@ -11,18 +16,15 @@ select:-webkit-autofill {
 
 .contactSection {
   color: white;
+  overflow:hidden;
 
   @media (max-width: 500px) {
     padding-block-start: calc(var(--section-py) + 6rem);
   }
 
-  .contactHeader {
-    width: 100%;
-  }
+  .contactHeader { width: 100%; }
 
-  .contactHeadingWrapper {
-    align-items: center;
-  }
+  .contactHeadingWrapper { align-items: center; }
 
   .contactHeading {
     font-size: 48px;
@@ -33,52 +35,50 @@ select:-webkit-autofill {
     padding-right: .25rem;
   }
 
-  .secLineLine{
-  position: relative;
-  height: 2px;
-}
-
 .secLineCenter{ grid-template-columns: 1fr auto 1fr; } /* Spacer | H1 | Line */
 .secLineLine{ position: relative; height: 2px; }
 
-.contactContent{ grid-column: 2; width: 100%; 
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
+  .lineRow.contactRow{
+    display:grid;
+    grid-template-columns: 1fr minmax(0, var(--content-max)) 1fr;
+    column-gap: clamp(1rem, 3vw, 4rem);
+    align-items:start;
+    width:min(100%, var(--page-max));
+    margin-inline:auto;
+    padding-inline: var(--page-pad);
+    min-width:0;
   }
 
-  .contactTextBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .contactContent{
+    grid-column:2;
+    display:grid;
+    grid-template-columns: 1fr 1fr;  
+    gap: clamp(12px, 2.5vw, 24px);
+    min-width:0;
   }
+
+    @media (max-width: 700px){
+    .contactContent{ grid-template-columns: 1fr; }
+  }
+
+
+  .contactTextBlock{ display:flex; flex-direction:column; gap:1rem; min-width:0; }
+  .problemHeading{ font-size:1.5rem; font-weight:700; margin:0; }
+  .contactText p{ margin-bottom:1rem; font-size:1rem; line-height:1.6; }
+
 
 .lineRow{
   display: grid;
   grid-template-columns: 1fr minmax(0, 48rem) 1fr;
   column-gap: clamp(1rem, 3vw, 4rem);
-  align-items: center;
+  align-items: baseline;
 }
-
-  .problemHeading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .contactText {
-    p {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-  }
 
   .contactForm {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    min-width:0;
 
     .inputField,
     .textarea-field {
@@ -252,8 +252,6 @@ select:-webkit-autofill {
 
   @media (max-width: 500px) {
 
-    margin: 0 1rem 0 1rem;
-
     .contactContent {
       padding-top: 0;
       padding-left: 0;
@@ -276,15 +274,14 @@ select:-webkit-autofill {
   }
 }
 
-.backToTopWrapper {
-  position: sticky;
-  bottom: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 2rem;
-  z-index: 1;
+.backToTopWrapper{
+  position:sticky; bottom:1rem;
+  width:min(100%, var(--page-max));
+  margin-inline:auto;
+  padding-inline: var(--page-pad);
+  display:flex; justify-content:flex-end;
+  z-index:1;
 }
-
 
 .backToTop {
   width: 2rem;

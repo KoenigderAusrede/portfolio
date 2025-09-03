@@ -1,8 +1,7 @@
 .headerWrapper {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+  inset: 0 0 auto 0;
+  width: 100%;
   height: 7.5rem;
   background-color: #141D2F;
   display: flex;
@@ -10,26 +9,18 @@
   align-items: center;
   z-index: 100;
 
+
   @media (max-width: 820px) {
     height: 5rem;
   }
 }
 
-.container {
-  width: 100%;
-  max-width: 1600px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-    justify-content: center ;
-  }
-  @media (max-width: 500px) {
-    padding: 0 0.5rem;
-  }
+.headerInner{
+  width:min(100%, var(--page-max));
+  margin-inline:auto;
+  padding-inline:var(--page-pad);
+  display:flex; align-items:center; justify-content:space-between;
+  min-width:0;
 }
 
 
@@ -118,9 +109,7 @@
     }
     
 
-    .felixLogo {
-      height: 1.7rem;
-    }
+.felixLogo{ height:1.7rem; display:block; }
 
     // Responsive styles
     .burger {
@@ -163,7 +152,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       height: 100vh;
       background-color: #2f3640;
       z-index: 1000;
