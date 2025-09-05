@@ -19,6 +19,13 @@
   }
 }
 
+#aboutMe,
+#skills,
+#portfolio,
+#contact {
+  scroll-margin-top: var(--header-h);
+}
+
 // Debugging outlines
 * {
   outline: 1px solid red;
@@ -29,7 +36,6 @@ html {
   scrollbar-gutter: stable right-edge;  
   padding: 0;
   margin: 0;
-  scroll-padding-top: var(--header-h);
 }
 
 body {
@@ -72,7 +78,7 @@ img {
 .container {
   width: min(100%, 100rem);
   margin-inline: auto;
-  display: grid;
+  display: block;
   grid-template-columns: 1fr;
   row-gap: var(--section-gap);
 }
@@ -114,7 +120,6 @@ section {
 .secLine h1 {
   position: relative;
   z-index: 1;
-  background: #141D2F;
   padding-inline: .25rem;
 }
 
@@ -165,6 +170,7 @@ section {
 }
 
 html{ box-sizing:border-box; }
+
 *,*::before,*::after{ box-sizing:inherit; }
 
 html, body{ overflow-x:hidden; }

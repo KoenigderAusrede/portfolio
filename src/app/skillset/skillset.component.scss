@@ -1,3 +1,49 @@
+#skills {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+   z-index: 5;  
+
+  --curve-h: max(75rem, 24svh);
+   --curve-rise: clamp(25rem, 14cqw, 34rem);
+   
+  > * { position: relative; z-index: 2; }
+
+  &::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    transform: translateX(-50%) translateY(calc(-1 * var(--curve-rise)));
+    width: 100vw;
+    @supports (width: 100svw){ width: 100svw; }
+
+    height: var(--curve-h);
+    pointer-events:none;
+    z-index: 0;
+
+    background:
+      linear-gradient(to bottom,
+        rgba(20,29,47,0) 90%,
+        rgba(20,29,47,.05) 95%,
+        #141D2F 99%) ,
+      url("/assets/img/curve.png") no-repeat center top / cover;
+
+    -webkit-mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
+  }
+
+  @media (min-width: 1000px) { --curve-rise: 25rem; }
+  @media (min-width: 1500px) { --curve-rise: 25rem; }
+  @media (min-width: 2000px) { --curve-rise: 25rem; }
+  @media (min-width: 3000px) { --curve-rise: 30rem; }
+  @media (min-width: 4000px) { --curve-rise: 38rem; }
+}
+
+@media (max-width: 900px){
+  #skills::before{ display: none; }
+}
+
 .skillsSection {
     height: 100%;
     position: relative;
@@ -45,7 +91,6 @@
     .textHead h1 {
         position: relative;
         z-index: 2;
-        background: #141D2F;
         padding-right: .25rem;
     }
 

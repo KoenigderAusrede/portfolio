@@ -1,10 +1,10 @@
 // contains lower part of aboutMe section (main2)
 
 .main2 {
-    --curve-h: clamp(10rem, 30vw, 45rem);
-    --curve-overlap: 20rem;
-    --pp-shift: clamp(-2rem, -2vw, -4rem)
-
+    container-type: inline-size;
+    --curve-h: clamp(28rem, 18cqw + 6rem, 40rem);
+    --curve-overlap: 12rem;
+    --pp-shift: clamp(-2rem, -2vw, -4rem);
     width: 100%;
     max-width: 1600px;
     margin-inline: auto;
@@ -18,22 +18,9 @@
     padding-block-end: var(--section-py);
     z-index: 2;
 
-    &::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: calc(var(--curve-overlap) * -1);
-        width: 100vw;
-        height: var(--curve-h);
-        background: url("../../assets/img/curve.png") no-repeat center top / cover;
-        pointer-events: none;
-        z-index: 3;
-    }
-
     /* „svw“-fallback-improvement */
     @supports (width: 100svw) {
-        .main2::after {
+        &::after {
             width: 100svw;
         }
     }
@@ -42,78 +29,104 @@
         flex-direction: column-reverse;
         padding: 0;
         height: fit-content;
-        
+
         &::after {
             background-image: none;
-        } 
+        }
+
+                .main2Left,
+                .main2Right {
+                    width: 100%;
+                    flex: 0 0 100%;
+                    min-inline-size: 0;
+                }
 
         .main2Left {
-            width: 100%;
-            height: fit-content;
-            padding: 1rem;
-            align-items: center;
-            top: -5.5rem;
-
-            h1 {
-                font-size: 1.5rem;
-                text-align: center;
-            }
+            padding-inline: var(--page-pad);
+            position: relative;
+            z-index: 2;
         }
 
         .main2Right {
             width: 100%;
-            height: 60vh;
             padding: 1rem;
-            align-items: center;
-        }
-
-        .aboutPp {
-            width: 100%;
-            height: 45vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-width: 0;
+        }
+
+        .aboutPp {
             position: relative;
-            transform: translateY(var(--pp-shift));
+            width: min(100%, 28rem);
+            aspect-ratio: 3 / 4;
+            margin: 0 auto;
+            display: grid;
+            place-items: center;
+            overflow: visible;
+            transform: none;
+            top: auto;
 
             .profilePicture,
             .profileBlur {
-                top: -4.5rem;
-                position: relative;
-                display: block;
-                margin: 0 auto;
-                height: clamp(22rem, 50vh, 28rem);
-                max-height: 100%;
-                width: auto;
-            }
-
-            .profilePicture {
                 position: absolute;
-                z-index: 2;
-                bottom: -2rem;
+                inset: 0;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                object-fit: contain;
             }
 
             .profileBlur {
-                filter: blur(40px);
+                filter: blur(32px);
+                transform: scale(1.06);
                 z-index: 1;
+            }
+
+            .profilePicture {
+                transform: scaleX(-1);
+                z-index: 2;
+            }
+
+            .aboutPp .profilePicture {
+                transform: scaleX(-1);
+                z-index: 2;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                transform: translate(-50%, -75%);
+                width: 100svw;
+                height: clamp(12rem, 45vw, 28rem);
+                background: url("../../assets/img/curve_2.png") no-repeat center top / cover;
+                pointer-events: none;
+                z-index: 2;
+            }
+
+            @supports (width: 100svw) {
+                &::after {
+                    width: 100svw;
+                }
             }
         }
 
         .textBlock {
-            position: relative;
-            height: fit-content;
+            position: static;
             width: 100%;
             padding: 0 1rem;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            z-index: 4;
-            top: 5rem;
+            margin-left: 0; 
+            margin-top: clamp(12px, 4vw, 24px);
+            max-width: 66ch;
+            margin-inline: auto;
 
             h1 {
                 font-size: 1.6rem;
                 margin-bottom: 1rem;
+                text-align: center;
             }
 
             p {
@@ -130,14 +143,6 @@
                 margin: 1rem 1rem 0 0;
             }
         }
-
-        .curveMobile {
-            width: 100%;
-            display: block;
-            bottom: -13.5rem;
-            position: absolute;
-            z-index: 3;
-        }
     }
 
     @media (max-width: 600px) {
@@ -147,20 +152,15 @@
     }
 
     @media (max-width: 480px) {
-        img {
-            display: none;
-        }
-
         .aboutBlock {
             padding: 0;
         }
 
         .main2Left {
+            position: static;
             width: 100%;
-            height: fit-content;
             padding: 1rem;
             align-items: center;
-            top: 5.5rem;
 
             h1 {
                 font-size: 1.5rem;
@@ -169,16 +169,20 @@
         }
 
         .main2Right {
-            width: 100%;
-            height: fit-content;
             padding: 1rem;
-            align-items: center;
         }
 
         .textBlock {
             width: 100%;
             font-size: 1rem;
         }
+    }
+}
+
+@container (min-width: 900px) {
+    .main2 {
+        --curve-h: clamp(20rem, 16cqw + 6rem, 36rem);
+        --curve-overlap: clamp(12rem, 10cqw + 2rem, 26rem);
     }
 }
 
@@ -225,6 +229,7 @@
     justify-content: center;
     width: 100%;
     height: auto;
+    z-index: 1;
 
 
     >img {
@@ -267,8 +272,4 @@
             transform: scale(1.2);
         }
     }
-}
-
-.curveMobile {
-    display: none;
 }
