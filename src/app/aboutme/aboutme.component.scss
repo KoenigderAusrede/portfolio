@@ -13,11 +13,6 @@
   overflow: visible;
 }
 
-:root{
-  --page-max: 1600px;
-  --page-pad: clamp(0.75rem, 4vw, 2rem);
-}
-
 .heroBox{
   width: min(100%, var(--page-max));
   margin-inline: auto;
@@ -117,7 +112,10 @@
     gap: clamp(1rem, 2.5vw, 2.5rem);
   }
 
-  .dividerButton { cursor: pointer; height: 2rem; transition: transform .3s ease;
+  .dividerButton {
+    cursor: pointer;
+    height: 2rem;
+    transition: transform .3s ease;
     &:hover { transform: scale(1.1); }
   }
 }

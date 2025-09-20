@@ -1,50 +1,82 @@
 #skills {
-  position: relative;
-  isolation: isolate;
-  container-type: inline-size;
-   z-index: 5;  
+    position: relative;
+    isolation: isolate;
+    container-type: inline-size;
+    z-index: 5;
 
-  --curve-h: max(75rem, 24svh);
-   --curve-rise: clamp(25rem, 14cqw, 34rem);
-   
-  > * { position: relative; z-index: 2; }
+    --curve-h: max(75rem, 24svh);
+    --curve-rise: clamp(25rem, 14cqw, 34rem);
 
-  &::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:0;
-    transform: translateX(-50%) translateY(calc(-1 * var(--curve-rise)));
-    width: 100vw;
-    @supports (width: 100svw){ width: 100svw; }
+    >* {
+        position: relative;
+        z-index: 2;
+    }
 
-    height: var(--curve-h);
-    pointer-events:none;
-    z-index: 0;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
 
-    background:
-      linear-gradient(to bottom,
-        rgba(20,29,47,0) 90%,
-        rgba(20,29,47,.05) 95%,
-        #141D2F 99%) ,
-      url("/assets/img/curve.png") no-repeat center top / cover;
+        left: 50%;
+        width: calc(100dvw - 7px);
+        margin-left: calc(-50dvw - 0.5px);
 
-    -webkit-mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
-  }
+        transform: translateY(calc(-1 * var(--curve-rise)));
 
-  @media (min-width: 1000px) { --curve-rise: 25rem; }
-  @media (min-width: 1500px) { --curve-rise: 25rem; }
-  @media (min-width: 2000px) { --curve-rise: 25rem; }
-  @media (min-width: 3000px) { --curve-rise: 30rem; }
-  @media (min-width: 4000px) { --curve-rise: 38rem; }
+        @supports not (width: 1svw) {
+            width: 100vw;
+        }
+
+        height: var(--curve-h);
+        pointer-events:none;
+        z-index: 0;
+
+        background-image: linear-gradient(to bottom, rgba(20, 29, 47, 0) 90%, rgba(20, 29, 47, .05) 95%, #141D2F 99%),
+        url("/assets/img/curve.png");
+        background-repeat: no-repeat,
+        no-repeat;
+        background-position: center top,
+        center top;
+        background-size: 100% 100%,
+        100% auto;
+
+        -webkit-mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
+    }
+
+    @media (min-width: 1000px) {
+        --curve-rise: 25rem;
+    }
+
+    @media (min-width: 1500px) {
+        --curve-rise: 25rem;
+    }
+
+    @media (min-width: 2000px) {
+        --curve-rise: 25rem;
+    }
+
+    @media (min-width: 3000px) {
+        --curve-rise: 30rem;
+    }
+
+    @media (min-width: 4000px) {
+        --curve-rise: 38rem;
+    }
 }
 
-@media (max-width: 900px){
-  #skills::before{ display: none; }
+@media (max-width: 899.98px) {
+    #skills::before {
+        content: normal !important;
+        display: none;
+    }
 }
 
 .skillsSection {
+    width: min(100%, var(--page-max));
+    margin-inline: auto;
+    padding-inline: calc(var(--page-pad) + 1rem);
+    container-type: inline-size;
     height: 100%;
     position: relative;
     display: grid;
@@ -58,7 +90,7 @@
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
-    padding: 1rem;
+    padding-block: 1rem;
     gap: 1rem;
     z-index: 3;
 
@@ -83,9 +115,10 @@
         }
     }
 
-
     .textHead {
         position: relative;
+        min-width: 0;
+        padding-left: 0;
     }
 
     .textHead h1 {
@@ -104,51 +137,6 @@
             p {
                 font-size: 1rem;
             }
-        }
-    }
-
-    .secLine {
-        display: grid;
-        align-items: center;
-        column-gap: clamp(1rem, 2vw, 2rem);
-    }
-
-    .secLineRight {
-        grid-template-columns: auto 1fr;
-    }
-
-    .secLineLine {
-        position: relative;
-        height: 2px;
-    }
-
-    .bleedRight::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: calc(50% - 50dvw);
-        height: 2px;
-        background: var(--line-color, currentColor);
-        transform: translateY(-50%) scaleX(0);
-        transform-origin: right;
-        opacity: 0;
-    }
-
-    .bleedRight.inView::before {
-        animation: lineGrow 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-
-    @keyframes lineGrow {
-        from {
-            opacity: 0;
-            transform: translateY(-50%) scaleX(0);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(-50%) scaleX(1);
         }
     }
 
@@ -203,7 +191,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 5px;
             padding: 0;
-
 
             img {
                 height: 40px;
@@ -438,4 +425,32 @@
     100% {
         transform: rotate(720deg);
     }
+}
+
+#skills .skillsSection {
+    --skills-pad-inline: 1rem;
+    --section-pad-inline: calc(var(--page-pad) + var(--skills-pad-inline));
+}
+
+@supports (width: 1cqw) {
+    #skills .secLine.--bleedRight .secLineLine::before {
+        inset-inline-start: 0;
+        inset-inline-end: calc(45cqw - 50svw + var(--section-pad-inline));
+        transform-origin: right;
+    }
+}
+
+#skills .skillsSection .secLine {
+    --bleed-fix: clamp(0px, var(--section-pad-inline), 6rem);
+}
+
+#skills .skillsSection .textHead .secLineLine {
+    width: 100%;
+    min-width: 0;
+}
+
+#skills .skillsSection .textHead,
+#skills .skillsSection .textContainer {
+    min-width: 0;
+    overflow: visible;
 }

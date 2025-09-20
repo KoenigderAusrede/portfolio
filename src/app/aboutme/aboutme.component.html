@@ -18,28 +18,32 @@
         <button class="greenButton" (click)="scrollToContact()">{{ text().hero.cta }}</button>
       </div>
 
-      <div class="heroBottom">
-        <div class="divider">
-          <div class="secLine secLineLeft">
-            <div class="secLineLine bleedLeft" style="--line-color:#70E61C" appInView></div>
-          </div>
-          <div class="dividerContent">
-            <a href="https://github.com/KoenigderAusrede" target="_blank" rel="noopener noreferrer">
-              <img class="dividerButton" src="assets/buttons/Github button.png" alt="GitHub" />
-            </a>
-            <a href="">
-              <img class="dividerButton" src="assets/buttons/Email button.png" (click)="scrollToContact()" alt="Mail" />
-            </a>
-            <a href="https://www.linkedin.com/in/felix-blaser-499804154/" target="_blank" rel="noopener noreferrer">
-              <img class="dividerButton" src="assets/buttons/Linkedin button.png" alt="LinkedIn" />
-            </a>
-          </div>
-        </div>
-        <div class="scroller">
-          <span class="scrollText">{{ text().hero.scroller}}</span>
-          <img src="assets/icons/arrowdown.png" alt="Scroll down" />
-        </div>
-      </div>
+<div class="heroBottom">
+  <div class="divider secLine secLineLeft --bleedLeft" 
+       appInView 
+       style="--line-color: #71e61e">
+       
+    <div class="secLineLine" aria-hidden="true"></div>
+
+    <div class="dividerContent">
+      <a href="https://github.com/KoenigderAusrede" target="_blank" rel="noopener noreferrer">
+        <img class="dividerButton" src="assets/buttons/Github button.png" alt="GitHub" />
+      </a>
+      <a href="">
+        <img class="dividerButton" src="assets/buttons/Email button.png" 
+             (click)="scrollToContact()" alt="Mail" />
+      </a>
+      <a href="https://www.linkedin.com/in/felix-blaser-499804154/" target="_blank" rel="noopener noreferrer">
+        <img class="dividerButton" src="assets/buttons/Linkedin button.png" alt="LinkedIn" />
+      </a>
+    </div>
+  </div>
+
+  <div class="scroller">
+    <span class="scrollText">{{ text().hero.scroller}}</span>
+    <img src="assets/icons/arrowdown.png" alt="Scroll down" />
+  </div>
+</div>
     </div>
   </div>
 

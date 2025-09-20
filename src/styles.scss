@@ -7,7 +7,10 @@
   --page-pad: clamp(0.75rem, 4vw, 2rem);
 
   --app-vh: 100vh;
+  --bleed-fix: .5px
+  --sbw: calc(100dvw - 100svw);
 }
+
 @supports (height: 100svh){
   :root{ --app-vh: 100svh; }
 }
@@ -27,15 +30,20 @@
 }
 
 // Debugging outlines
-* {
-  outline: 1px solid red;
-}
+// * {
+//   outline: 1px solid red;
+// }
 
 html {
-  overflow-x: clip;
-  scrollbar-gutter: stable right-edge;  
+  scrollbar-gutter: stable;  
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+
+  @media (max-width: 768px){
+   scrollbar-gutter: auto;
+}
 }
 
 body {
@@ -44,12 +52,6 @@ body {
   font-family: poppins, sans-serif;
   padding: 0;
   margin: 0;
-}
-
-/* fixed anchors global for scrolling */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--header-h);
 }
 
 /* safety-net margin colapse */
@@ -79,7 +81,6 @@ img {
   width: min(100%, 100rem);
   margin-inline: auto;
   display: block;
-  grid-template-columns: 1fr;
   row-gap: var(--section-gap);
 }
 
@@ -95,95 +96,78 @@ section {
 
 /* Utility: full VP-width, centered relativ to container */
 /* Basis: heading + line */
+
 .secLine {
+  position: relative;
   display: grid;
   align-items: center;
   column-gap: clamp(1rem, 2vw, 2rem);
+  padding-inline: var(--page-pad);
 }
 
-.secLineRight {
-  grid-template-columns: auto 1fr;
-}
-
-/* heading | line */
-.secLineLeft {
-  grid-template-columns: 1fr auto;
-}
-
-/* line | heading */
 .secLineLine {
   position: relative;
   height: 2px;
+  transform: translateY(.075em);
 }
 
-/* masks line for clean contact */
-.secLine h1 {
-  position: relative;
-  z-index: 1;
-  padding-inline: .25rem;
-}
+.secLineRight { grid-template-columns: auto 1fr; }
+.secLineLeft  { grid-template-columns: 1fr auto; }
+.secLine h1   { margin: 0; }
 
-
-/* directed bleed ONLY right (start left, up to right vp-edge) */
-.bleedRight::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: calc(50% - 50dvw);
-  height: 2px;
+.secLineLine::before {
+  content:"";
+  position:absolute;
+  top:50%;
+  height:2px;
   background: var(--line-color, currentColor);
   transform: translateY(-50%) scaleX(0);
-  transform-origin: left;
   opacity: 0;
 }
 
-/* directed bleed ONLY left (start right, up to left vp-edge) */
-.bleedLeft::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: calc(50% - 50dvw);
-  height: 2px;
-  background: var(--line-color, currentColor);
-  transform: translateY(-50%) scaleX(0);
+/* inView Animation */
+.secLine.inView .secLineLine::before {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
+  transition: transform 1.2s cubic-bezier(.4,0,.2,1), opacity .2s;
+}
+
+.secLine.--bleedRight .secLineLine::before{
+  inset-inline-start: 0;
+  inset-inline-end: calc(50% - 50svw + var(--bleed-fix));
   transform-origin: right;
-  opacity: 0;
+}
+@supports not (width: 1svw){
+  .secLine.--bleedRight .secLineLine::before{
+    inset-inline-end: calc(50% - 50vw + var(--bleed-fix));
+  }
 }
 
-.bleedRight.inView::before,
-.bleedLeft.inView::before {
-  animation: lineGrow 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.secLine.--bleedLeft .secLineLine::before{
+  inset-inline-end: 0;
+  inset-inline-start: calc(50% - 50svw + var(--bleed-fix));
+  transform-origin: left;
+}
+@supports not (width: 1svw){
+  .secLine.--bleedLeft .secLineLine::before{
+    inset-inline-start: calc(50% - 50vw + var(--bleed-fix));
+  }
 }
 
 @keyframes lineGrow {
-  from {
-    opacity: 0;
-    transform: translateY(-50%) scaleX(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(-50%) scaleX(1);
-  }
+  from { opacity: 0; transform: translateY(-50%) scaleX(0);}
+  to { opacity: 1; transform: translateY(-50%) scaleX(1); }
 }
 
 html{ box-sizing:border-box; }
 
 *,*::before,*::after{ box-sizing:inherit; }
 
-html, body{ overflow-x:hidden; }
-
 img, svg, canvas, video{ max-width:100%; height:auto; display:block; }
 table{ max-width:100%; display:block; overflow-x:auto; }
 
 :is(.container, .page, .flex, .grid) > * { min-width:0; }
 
-:root{
-  --page-max: 1600px;
-  --page-pad: clamp(0.75rem, 4vw, 2rem);
-}
 .page, .container{
   width:min(100%, var(--page-max));
   margin-inline:auto;
@@ -193,4 +177,3 @@ table{ max-width:100%; display:block; overflow-x:auto; }
 @supports (width: 100svw){
   .full-viewport { width:100svw; }
 }
-
