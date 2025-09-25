@@ -427,30 +427,10 @@
     }
 }
 
-#skills .skillsSection {
-    --skills-pad-inline: 1rem;
-    --section-pad-inline: calc(var(--page-pad) + var(--skills-pad-inline));
+/* Parent hat padding-inline: calc(var(--page-pad) + 1rem) */
+#skills .skillsSection { --skills-pad-inline: 1rem; }
+#skills .skillsSection .section-rule{
+  --section-rule-pad-inline: 0; /* kein doppeltes Pad in der Linie */
+  --section-rule-trim: calc(var(--page-pad) + var(--skills-pad-inline));
 }
-
-@supports (width: 1cqw) {
-    #skills .secLine.--bleedRight .secLineLine::before {
-        inset-inline-start: 0;
-        inset-inline-end: calc(45cqw - 50svw + var(--section-pad-inline));
-        transform-origin: right;
-    }
-}
-
-#skills .skillsSection .secLine {
-    --bleed-fix: clamp(0px, var(--section-pad-inline), 6rem);
-}
-
-#skills .skillsSection .textHead .secLineLine {
-    width: 100%;
-    min-width: 0;
-}
-
-#skills .skillsSection .textHead,
-#skills .skillsSection .textContainer {
-    min-width: 0;
-    overflow: visible;
-}
+#skills .skillsSection .textHead .section-rule__track{ width:100%; min-width:0; }

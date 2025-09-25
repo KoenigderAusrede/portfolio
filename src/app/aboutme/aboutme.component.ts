@@ -2,7 +2,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, computed } from '@angular/core';
 import { translations } from '../../../translations';
 import { LanguageService } from '../services/language.service';
-import { InViewDirective } from '../shared/in-view.directive';
+import { InViewDirective } from '../shared/inView.directive';
 
 @Component({
   selector: 'app-aboutme',

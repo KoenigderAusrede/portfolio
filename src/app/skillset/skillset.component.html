@@ -1,55 +1,56 @@
 <section id="skills">
   <div class="skillsSection">
     <div class="textContainer">
-      <div class="textHead secLine secLineRight --bleedRight" style="--line-color:#00CFFF" appInView>
+      <div class="section-rule section-rule--line-right section-rule--bleed-right section-rule--full-width section-rule--animate"
+     appInView style="--line-color:#00CFFF">
         <h1>{{ text().skills.heading }}</h1>
-        <div class="secLineLine" aria-hidden="true"></div>
+        <div class="section-rule__track" aria-hidden="true"></div>
       </div>
     </div>
 
     <div class="symbols">
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/JavaScript.png" />
+        <img class="hoverEffect" src="assets/icons/JavaScript.png" alt=""/>
         <p>JavaScript</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/Angular.png" />
+        <img class="hoverEffect" src="assets/icons/Angular.png" alt=""/>
         <p>Angular</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/Typescript.png" />
+        <img class="hoverEffect" src="assets/icons/Typescript.png" alt=""/>
         <p>TypeScript</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/HTML.png" />
+        <img class="hoverEffect" src="assets/icons/HTML.png" alt=""/>
         <p>HTML</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/Git.png" />
+        <img class="hoverEffect" src="assets/icons/Git.png" alt=""/>
         <p>GIT</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/Firebase.png" />
+        <img class="hoverEffect" src="assets/icons/Firebase.png" alt=""/>
         <p>Firebase</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/CSS.png" />
+        <img class="hoverEffect" src="assets/icons/CSS.png" alt=""/>
         <p>CSS</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/Scrum.png" />
+        <img class="hoverEffect" src="assets/icons/Scrum.png" alt=""/>
         <p>Scrum</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/API.png" />
+        <img class="hoverEffect" src="assets/icons/API.png" alt=""/>
         <p>API</p>
       </div>
       <div class="skillBox">
-        <img class="hoverEffect" src="assets/icons/Test Automation.png" />
+        <img class="hoverEffect" src="assets/icons/TestAutomation.png" alt=""/>
         <p>Automation</p>
       </div>
       <div class="skillBox learning" [ngClass]="{'showTooltip': showTooltip}">
-        <div class="learningIcon" (click)="handleLearningTap()"></div>
+        <div class="learningIcon" (click)="handleLearningTap()" role="button"></div>
         <div class="tooltip">
           <p>{{ text().skills.tooltipIntro }}</p>
           <div class="iconRow">

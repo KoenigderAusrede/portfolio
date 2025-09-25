@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 import { LanguageService } from '../services/language.service';
 import { translations } from '../../../translations';
 import { Router } from '@angular/router';
-import { InViewDirective } from '../shared/in-view.directive';
+import { InViewDirective } from '../shared/inView.directive';
 
 @Component({
   selector: 'app-contact',

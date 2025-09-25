@@ -19,58 +19,58 @@
       </div>
 
 <div class="heroBottom">
-  <div class="divider secLine secLineLeft --bleedLeft" 
-       appInView 
-       style="--line-color: #71e61e">
-       
-    <div class="secLineLine" aria-hidden="true"></div>
+<div class="section-rule section-rule--line-left section-rule--bleed-left section-rule--full-width section-rule--animate"
+     appInView style="--line-color:#71e61e">
+    <div class="section-rule__track" aria-hidden="true"></div>
 
-    <div class="dividerContent">
+    <nav class="dividerContent" aria-label="Profile actions">
       <a href="https://github.com/KoenigderAusrede" target="_blank" rel="noopener noreferrer">
         <img class="dividerButton" src="assets/buttons/Github button.png" alt="GitHub" />
       </a>
-      <a href="">
-        <img class="dividerButton" src="assets/buttons/Email button.png" 
-             (click)="scrollToContact()" alt="Mail" />
-      </a>
+
+      <button class="dividerButton" type="button" (click)="scrollToContact()" aria-label="Mail">
+        <img src="assets/buttons/Email button.png" alt="Mail" />
+      </button>
+
       <a href="https://www.linkedin.com/in/felix-blaser-499804154/" target="_blank" rel="noopener noreferrer">
         <img class="dividerButton" src="assets/buttons/Linkedin button.png" alt="LinkedIn" />
       </a>
-    </div>
+    </nav>
   </div>
 
   <div class="scroller">
-    <span class="scrollText">{{ text().hero.scroller}}</span>
+    <span class="scrollText">{{ text().hero.scroller }}</span>
     <img src="assets/icons/arrowdown.png" alt="Scroll down" />
   </div>
 </div>
+
     </div>
-  </div>
+    </div>
 
-  <div class="main2">
-    <div class="main2Left" id="aboutMe">
-      <div class="textBlock">
-        <h1>{{ text().about.title }}</h1>
-        <p [innerHTML]="text().about.intro">
+    <div class="main2">
+      <div class="main2Left" id="aboutMe">
+        <div class="textBlock">
+          <h1>{{ text().about.title }}</h1>
+          <p [innerHTML]="text().about.intro"></p>
 
-        <div class="aboutBlock">
-          <img src="assets/icons/bulb/bulb_white_S.png" alt="" />
-          <p [innerHTML]="text().about.experience">
+          <div class="aboutBlock">
+            <img src="assets/icons/bulb/bulb_white_S.png" alt="" />
+            <p [innerHTML]="text().about.experience"></p>
+          </div>
+
+          <div class="aboutBlock">
+            <img src="assets/icons/puzzle/puzzle_white_S.png" alt="" />
+            <p [innerHTML]="text().about.change"></p>
+          </div>
         </div>
+      </div>
 
-        <div class="aboutBlock">
-          <img src="assets/icons/puzzle/puzzle_white_S.png" alt="" />
-          <p [innerHTML]="text().about.change">
+      <div class="main2Right">
+        <div class="aboutPp">
+          <img class="profileBlur" src="assets/blurrs/green_purple_shadow.png" alt="" />
+          <img class="profilePicture" [ngSrc]="'assets/img/profilePic.png'" width="300" height="400" alt="Profilbild"
+            priority />
         </div>
       </div>
     </div>
-
-    <div class="main2Right">
-      <div class="aboutPp">
-        <img class="profileBlur" src="assets/blurrs/green_purple_shadow.png" alt="" />
-        <img class="profilePicture" [ngSrc]="'assets/img/profilePic.png'" width="300" height="400" alt="Profilbild"
-          priority />
-      </div>
-    </div>
-  </div>
 </section>

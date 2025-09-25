@@ -53,3 +53,6 @@
 @media (max-width: 768px){
   .grid{ grid-template-columns: 1fr; }
 }
+
+.portfolioHeader .section-rule{ --section-rule-trim: var(--page-pad); }
+.portfolioHeader .section-rule__track{ width:100%; min-width:0; }

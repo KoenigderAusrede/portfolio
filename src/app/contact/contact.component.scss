@@ -302,3 +302,6 @@ select:-webkit-autofill {
     object-fit: contain;
   }
 }
+
+.contactBody .section-rule{ --section-rule-trim: var(--page-pad); }
+.contactBody .section-rule__track{ width:100%; min-width:0; }

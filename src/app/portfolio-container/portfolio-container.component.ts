@@ -5,7 +5,7 @@ import { Project } from '../models/project';
 import { LanguageService } from '../services/language.service';
 import { translations } from '../../../translations';
 import { HttpClient } from '@angular/common/http';
-import { InViewDirective } from '../shared/in-view.directive';
+import { InViewDirective } from '../shared/inView.directive';
 
 @Component({
   selector: 'app-portfolio-container',

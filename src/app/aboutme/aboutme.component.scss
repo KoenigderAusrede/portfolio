@@ -1,4 +1,4 @@
-// Contains upper part of aboutMe section (main1)
+// Contains upper part of aboutMe section (main/herobox)
 
 /* ===================== */
 /* Base styles           */
@@ -91,33 +91,39 @@
   }
 }
 
-.heroBottom {
+.heroBottom{
+  --section-rule-pad-inline: 0;
+  --section-rule-trim: var(--page-pad);
+
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  width: 100%;
-  height: 25%;
-}
 
-.divider {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  column-gap: clamp(1rem, 2.5vw, 2.5rem);
-  z-index: 2;
+  > .section-rule{
+    flex: 1 1 auto;
+    min-inline-size: 0;
 
-  .dividerContent {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    gap: clamp(1rem, 2.5vw, 2.5rem);
+
+    .section-rule__track{ inline-size: 100%; min-inline-size: 0; }
+
+    .dividerContent{
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 2.5vw, 2.5rem);
+    }
+    .dividerButton{
+      cursor: pointer;
+      height: 2rem;
+      transition: transform .3s ease;
+    }
+    .dividerButton:hover{ transform: scale(1.1); }
   }
 
-  .dividerButton {
-    cursor: pointer;
-    height: 2rem;
-    transition: transform .3s ease;
-    &:hover { transform: scale(1.1); }
-  }
+
+  .scroller{ flex: 0 0 auto; }
 }
 
 .heroBgLeft,
@@ -165,6 +171,7 @@
 
 .scroller {
   position: relative;
+  flex: 0 0 auto;
   bottom: 1rem;
   right: .1rem;
   margin-bottom: .5rem;

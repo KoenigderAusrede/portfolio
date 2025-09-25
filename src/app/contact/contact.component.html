@@ -1,25 +1,22 @@
-<section class="contactSection" id="contact">
+<section class="contactSection" id="contact" aria-labelledby="contact-heading">
 <div class="contactHeader">
-  <div class="contactHeadingWrapper secLine secLineCenter">
-    <div></div>
-    <h1 class="contactHeading">{{ text().contact.heading }}</h1>
-    <div class="secLineLine bleedRight" style="--line-color:#70E61C" appInView></div>
+<div class="section-rule section-rule--line-right section-rule--bleed-right section-rule--full-width section-rule--animate"
+     appInView style="--line-color:#00CFFF">
+    <h1 id="contact-heading" class="contactHeading">{{ text().contact.heading }}</h1>
+    <div class="section-rule__track" aria-hidden="true"></div>
   </div>
 </div>
 
-
-
-<div class="lineRow contactRow">
-  <div class="secLineLine bleedLeft" style="--line-color:#1bdae5" appInView></div>
+<div class="section-rule section-rule--line-left section-rule--bleed-left section-rule--full-width section-rule--animate"
+     appInView style="--line-color:#71e61e">
+  <div class="section-rule__track" aria-hidden="true"></div>
 
     <div class="contactContent">
-      <div class="contactTextBlock">
         <div class="contactText">
           <h2 class="problemHeading">{{ text().contact.subheading }}</h2>
           <p [innerHTML]="text().contact.intro1"></p>
           <p>{{ text().contact.intro2 }}</p>
         </div>
-      </div>
 
       <form class="contactForm" (submit)="onSubmit($event)">
         <!-- Name Field -->

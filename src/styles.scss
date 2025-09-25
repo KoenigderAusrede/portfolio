@@ -1,14 +1,16 @@
+@use './section-rule.scss' as *;
+
 :root{
   --header-h: 7.5rem;
   --section-gap: 4rem;
   --section-py: 4rem;
-
-  --page-max: 1600px;
   --page-pad: clamp(0.75rem, 4vw, 2rem);
+  --page-max: 1600px;
+  --app-vh: 100dvh;
 
-  --app-vh: 100vh;
-  --bleed-fix: .5px
-  --sbw: calc(100dvw - 100svw);
+  --secLine-pad-inline: var(--page-pad); /* Default: intern padding */
+  --section-rule-trim: var(--section-rule-pad-inline); 
+  --bleed-nudge: 0px; /* optional finetuning */
 }
 
 @supports (height: 100svh){
@@ -92,71 +94,6 @@ section {
 .contact-root :where(.privacy-link) {
   color: #b95eff;
   text-decoration: underline;
-}
-
-/* Utility: full VP-width, centered relativ to container */
-/* Basis: heading + line */
-
-.secLine {
-  position: relative;
-  display: grid;
-  align-items: center;
-  column-gap: clamp(1rem, 2vw, 2rem);
-  padding-inline: var(--page-pad);
-}
-
-.secLineLine {
-  position: relative;
-  height: 2px;
-  transform: translateY(.075em);
-}
-
-.secLineRight { grid-template-columns: auto 1fr; }
-.secLineLeft  { grid-template-columns: 1fr auto; }
-.secLine h1   { margin: 0; }
-
-.secLineLine::before {
-  content:"";
-  position:absolute;
-  top:50%;
-  height:2px;
-  background: var(--line-color, currentColor);
-  transform: translateY(-50%) scaleX(0);
-  opacity: 0;
-}
-
-/* inView Animation */
-.secLine.inView .secLineLine::before {
-  transform: translateY(-50%) scaleX(1);
-  opacity: 1;
-  transition: transform 1.2s cubic-bezier(.4,0,.2,1), opacity .2s;
-}
-
-.secLine.--bleedRight .secLineLine::before{
-  inset-inline-start: 0;
-  inset-inline-end: calc(50% - 50svw + var(--bleed-fix));
-  transform-origin: right;
-}
-@supports not (width: 1svw){
-  .secLine.--bleedRight .secLineLine::before{
-    inset-inline-end: calc(50% - 50vw + var(--bleed-fix));
-  }
-}
-
-.secLine.--bleedLeft .secLineLine::before{
-  inset-inline-end: 0;
-  inset-inline-start: calc(50% - 50svw + var(--bleed-fix));
-  transform-origin: left;
-}
-@supports not (width: 1svw){
-  .secLine.--bleedLeft .secLineLine::before{
-    inset-inline-start: calc(50% - 50vw + var(--bleed-fix));
-  }
-}
-
-@keyframes lineGrow {
-  from { opacity: 0; transform: translateY(-50%) scaleX(0);}
-  to { opacity: 1; transform: translateY(-50%) scaleX(1); }
 }
 
 html{ box-sizing:border-box; }
