@@ -5,12 +5,12 @@
 /* ===================== */
 
 .main{
-  margin-top: var(--header-h);
-  min-height: calc(var(--app-vh) - var(--header-h));
   display: grid;
   align-items: stretch;
   justify-items: center;
   overflow: visible;
+  min-block-size: 100dvb;
+  padding-bottom: 4rem;
 }
 
 .heroBox{
@@ -97,7 +97,7 @@
 
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   > .section-rule{
     flex: 1 1 auto;

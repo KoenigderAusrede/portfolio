@@ -82,6 +82,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
+        "symbols rule"  
         "symbols textHead"
         "symbols textBody";
     justify-content: space-between;
@@ -197,13 +198,8 @@
                 width: auto;
             }
 
-            p {
-                font-size: 1rem;
-            }
-
-            .skillBox:nth-last-child(1) {
-                grid-column: span 2;
-            }
+            p { font-size: 1rem; }
+            .skillBox:nth-last-child(1) { grid-column: span 2; }
         }
 
         .textContainer {
@@ -226,15 +222,22 @@
     }
 
     @media (max-width: 380px) {
-        .textHead {
-            font-size: 1.2rem;
-        }
-
-        .textBody {
-            font-size: 1rem;
-        }
+        .textHead { font-size: 1.2rem; }
+        .textBody { font-size: 1rem; }
     }
 }
+
+.skillsSection > .section-rule{ grid-area: rule; align-self: end; }
+.skillsSection .textContainer{ grid-column: 2; grid-row: 2 / span 2; }
+.skillsSection .symbols{ grid-area: symbols; }
+
+.skillsSection > .section-rule { 
+    grid-area: rule;
+    --section-rule-pad-inline: 0;
+    --section-rule-trim: calc(var(--page-pad) + var(--skills-pad-inline));
+    --section-rule-nudge: -40px;
+}
+
 
 .skillBox {
     color: white;
@@ -349,9 +352,7 @@
     background-position: center;
 
     @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            background-image: url('../../assets/icons/learning.svg');
-        }
+        &:hover { background-image: url('../../assets/icons/learning.svg'); }
     }
 
     @media (max-width: 768px) {
@@ -399,14 +400,10 @@
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
 
-        @media (max-width: 768px) {
-            font-size: 1rem;
-        }
+        @media (max-width: 768px) { font-size: 1rem; }
     }
 
-    p {
-        font-size: 1rem;
-    }
+    p { font-size: 1rem; }
 }
 
 .hoverEffect:hover {
@@ -414,23 +411,14 @@
 }
 
 @keyframes hover-rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-30deg);
-    }
-
-    100% {
-        transform: rotate(720deg);
-    }
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-30deg); }
+    100% { transform: rotate(720deg); }
 }
 
-/* Parent hat padding-inline: calc(var(--page-pad) + 1rem) */
 #skills .skillsSection { --skills-pad-inline: 1rem; }
 #skills .skillsSection .section-rule{
-  --section-rule-pad-inline: 0; /* kein doppeltes Pad in der Linie */
+  --section-rule-pad-inline: 0;
   --section-rule-trim: calc(var(--page-pad) + var(--skills-pad-inline));
+  --section-rule-nudge: -40px;
 }
-#skills .skillsSection .textHead .section-rule__track{ width:100%; min-width:0; }

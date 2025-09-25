@@ -98,7 +98,8 @@ section {
 
 html{ box-sizing:border-box; }
 
-*,*::before,*::after{ box-sizing:inherit; }
+*,*::before,*::after{ box-sizing: border-box; }
+section:has(.heroBox) { padding-block-start: 0; } 
 
 img, svg, canvas, video{ max-width:100%; height:auto; display:block; }
 table{ max-width:100%; display:block; overflow-x:auto; }
