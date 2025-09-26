@@ -5,12 +5,15 @@
 /* ===================== */
 
 .main{
+  padding-top: 7.5rem;
   display: grid;
   align-items: stretch;
   justify-items: center;
   overflow: visible;
   min-block-size: 100dvb;
   padding-bottom: 4rem;
+
+  @media (max-width: 420px){ overflow-x: clip; }
 }
 
 .heroBox{
@@ -96,8 +99,8 @@
   --section-rule-trim: var(--page-pad);
 
   display: flex;
-  align-items: flex-end;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: clamp(1rem, 55vw, 60rem);
 
   > .section-rule{
     flex: 1 1 auto;
@@ -116,10 +119,12 @@
     }
     .dividerButton{
       cursor: pointer;
-      height: 2rem;
       transition: transform .3s ease;
+      --icon: clamp(1rem, 24px, 30px);
+      width: var(--icon);
+      height: auto;
     }
-    .dividerButton:hover{ transform: scale(1.1); }
+    .dividerButton:hover{ transform: scale(1.2); }
   }
 
 
@@ -222,8 +227,7 @@
 /* ≤500px */
 @media (max-width: 500px) {
   .main {
-    padding-inline: 1rem;
-    padding-block: 0; 
+    padding-top: 5rem;
   }
 
   .heroContent .roles {

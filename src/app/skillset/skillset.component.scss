@@ -44,12 +44,17 @@
         mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
     }
 
+    @media (max-width: 600px) {
+        padding-bottom: 10rem;
+    }
+
+
     @media (min-width: 1000px) {
-        --curve-rise: 25rem;
+        --curve-rise: 18rem;
     }
 
     @media (min-width: 1500px) {
-        --curve-rise: 25rem;
+        --curve-rise: 21rem;
     }
 
     @media (min-width: 2000px) {
@@ -230,14 +235,6 @@
 .skillsSection > .section-rule{ grid-area: rule; align-self: end; }
 .skillsSection .textContainer{ grid-column: 2; grid-row: 2 / span 2; }
 .skillsSection .symbols{ grid-area: symbols; }
-
-.skillsSection > .section-rule { 
-    grid-area: rule;
-    --section-rule-pad-inline: 0;
-    --section-rule-trim: calc(var(--page-pad) + var(--skills-pad-inline));
-    --section-rule-nudge: -40px;
-}
-
 
 .skillBox {
     color: white;
@@ -421,4 +418,9 @@
   --section-rule-pad-inline: 0;
   --section-rule-trim: calc(var(--page-pad) + var(--skills-pad-inline));
   --section-rule-nudge: -40px;
+    --section-rule-nudge-corr: 0;
+}
+
+@media (max-width: 768px) and (min-width: 626px){
+  #skills{ padding-bottom: 22rem; }
 }

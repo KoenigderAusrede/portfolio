@@ -8,6 +8,7 @@
   --section-rule-pad-inline: var(--page-pad);
   --section-rule-trim: var(--section-rule-pad-inline);
   --section-rule-nudge: 0px;
+  --section-rule-nudge-corr: 0px;
 }
 
 /* ========= Block & Element ========= */
@@ -60,20 +61,32 @@
 
 /* ========= Bleed: left → middle  ========= */
 .section-rule--line-left .section-rule__track::before{
-  inset-inline-start: calc(50cqw - 50svw + var(--section-rule-trim, 0px) + var(--section-rule-nudge, 0px ));
+  inset-inline-start: calc(
+    50cqw - 50svw + var(--section-rule-trim, 0px)
+    + var(--section-rule-nudge, 0px )
+    + var(--section-rule-nudge-corr, 0px)
+    );
   inset-inline-end: 0;
   transform-origin: left;
 }
 @supports (width: 1dvw){
   .section-rule--bleed-left .section-rule__track::before{
-    inset-inline-start: calc(50% - 50dvw + var(--section-rule-trim) + var(--section-rule-nudge));
+    inset-inline-start: calc(
+      50% - 50dvw + var(--section-rule-trim)
+     + var(--section-rule-nudge)
+     + var(--section-rule-nudge-corr, 0px)
+    );
   }
 }
 
 /* ========= Bleed: right → middle ========= */
 .section-rule--line-right .section-rule__track::before{
   inset-inline-start: 0;
-  inset-inline-end: calc(50cqw - 50svw + var(--section-rule-trim, 0px) + var(--section-rule-nudge, 0px));
+  inset-inline-end: calc(
+    50cqw - 50svw + var(--section-rule-trim, 0px)
+     + var(--section-rule-nudge, 0px)
+     + var(--section-rule-nudge-corr, 0px)
+     );
   transform-origin: right;
 }
 

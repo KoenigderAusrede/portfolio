@@ -10,7 +10,6 @@
 
   --secLine-pad-inline: var(--page-pad); /* Default: intern padding */
   --section-rule-trim: var(--section-rule-pad-inline); 
-  --bleed-nudge: 0px; /* optional finetuning */
 }
 
 @supports (height: 100svh){
@@ -75,16 +74,23 @@ footer {
 }
 
 img {
-  max-width: 100%;
   height: auto;
 }
 
 .container {
-  width: min(100%, 100rem);
+  width: 100%;
+  max-width: var(--page-max);
   margin-inline: auto;
+  padding-inline: var(--page-pad);
   display: block;
   row-gap: var(--section-gap);
+  min-width: 0;
 }
+
+.container > *{
+  min-width: 0;
+  max-width: 100%;
+} 
 
 section {
   margin: 0;
@@ -114,4 +120,8 @@ table{ max-width:100%; display:block; overflow-x:auto; }
 
 @supports (width: 100svw){
   .full-viewport { width:100svw; }
+}
+
+@media (max-width: 400px){
+  .container{ overflow-x: clip; }
 }

@@ -5,6 +5,7 @@
     --curve-h: clamp(28rem, 18cqw + 6rem, 40rem);
     --curve-overlap: 12rem;
     --pp-shift: clamp(-2rem, -2vw, -4rem);
+    --curve-fudge: 8px;
     width: 100%;
     max-width: 1600px;
     margin-inline: auto;
@@ -99,19 +100,23 @@
                 position: absolute;
                 left: 50%;
                 top: 100%;
-                transform: translate(-50%, -75%);
-                width: 100svw;
+                width: calc(100dvw - var(--curve-fudge, 1px));
+                margin-left: -50dvw;
+
+                transform: translateY(-75%);
+
                 height: clamp(12rem, 45vw, 28rem);
                 background: url("../../assets/img/curve_2.png") no-repeat center top / cover;
                 pointer-events: none;
                 z-index: 2;
             }
 
-            @supports (width: 100svw) {
-                &::after {
-                    width: 100svw;
-                }
-            }
+  @supports not (width: 1dvw) {
+    .aboutpP::after {
+      width: calc(100vw - var(--curve-fudge, 1px));
+      margin-left: -50vw;
+    }
+  }
         }
 
         .textBlock {
