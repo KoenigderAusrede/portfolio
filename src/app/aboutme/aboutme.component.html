@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="heroButton">
-        <button class="greenButton" (click)="scrollToContact()">{{ text().hero.cta }}</button>
+        <button class="greenButton" (click)="scrollToContact($event)">{{ text().hero.cta }}</button>
       </div>
 
 <div class="heroBottom">
@@ -28,7 +28,7 @@
         <img class="dividerButton" src="assets/buttons/Github button.png" alt="GitHub" />
       </a>
 
-      <a class="dividerButton" type="button" (click)="scrollToContact()" aria-label="Mail">
+      <a class="dividerButton" type="button" (click)="scrollToContact($event)" aria-label="Mail">
         <img src="assets/buttons/Email button.png" alt="Mail" />
       </a>
 

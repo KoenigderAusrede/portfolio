@@ -21,12 +21,15 @@ export class SkillsetComponent {
    return translations[this.lang.language()];
  }
 
-  scrollToContact(): void {
-    const contact = document.getElementById('contact');
-    if (contact) {
-      contact.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+scrollToContact(ev?: Event): void {
+  ev?.preventDefault();
+  const el = document.getElementById('contact');
+  if (!el) return;
+
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  history.replaceState(null, '', '#contact');
+}
+
 
 showTooltip = false;
 

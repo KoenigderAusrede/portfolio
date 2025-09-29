@@ -252,6 +252,8 @@
 @media (max-width: 480px){
   .heroBottom{ width: 100%; }
   .heroBgLeft, .heroBgRight{ opacity: .4; }
+
+  .aboutBlock > img { display: none !important; }
 }
 
 /* ≤400px */

@@ -16,14 +16,14 @@ export class AboutmeComponent {
   language = this.langService.language;
   text = computed(() => translations[this.language()]);
 
-  constructor(private langService: LanguageService) {}
-  
-  scrollToContact(): void {
-    event?.preventDefault();
-    const contact = document.getElementById('contact');
-    if (contact) {
-      contact.scrollIntoView({ behavior: 'smooth' });
-    }
+  constructor(private langService: LanguageService) { }
+
+  scrollToContact(ev?: Event): void {
+    ev?.preventDefault();
+    const el = document.getElementById('contact');
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', '#contact');
   }
-  
 }

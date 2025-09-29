@@ -8,9 +8,9 @@
   <div class="mobileNav" [class.open]="isMenuOpen">
     <nav>
       <a href="#" (click)="handleNav('aboutMe', $event)">About me</a>
-<a href="#" (click)="handleNav('skills',   $event)">Skills</a>
-<a href="#" (click)="handleNav('portfolio',$event)">Portfolio</a>
-<a href="#" (click)="handleNav('contact',  $event)">Contact</a>
+      <a href="#" (click)="handleNav('skills',   $event)">Skills</a>
+      <a href="#" (click)="handleNav('portfolio',$event)">Portfolio</a>
+      <a href="#" (click)="handleNav('contact',  $event)">Contact</a>
       <div class="languageToggle">
         <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
         |
@@ -21,12 +21,12 @@
 
   <div class="headerInner">
     <a href="/felix/" aria-label="Zurück zur Startseite">
-  <img src="assets/img/Felix_Logo.png" class="felixLogo" alt="Felix Logo">
-</a>
+      <img src="assets/img/Felix_Logo.png" class="felixLogo" alt="Felix Logo">
+    </a>
     <nav>
       <a href="#" (click)="handleNav('aboutMe', $event)">About Me</a>
-<a href="#" (click)="handleNav('skills',   $event)">Skills</a>
-<a href="#" (click)="handleNav('portfolio',$event)">Portfolio</a>
+      <a href="#" (click)="handleNav('skills',   $event)">Skills</a>
+      <a href="#" (click)="handleNav('portfolio',$event)">Portfolio</a>
       <div class="languageToggle">
         <span (click)="switchLang('en')" [class.active]="language() === 'en'">EN</span>
         |

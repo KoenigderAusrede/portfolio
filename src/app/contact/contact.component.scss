@@ -3,6 +3,8 @@ $checkbox-path: '../../assets/checkbox';
   --content-max: 48rem;
 }
 
+html { scroll-padding-top: 0 }
+
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
@@ -17,7 +19,7 @@ select:-webkit-autofill {
       --section-rule-nudge-corr: 0px;
 
   @media (max-width: 500px) {
-    padding-block-start: calc(var(--section-py) + 6rem);
+    padding-block-start: calc(var(--section-py));
   }
 
   .contactHeader {     
@@ -300,7 +302,6 @@ select:-webkit-autofill {
     .contactHeader {
       left: auto;
       transform: translateX(0.2rem);
-      padding-top: 2rem;
     }
 
     .contact-heading {
@@ -315,7 +316,7 @@ select:-webkit-autofill {
 }
 
 .backToTopWrapper{
-  position:sticky; bottom:1rem;
+  position:relative; bottom:1rem;
   width:min(100%, var(--page-max));
   margin-inline:auto;
   padding-inline: var(--page-pad);
